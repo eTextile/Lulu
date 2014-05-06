@@ -1,100 +1,107 @@
+// Maurin Donneaud for Lucette board
+// upload with "Arduino Pro ou Pro Mini"
+// Atmega328 (3.3V, 8MHz)
+
 #include "Tlc5940.h"
 
-//#define  PORT_SPEED        38400     // serial port speed
-#define  PORT_SPEED        9600     // serial port speed
+#define  BAUDRATE         38400    // vitesse du port serie
+#define  DATA             3        // nombre de d'octets par trame
+#define  FOOTER           47       // flag (/) to stop recording incoming bytes
+#define  LED              16       // nombre de LEDs
+#define  FRAME            16       // nombre de frames
 
-#define  LED               16        //
-#define  FRAME             16        //
-
-unsigned int timeLigne[LED][FRAME];
-unsigned int lastTimeLigne[LED][FRAME];
-
+byte storedByte[DATA] = { 0,0,0 };
+int pos = 0;
+boolean stringComplete = false;  // whether the string is complete
+  
+int seq[LED][FRAME] = {
+ {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+ {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+ {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+ {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+ {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+ {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+ {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+ {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+ {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+ {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+ {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+ {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+ {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+ {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+ {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+ {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+};
+ 
 unsigned int bpm = 120;
-float timeFrame = 60000 / bpm;;
+float timeFrame = 60000 / bpm;
 unsigned long currentMillis = 0;
-
-int frameIndex = 0;
-
+unsigned int frameIndex = 0;
 boolean toggel = false;
-boolean DEBUG = true;
+
 
 /////////////////////// INITIALISATION
-void setup() {
-  Serial.begin(PORT_SPEED);
+void setup(){
+  Serial.begin(BAUDRATE);   // initialize serial
   Tlc.init();
   delay(1000);
 }
 
 /////////////////////// BOUCLE PRINCIPALE
-void loop() {
-  serialEvent();
-  vibroParcer();
+void loop(){
+  ledUpdate();
 }
 
-//////////////////////////// Recuperation des données envoyées sur le port série
+/*
+  SerialEvent occurs whenever a new data comes in the
+ hardware serial RX. This routine is run between each
+ time loop() runs, so using delay inside loop can delay
+ response.  Multiple bytes of data may be available.
+ */
+ 
 void serialEvent() {
-
-  char ledId;
-  char framePos;
-  int value;
-
-  if (Serial.available()) {
-
-    ledId = Serial.read();     // A.....P
-    framePos = Serial.read();  // a.....p
-
-    if ( (ledId >= 'A' && ledId <= 'P') && (framePos >= 'a' && framePos <= 'p') ) {
-
-      value = Serial.parseInt();
-
-      if (DEBUG) Serial.print(ledId - 'A');
-      if (DEBUG) Serial.print("\t");
-      if (DEBUG) Serial.print(framePos - 'a');
-      if (DEBUG) Serial.print("\t");
-      if (DEBUG) Serial.println(value);
+  
+  byte incommingByte = 0;
+  byte ledID = 0;
+  byte frameID = 0;
+  unsigned int LEDvalue = 0;
+  
+  if(Serial.available() > 0) {
+    incommingByte = Serial.read();
+    if(incommingByte == FOOTER) {
+      stringComplete = true;
     }
-  }
-  if (value != 0) {
-    timeLigne[ ledId - 'A' ][ framePos - 'a' ] = value;
-    
-    if (DEBUG) {
-      for (int i = 0; i < 16; i++) {
-        for (int j = 0; j < 16; j++) {
-          Serial.print( timeLigne[ i ][ j ] ), Serial.print(" ");
-        }
-        Serial.println();
-      }
-      Serial.println("-------------------");
+    else {
+      storedByte[pos] = incommingByte;
+      pos++;
+    }
+    if(stringComplete == true){
+      ledID = storedByte[0] >> 4;
+      frameID = storedByte[0] & 15;
+      LEDvalue = (storedByte[1] << 8) + storedByte[2];
+      seq[ledID][frameID] = LEDvalue;
+      stringComplete = false;
+      pos = 0;
     }
   }
 }
-
 
 ////////////////////////////////////// Parser to read serial datas from an [2][16] array of bytes
-void vibroParcer() {
+void ledUpdate(){
   int val = 0;
 
-  if ( millis() - currentMillis >= timeFrame && toggel == true ) {
+  if ( millis() - currentMillis >= timeFrame ) {
     currentMillis = millis();
     toggel = false;
 
     for (int ledIndex = 0; ledIndex < LED; ledIndex++) {
-      val = timeLigne[ledIndex][frameIndex];
-
-      if (val > 0) {
-        Tlc.set(ledIndex, val);
-        Tlc.update();
-      }
-      else {
-        Tlc.set(ledIndex, 0);
-        Tlc.update();
-      }
+      val = seq[ledIndex][frameIndex];
+      Tlc.set(ledIndex, val);
+      Tlc.update();
     }
+    Serial.write(124);
   }
-
-  if (toggel == false) {
-    toggel = true;
-    frameIndex++;
-    frameIndex = frameIndex % FRAME;
-  }
+  frameIndex++;
+  frameIndex = frameIndex % FRAME;
 }
+
