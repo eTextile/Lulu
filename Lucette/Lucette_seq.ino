@@ -13,7 +13,7 @@
 byte storedByte[DATA] = { 0,0,0 };
 int pos = 0;
 boolean stringComplete = false;  // whether the string is complete
-  
+
 int seq[LED][FRAME] = {
  {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
  {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
@@ -33,13 +33,13 @@ int seq[LED][FRAME] = {
  {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 };
  
-unsigned int bpm = 180;
-unsigned int timeFrame = (int) (60000 / bpm);
+unsigned int bpm = 200;
+float timeFrame = 60000 / bpm;
 unsigned long currentMillis = 0;
 unsigned int frameIndex = 0;
-boolean toggel = false;
+// boolean toggel = false;
 
-boolean DEBUG = false;
+boolean DEBUG = true;
 
 /////////////////////// INITIALISATION
 void setup(){
@@ -50,12 +50,13 @@ void setup(){
 
 /////////////////////// BOUCLE PRINCIPALE
 void loop(){
+  
   ledUpdate();
   
-  if ( DEBUG ) {
+  if ( DEBUG == true ) {
     for (int i=0; i<LED; i++){
-      for (int j=0; j<LED; j++){
-       Serial.print(seq[i][j]),Serial.print(" ");
+      for (int j=0; j<FRAME; j++){
+        Serial.print(seq[i][j]), Serial.print(" ");
       }
       Serial.println();
     }
@@ -63,6 +64,7 @@ void loop(){
   }
 }
 
+/////////////////////// Les Fonctions
 /*
   SerialEvent occurs whenever a new data comes in the
  hardware serial RX. This routine is run between each
@@ -79,6 +81,7 @@ void serialEvent() {
   
   if(Serial.available() > 0) {
     incommingByte = Serial.read();
+    
     if(incommingByte == FOOTER) {
       stringComplete = true;
     }
@@ -91,8 +94,8 @@ void serialEvent() {
       frameID = storedByte[0] & 15;
       LEDvalue = (storedByte[1] << 8) + storedByte[2];
       seq[ledID][frameID] = LEDvalue;
-      stringComplete = false;
       pos = 0;
+      stringComplete = false;
     }
   }
 }
@@ -102,15 +105,16 @@ void ledUpdate(){
   int val = 0;
 
   if ( millis() - currentMillis >= timeFrame ) {
+    
     currentMillis = millis();
-    toggel = false;
+    // toggel = false;
 
     for (int ledIndex = 0; ledIndex < LED; ledIndex++) {
       val = seq[ledIndex][frameIndex];
       Tlc.set(ledIndex, val);
       Tlc.update();
     }
-    Serial.write(13);
+    // Serial.write(13);
   }
   frameIndex++;
   frameIndex = frameIndex % FRAME;
