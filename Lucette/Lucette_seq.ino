@@ -33,19 +33,17 @@ int seq[LED][FRAME] = {
  {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 };
  
-unsigned int bpm = 200;
-float timeFrame = 60000 / bpm;
-unsigned long currentMillis = 0;
-unsigned int frameIndex = 0;
-// boolean toggel = false;
-
-boolean DEBUG = true;
+unsigned int bpm = 120;
+float timeFrame = 0;
+unsigned long lastMillis = 0;
+byte frameIndex = 0;
+boolean DEBUG = false;
 
 /////////////////////// INITIALISATION
 void setup(){
+  timeFrame = 60000 / bpm;
   Serial.begin(BAUDRATE);   // initialize serial
   Tlc.init();
-  delay(1000);
 }
 
 /////////////////////// BOUCLE PRINCIPALE
@@ -79,24 +77,32 @@ void serialEvent() {
   byte frameID = 0;
   unsigned int LEDvalue = 0;
   
-  if(Serial.available() > 0) {
+  if (Serial.available()) {
+
     incommingByte = Serial.read();
     
-    if(incommingByte == FOOTER) {
+    if (incommingByte == FOOTER) {
       stringComplete = true;
     }
     else {
       storedByte[pos] = incommingByte;
       pos++;
     }
-    if(stringComplete == true){
+    if (stringComplete == true){
       ledID = storedByte[0] >> 4;
       frameID = storedByte[0] & 15;
       LEDvalue = (storedByte[1] << 8) + storedByte[2];
+      
       seq[ledID][frameID] = LEDvalue;
       pos = 0;
       stringComplete = false;
     }
+    /*
+    if (stringComplete == true && pos == 1){
+      bpm = storedByte[0];
+      timeFrame = 60000 / bpm;
+    }
+    */
   }
 }
 
@@ -104,19 +110,16 @@ void serialEvent() {
 void ledUpdate(){
   int val = 0;
 
-  if ( millis() - currentMillis >= timeFrame ) {
+  if (millis() - lastMillis >= timeFrame) {    
+    lastMillis = millis();
     
-    currentMillis = millis();
-    // toggel = false;
-
-    for (int ledIndex = 0; ledIndex < LED; ledIndex++) {
+    for (int ledIndex=0; ledIndex<LED; ledIndex++) {
       val = seq[ledIndex][frameIndex];
       Tlc.set(ledIndex, val);
-      Tlc.update();
     }
-    // Serial.write(13);
+    Tlc.update();
+    frameIndex++;
+    frameIndex = frameIndex % FRAME;
+    Serial.print('A');
   }
-  frameIndex++;
-  frameIndex = frameIndex % FRAME;
 }
-
