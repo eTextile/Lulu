@@ -5,52 +5,55 @@
 #include "Tlc5940.h"
 
 #define  BAUDRATE         38400    // vitesse du port serie
-#define  DATA             3        // nombre de d'octets par trame
-#define  FOOTER           47       // flag (/) to stop recording incoming bytes
+#define  DATA             32       // nombre de d'octets par trame
+
+#define  FOOTER_DATA      255      // flag (/) to stop recording incoming bytes
+#define  FOOTER_TEMPO     127      // flag (/) to stop recording incoming bytes
+
 #define  LED              16       // nombre de LEDs
 #define  FRAME            16       // nombre de frames
 
-byte storedByte[DATA] = { 0,0,0 };
-int pos = 0;
-boolean stringComplete = false;  // whether the string is complete
-
-int seq[LED][FRAME] = {
- {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
- {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
- {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
- {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
- {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
- {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
- {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
- {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
- {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
- {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
- {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
- {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
- {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
- {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
- {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
- {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+char serialData[DATA] = {
+ 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 
 };
- 
-unsigned int bpm = 120;
-float timeFrame = 0;
+  
+int seq[LED][FRAME] = {
+   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+};
+
+
+byte bpm = 300;
+float timeFrame = 100;
 unsigned long lastMillis = 0;
 byte frameIndex = 0;
 boolean DEBUG = false;
 
 /////////////////////// INITIALISATION
 void setup(){
-  timeFrame = 60000 / bpm;
   Serial.begin(BAUDRATE);   // initialize serial
   Tlc.init();
 }
 
 /////////////////////// BOUCLE PRINCIPALE
 void loop(){
-  
+
   ledUpdate();
-  
+
   if ( DEBUG == true ) {
     for (int i=0; i<LED; i++){
       for (int j=0; j<FRAME; j++){
@@ -69,40 +72,28 @@ void loop(){
  time loop() runs, so using delay inside loop can delay
  response.  Multiple bytes of data may be available.
  */
- 
-void serialEvent() {
-  
-  byte incommingByte = 0;
-  byte ledID = 0;
-  byte frameID = 0;
-  unsigned int LEDvalue = 0;
-  
-  if (Serial.available()) {
 
-    incommingByte = Serial.read();
+void serialEvent() {
+  int highBit = 0;
+  int lowBit = 0;
+  int frameID = 0;
+  int LEDvalue = 0;
+
+  if (Serial.available()) {
     
-    if (incommingByte == FOOTER) {
-      stringComplete = true;
-    }
-    else {
-      storedByte[pos] = incommingByte;
-      pos++;
-    }
-    if (stringComplete == true){
-      ledID = storedByte[0] >> 4;
-      frameID = storedByte[0] & 15;
-      LEDvalue = (storedByte[1] << 8) + storedByte[2];
+      Serial.readBytesUntil(FOOTER_DATA, serialData, DATA);
+    
+    for (int i=0; i<32; i=i+2){
       
-      seq[ledID][frameID] = LEDvalue;
-      pos = 0;
-      stringComplete = false;
+      highBit = serialData[i];
+      lowBit = serialData[i+1];
+      
+      Serial.print(highBit), Serial.print(" "),  Serial.println(lowBit);
+      
+      LEDvalue = (highBit << 6) + lowBit;
+
+      seq[frameID][ i/2 ] = LEDvalue;
     }
-    /*
-    if (stringComplete == true && pos == 1){
-      bpm = storedByte[0];
-      timeFrame = 60000 / bpm;
-    }
-    */
   }
 }
 
@@ -112,7 +103,7 @@ void ledUpdate(){
 
   if (millis() - lastMillis >= timeFrame) {    
     lastMillis = millis();
-    
+
     for (int ledIndex=0; ledIndex<LED; ledIndex++) {
       val = seq[ledIndex][frameIndex];
       Tlc.set(ledIndex, val);
@@ -120,6 +111,7 @@ void ledUpdate(){
     Tlc.update();
     frameIndex++;
     frameIndex = frameIndex % FRAME;
-    Serial.print('A');
+    // if ( !DEBUG ) Serial.print('A');
   }
 }
+
