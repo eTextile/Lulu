@@ -13,8 +13,11 @@
 #define  LED              16       // nombre de LEDs
 #define  FRAME            16       // nombre de frames
 
-char serialData[DATA] = {
- 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 
+unsigned char serialData[DATA] = {
+ '\0','\0','\0','\0','\0','\0','\0','\0',
+ '\0','\0','\0','\0','\0','\0','\0','\0',
+ '\0','\0','\0','\0','\0','\0','\0','\0',
+ '\0','\0','\0','\0','\0','\0','\0','\0'
 };
   
 int seq[LED][FRAME] = {
@@ -33,7 +36,7 @@ int seq[LED][FRAME] = {
    {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
    {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
    {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
 };
 
 
@@ -76,25 +79,22 @@ void loop(){
 void serialEvent() {
   int highBit = 0;
   int lowBit = 0;
-  int frameID = 0;
-  int LEDvalue = 0;
-
+  int LED_id = 0;
+  int LED_value = 0;
+  byte test = 0;
+  
   if (Serial.available()) {
-    
-      Serial.readBytesUntil(FOOTER_DATA, serialData, DATA);
-    
-    for (int i=0; i<32; i=i+2){
-      
-      highBit = serialData[i];
-      lowBit = serialData[i+1];
-      
-      Serial.print(highBit), Serial.print(" "),  Serial.println(lowBit);
-      
-      LEDvalue = (highBit << 6) + lowBit;
-
-      seq[frameID][ i/2 ] = LEDvalue;
-    }
-  }
+    test = Serial.readBytesUntil(FOOTER_DATA, (char*)serialData, DATA);
+    if (test == DATA){
+      for (int i=0; i<DATA; i=i+2){
+        highBit = (unsigned int) serialData[i] << 6;
+        lowBit = serialData[i+1];
+        LED_value = highBit + lowBit;
+        // Serial.print(LED_value);
+        seq[ LED_id ][ i/2 ] = LED_value;
+        }
+      }
+   }
 }
 
 ////////////////////////////////////// Parser to read serial datas from an [2][16] array of bytes
@@ -114,4 +114,3 @@ void ledUpdate(){
     // if ( !DEBUG ) Serial.print('A');
   }
 }
-
