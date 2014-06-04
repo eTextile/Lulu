@@ -5,45 +5,58 @@
 #include "Tlc5940.h"
 
 #define  BAUDRATE         38400    // vitesse du port serie
-#define  DATA             32       // nombre de d'octets par trame
+#define  DATA             512      // nombre de d'octets par trame
 
 #define  FOOTER_DATA      255      // flag (/) to stop recording incoming bytes
-#define  FOOTER_TEMPO     127      // flag (/) to stop recording incoming bytes
+#define  FOOTER_TEMPO     127      // flag ( ) to stop recording incoming bytes
 
 #define  LED              16       // nombre de LEDs
 #define  FRAME            16       // nombre de frames
 
-unsigned char serialData[DATA] = {
- '\0','\0','\0','\0','\0','\0','\0','\0',
- '\0','\0','\0','\0','\0','\0','\0','\0',
- '\0','\0','\0','\0','\0','\0','\0','\0',
- '\0','\0','\0','\0','\0','\0','\0','\0'
+byte serialData[DATA] = {
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 };
-  
+ 
+ int index = 0;
+ 
 int seq[LED][FRAME] = {
-   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-   {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
+ { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
+ { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
+ { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
+ { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
+ { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
+ { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
+ { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
+ { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
+ { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
+ { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
+ { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
+ { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
+ { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
+ { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
+ { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
+ { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
 };
-
 
 byte bpm = 300;
-float timeFrame = 100;
+float timeFrame = 1000;
 unsigned long lastMillis = 0;
-byte frameIndex = 0;
+unsigned int frameIndex = 0;
 boolean DEBUG = false;
 
 /////////////////////// INITIALISATION
@@ -54,63 +67,52 @@ void setup(){
 
 /////////////////////// BOUCLE PRINCIPALE
 void loop(){
-
   ledUpdate();
-
-  if ( DEBUG == true ) {
-    for (int i=0; i<LED; i++){
-      for (int j=0; j<FRAME; j++){
-        Serial.print(seq[i][j]), Serial.print(" ");
-      }
-      Serial.println();
-    }
-    Serial.println();
-  }
 }
 
 /////////////////////// Les Fonctions
-/*
-  SerialEvent occurs whenever a new data comes in the
- hardware serial RX. This routine is run between each
- time loop() runs, so using delay inside loop can delay
- response.  Multiple bytes of data may be available.
- */
-
-void serialEvent() {
+void serialEvent(){
+  byte inputValue = 0;
   int highBit = 0;
   int lowBit = 0;
-  int LED_id = 0;
-  int LED_value = 0;
-  byte test = 0;
-  
-  if (Serial.available()) {
-    test = Serial.readBytesUntil(FOOTER_DATA, (char*)serialData, DATA);
-    if (test == DATA){
+  int ledId = 0;
+  int seqPos = 0;
+  int seqValue = 0;
+
+  if (Serial.available() > 0){
+    inputValue = Serial.read();
+
+    if (inputValue != 255){
+      serialData[index] = inputValue;
+      index++;
+    }
+    else{
+      index = 0;
       for (int i=0; i<DATA; i=i+2){
-        highBit = (unsigned int) serialData[i] << 6;
+        highBit = (int)serialData[i] << 6;
         lowBit = serialData[i+1];
-        LED_value = highBit + lowBit;
-        // Serial.print(LED_value);
-        seq[ LED_id ][ i/2 ] = LED_value;
-        }
+        seqValue = highBit + lowBit;
+        ledId = (int)i/32;
+        seqPos = ((int)i/2) % 16;
+        seq[ledId][seqPos] = seqValue;
       }
-   }
+    }
+  }
 }
 
 ////////////////////////////////////// Parser to read serial datas from an [2][16] array of bytes
 void ledUpdate(){
   int val = 0;
 
-  if (millis() - lastMillis >= timeFrame) {    
+  if (millis() - lastMillis >= timeFrame){    
     lastMillis = millis();
 
-    for (int ledIndex=0; ledIndex<LED; ledIndex++) {
+    for (int ledIndex=0; ledIndex<LED; ledIndex++){
       val = seq[ledIndex][frameIndex];
       Tlc.set(ledIndex, val);
     }
     Tlc.update();
     frameIndex++;
     frameIndex = frameIndex % FRAME;
-    // if ( !DEBUG ) Serial.print('A');
   }
 }
