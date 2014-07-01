@@ -12,7 +12,7 @@
 
 #define  LED              16       // nombre de LEDs
 #define  FRAME            16       // nombre de frames
-#define  XERR             2        // pin to trigger TLC error (PD2)
+#define  XERR             2        // pin to sens TLC error (PD2)
 #define  ledPin           5        // pin to display TLC error
 
 byte serialData[DATA] = {
@@ -56,7 +56,7 @@ int seq[LED][FRAME] = {
 };
  
 
-byte bpm = 300;
+int bpm = 300;
 float timeFrame = 100;
 unsigned long lastMillis = 0;
 unsigned int frameIndex = 0;
@@ -64,7 +64,7 @@ unsigned int frameIndex = 0;
 boolean ledError = false;
 boolean lastLedError = false;
 boolean ledState = false;
-boolean DEBUG = true;
+boolean DEBUG = false;
 
 /////////////////////// INITIALISATION
 void setup(){
@@ -92,7 +92,7 @@ void serialEvent(){
   if (Serial.available() > 0){
     inputValue = Serial.read();
 
-    if(inputValue == 255){
+    if(inputValue == FOOTER_DATA){
       for (int i=0; i<DATA; i=i+2){
         highBit = (int)serialData[i] << 6;
         lowBit = serialData[i+1];
@@ -101,12 +101,14 @@ void serialEvent(){
         seqPos = ((int)i/2) % 16;
         seq[ledId][seqPos] = seqValue;
       }
+      index = 0;
     }
-    else if(inputValue == 127){
-      highBit = (int)serialData[0] << 6;
-      lowBit = serialData[1];
+    else if(inputValue == FOOTER_TEMPO){
+      highBit = (int)serialData[1] << 6;
+      lowBit = serialData[0];
       bpm = highBit + lowBit;
       timeFrame = 60000 / bpm;
+      index = 0;
     }
     else {
       serialData[index] = inputValue;
