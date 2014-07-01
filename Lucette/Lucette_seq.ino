@@ -4,7 +4,7 @@
 
 #include "Tlc5940.h"
 
-#define  BAUDRATE         9600     // vitesse du port serie
+#define  BAUDRATE         38400    // vitesse du port serie
 #define  DATA             512      // nombre de d'octets par trame
 
 #define  FOOTER_DATA      255      // flag (/) to stop recording incoming bytes
@@ -14,7 +14,6 @@
 #define  FRAME            16       // nombre de frames
 #define  XERR             2        // pin to trigger TLC error (PD2)
 #define  ledPin           5        // pin to display TLC error
-
 
 byte serialData[DATA] = {
  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -35,7 +34,7 @@ byte serialData[DATA] = {
  0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 };
  
- int index = 0;
+int index = 0;
  
 int seq[LED][FRAME] = {
  { 4095,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
@@ -46,31 +45,33 @@ int seq[LED][FRAME] = {
  { 0,0,0,0,0,4095,0,0,0,0,0,0,0,0,0,0 },
  { 0,0,0,0,0,0,4095,0,0,0,0,0,0,0,0,0 },
  { 0,0,0,0,0,0,0,4095,0,0,0,0,0,0,0,0 },
- { 0,0,0,0,0,0,0,0,4095,0,0,0,0,0,0,0 },
- { 0,0,0,0,0,0,0,0,0,4095,0,0,0,0,0,0 },
- { 0,0,0,0,0,0,0,0,0,0,4095,0,0,0,0,0 },
- { 0,0,0,0,0,0,0,0,0,0,0,4095,0,0,0,0 },
- { 0,0,0,0,0,0,0,0,0,0,0,0,4095,0,0,0 },
- { 0,0,0,0,0,0,0,0,0,0,0,0,0,4095,0,0 },
- { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,4095,0 },
- { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4095 }
+ { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
+ { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
+ { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
+ { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
+ { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
+ { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
+ { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
+ { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
 };
-
+ 
 
 byte bpm = 300;
-float timeFrame = 1000;
+float timeFrame = 100;
 unsigned long lastMillis = 0;
 unsigned int frameIndex = 0;
 
-boolean ledError[LED];
-boolean lastLedError[LED];
-boolean DEBUG = false;
+boolean ledError = false;
+boolean lastLedError = false;
+boolean ledState = false;
+boolean DEBUG = true;
 
 /////////////////////// INITIALISATION
 void setup(){
-  Serial.begin(BAUDRATE);   // initialize serial
-  pinMode(XERR, INPUT);     //
-  pinMode(ledPin, OUTPUT);  //
+  Serial.begin(BAUDRATE);    // initialize serial
+  pinMode(XERR, INPUT);      //
+  pinMode(ledPin, OUTPUT);   //
+  digitalWrite(ledPin, LOW); //
   Tlc.init();
 }
 
@@ -116,32 +117,27 @@ void serialEvent(){
 
 ////////////////////////////////////// Parser to read serial datas from an [2][16] array of bytes
 void ledUpdate(){
-  int val = 0;
+
 
   if (millis() - lastMillis >= timeFrame){    
     lastMillis = millis();
 
     for (int ledIndex=0; ledIndex<LED; ledIndex++){
-      val = seq[ledIndex][frameIndex];
-      Tlc.set(ledIndex, val);
-
-      /////////// ERROR
-      lastLedError[ledIndex] = ledError[ledIndex];
-      ledError[ledIndex] = digitalRead(XERR); // XERR is ERROR pin
-      if( ledError[ledIndex] != lastLedError[ledIndex] && lastLedError[ledIndex] == LOW){
-        digitalWrite(ledPin, HIGH);
-        if(DEBUG){
-          Serial.println(F("ERROR : "));
-          for (int j=0; j< LED; j++){
-            Serial.println(j);
-          }
-          digitalWrite(ledPin, LOW);
-        }
-      }
-    }    
+      Tlc.set(ledIndex, seq[ledIndex][frameIndex]);
+    }
     Tlc.update();
+    /////////// CATCH ERROR
+    lastLedError = ledError;
+    ledError = digitalRead(XERR); // XERR is ERROR pin
+    if( ledError == true && ledError != lastLedError ){
+      digitalWrite(ledPin, HIGH);
+    }
+    else{
+      digitalWrite(ledPin, LOW);
+    }
     frameIndex++;
     frameIndex = frameIndex % FRAME;
 
   }
 }
+
