@@ -25,7 +25,7 @@ Cette broche est connectée a la broche XERR du TLC5940. elle est active si l
 	#define XERR      2     // pin to trigger TLC error (PD2)
 
 // La broche 5
-Cette broche est connectée à une LED pour pouvoir ficher les ERREURS captées par la broche XERR.
+Cette broche est connectée à une LED pour pouvoir afficher les ERREURS captées par la broche XERR.
 Elle est aussi utile pour debugger visuellement un programme avec la fonction digitalWrite(ledPin, HIGH/LOW);
 	#define ledPin      5    // pin to display TLC error
 
