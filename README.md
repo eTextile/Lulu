@@ -1,4 +1,4 @@
-lucette_seq
+Lucette
 ===========
 /////////// Caractéristiques de la carte :
 	- 16 voies 12bits PWM (TLC5940)
