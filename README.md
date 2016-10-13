@@ -6,12 +6,11 @@ Textile lumineux réalisés en collaboration avec Alice Heit designer textile. O
 ### Le site d'Alice : <a href="https://araneafilum.wordpress.com/" rel="nofollow">araneafilum.wordpress.com/</a>
 
 ## Caractéristiques de la carte Lucette
-- 16 voies 12bits PWM (TLC5940)
-- courant de sortie max 120 mA / 3.3V
-- microcontroller Atmeg328
-- interface série
-- chargeur lithium-ion intégré : recharge de la batterie par mini USB
-- interrupter ON/OFF
+- Interrupter ON/OFF
+- Microcontroller Atmeg328
+- Contrôleur 16 PWM 12bits (TLC5940)
+- Courant de sortie 120 mA / 3.3V max
+- Chargeur lithium-ion intégré
 
 ## Configurer l'IDE Arduino
  - La première étape consiste à installer la librairie TLC5940 dans le répertoire : Documents/Arduino/libraries/Tlc5940
@@ -21,7 +20,6 @@ Textile lumineux réalisés en collaboration avec Alice Heit designer textile. O
  - Pour envoyer un programme c'est comme avec une Arduino mais il faut appuyer sur le bouton reset de la carte au moment d'envoyer le programme.
 
 ## Les broches/pin de l'ATmega328
-
 ### La broche digital 2
 Cette broche est connectée a la broche XERR du TLC5940, elle est active si le TLC est en surchauffe ou si une connexion entre un actionneur et la puce est interrompu 
  - #define XERR 2 // pin to catch TLC error (PD2)
@@ -44,8 +42,7 @@ Cette broche est connectée a la broche XERR du TLC5940, elle est active si le
 
 ## Les données importantes
 - Avant de brancher une LED il faut relever le courant MAXIMUM qu'elle consomme, puis en fonction de cette valeur ajuster la résistance R5 sur la carte (cf: capture d'écran ci-joint).
-
-- La formule qui permet de calculer la valeur de cette résistance est a la page 14 du datasheet : http://www.ti.com/lit/gpn/tlc5940
+ - La formule qui permet de calculer la valeur de cette résistance est a la page 14 du datasheet : http://www.ti.com/lit/gpn/tlc5940
 
 # TODO
 - add auto-reset
