@@ -1,11 +1,11 @@
 # Lucette
 
-Textile lumineux en collaboration avec Alice Heit designer textile. Objets d’exception pour les repas de fêtes, ce tissus mêle intimement tradition et innovation. Il est animé d’un motif changeant, dont les lentes variations accompagnent les différents temps du repas. Une attention particulière est portée à l’intégration de électronique qui disparaît totalement au profit d’une esthétique simple. Le tissu, composé de fils d’ortie brute et des fils transparents très fins, présente une structure double épaisseur, à l’intérieur de laquelle sont entrelacées les fibres optiques lumineuses. Ces tissus sont des pièces uniques réalisés sur mesure.
+Textile lumineux réalisés en collaboration avec Alice Heit designer textile. Objets d’exception pour les repas de fêtes, ce tissus mêle intimement tradition et innovation. Il est animé d’un motif changeant, dont les lentes variations accompagnent les différents temps du repas. Une attention particulière est portée à l’intégration de électronique qui disparaît totalement au profit d’une esthétique simple. Le tissu, composé de fils d’ortie brute et des fils transparents très fins, présente une structure double épaisseur, à l’intérieur de laquelle sont entrelacées les fibres optiques lumineuses. Ces tissus sont des pièces uniques réalisés sur mesure.
 
 ![alt tag](https://farm8.staticflickr.com/7762/18261111032_ac43080403_z_d.jpg)
 ### Le site d'Alice : <a href="https://araneafilum.wordpress.com/" rel="nofollow">araneafilum.wordpress.com/</a>
 
-## Caractéristiques de la carte
+## Caractéristiques de la carte Lucette
 - 16 voies 12bits PWM (TLC5940)
 - courant de sortie max 120 mA / 3.3V
 - microcontroller Atmeg328
