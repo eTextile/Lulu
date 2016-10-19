@@ -24,15 +24,22 @@ Le projet Luce est à l’origine du développement de la carte électronique Lu
 
 ## Les broches/pin de l'ATmega328
 - La broche digital 2 : cette broche est connectée a la broche XERR du TLC5940, elle est active si le TLC est en surchauffe ou si une connexion entre un actionneur et la puce est interrompu 
- - #define XERR 2 // pin to catch TLC error
+```
+#define XERR 2 // pin to catch TLC error
+```
+
 - La broche digital 5 : Cette broche est connectée à une LED pour afficher les ERREURS captées par la broche XERR. Elle est aussi utile pour debugger visuellement un programme avec la fonction digitalWrite(ledPin, HIGH/LOW);
- - #define ledPin 5 // pin to display TLC error
+```
+#define ledPin 5 // pin to display TLC error
+```
 - Les broches A2, A1, D6, D7, D8 : ces broches sont utilisables pour ajouter des capteurs, par exemple un bouton pour activer la lecture, etc. Elles sont accessibles sur le coté de la carte.
 
 ## Les fonctions de la librairie
-- La librairie TLC5940 comporte un ensemble de fonctions qui permettent de programmer l'intencité du courant sur chaque sorties
-- Tlc.set( channel, valeur 12 bit ); // [0,4095]
-- Tlc.update();
+La librairie TLC5940 comporte un ensemble de fonctions qui permettent de programmer l'intencité de chaqu'une des LEDs
+```
+Tlc.set( channel, valeur 12 bit ); // [0,4095]
+Tlc.update();
+```
 - Voir les exemples fournis avec cette librairie
  - Documents/Arduino/libraries/Tlc5940/examples
 
