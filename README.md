@@ -1,21 +1,25 @@
 # Luce
-Textile lumineux réalisés en collaboration avec Alice Heit designer textile. Objets d’exception, ce tissus mêle intimement tradition et innovation. Il est animé d’un motif changeant, dont les lentes variations sont inspirées d'organismes vivants. Une attention particulière est portée à l’intégration de électronique qui disparaît totalement au profit d’une esthétique simple. Le tissu, présente une structure double épaisseur, à l’intérieur de laquelle sont entrelacées les fibres optiques lumineuses. Ces tissus sont des pièces uniques réalisés sur mesure.
-# Le site web d'Alice : <a href="https://araneafilum.wordpress.com/" rel="nofollow">araneafilum.wordpress.com/</a>
+Textile lumineux réalisés en collaboration avec Alice Heit designer textile. Objets d’exception, ce tissus mêle intimement tradition et innovation. Il est animé d’un motif changeant, dont les lentes variations sont inspirées d'organismes vivants. Une attention particulière est portée à l’intégration de électronique qui disparaît totalement au profit d’une esthétique simple. Le tissu, présente une structure double épaisseur, à l’intérieur de laquelle sont entrelacées les fibres optiques lumineuses. Ces tissus sont des pièces uniques réalisés sur mesure. Le site web d'Alice : [Araneafilum](https://araneafilum.wordpress.com/)
 
 ![alt tag](https://farm8.staticflickr.com/7762/18261111032_ac43080403_z_d.jpg)
 ![alt tag](https://farm6.staticflickr.com/5506/29792500474_7d4b125e57_z_d.jpg)
 
-### La carte électronique Lucette
+## Lucette
+Le projet Luce est à l’origine du développement de la carte électronique Lucette. Cette petite carte qui fonctionne sur batterie rechargeable permet de controler plusieurs sources lumineuses.
+
+### Lucette caractéristiques
 - Interrupter ON/OFF
 - Microcontroller Atmeg328
 - Contrôleur 16 PWM 12bits (TLC5940)
-- Courant de sortie 120 mA / 3.3V max
+- Courant de sortie max : 3.3V - 60 mA
 - Chargeur lithium-ion intégré
+
 ![alt tag](https://farm2.staticflickr.com/1562/25915319424_2622f2de8f_z_d.jpg)
+
 
 ## Configurer l'IDE Arduino
  - La première étape consiste à installer la librairie TLC5940 dans le répertoire : Documents/Arduino/libraries/Tlc5940
- - La doc sur arduino.cc : http://www.arduino.cc/playground/learning/TLC5940
+ - La [doc du TLC5940](http://www.arduino.cc/playground/learning/TLC5940) sur arduino.cc
  - Le lien directe de la lib sur google code : http://code.google.com/p/tlc5940arduino/downloads/detail?name=Tlc5940_r014_2.zip&can=2&q=
  - Type de carte : Arduino Pro or Pro Mini (3.3V, 8MHz) / ATmega328
  - Pour envoyer un programme c'est comme avec une Arduino mais il faut appuyer sur le bouton reset de la carte au moment d'envoyer le programme.
@@ -44,6 +48,9 @@ Cette broche est connectée a la broche XERR du TLC5940, elle est active si le
 ## Les données importantes
 - Avant de brancher une LED il faut relever le courant MAXIMUM qu'elle consomme, puis en fonction de cette valeur ajuster la résistance R5 sur la carte (cf: capture d'écran ci-joint).
  - La formule qui permet de calculer la valeur de cette résistance est a la page 14 du datasheet : http://www.ti.com/lit/gpn/tlc5940
+ 
+### Les carte électroniques Lulu
+https://farm2.staticflickr.com/1484/25915301344_d6258fcb50_z_d.jpg
 
 # TODO
 - add auto-reset
