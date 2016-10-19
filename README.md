@@ -48,8 +48,9 @@ Tlc.update();
  - La formule qui permet de calculer la valeur de cette résistance est a la page 14 du datasheet : http://www.ti.com/lit/gpn/tlc5940
  
 ### Les carte électroniques Lulu
-https://farm2.staticflickr.com/1484/25915301344_d6258fcb50_z_d.jpg
+![alt tag](https://farm2.staticflickr.com/1484/25915301344_d6258fcb50_z_d.jpg)
 
-# TODO
+
+## TODO
 - add auto-reset
 - ajouter pins non utilisées sur le bord du PCB
