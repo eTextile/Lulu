@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle version="6.5.0">
+<drawing>
+<settings>
+<setting alwaysvectorfont="no"/>
+<setting verticaltext="up"/>
+</settings>
+<grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<layers>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
+<layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
+<layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
+<layer number="5" name="Route5" color="4" fill="4" visible="no" active="no"/>
+<layer number="6" name="Route6" color="1" fill="8" visible="no" active="no"/>
+<layer number="7" name="Route7" color="4" fill="8" visible="no" active="no"/>
+<layer number="8" name="Route8" color="1" fill="2" visible="no" active="no"/>
+<layer number="9" name="Route9" color="4" fill="2" visible="no" active="no"/>
+<layer number="10" name="Route10" color="1" fill="7" visible="no" active="no"/>
+<layer number="11" name="Route11" color="4" fill="7" visible="no" active="no"/>
+<layer number="12" name="Route12" color="1" fill="5" visible="no" active="no"/>
+<layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
+<layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
+<layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="no" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
+<layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
+<layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
+<layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
+<layer number="35" name="tGlue" color="7" fill="4" visible="no" active="yes"/>
+<layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
+<layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
+<layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
+<layer number="50" name="dxf" color="7" fill="1" visible="no" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
+<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
+<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
+<layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="93" name="Pins" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="94" name="Symbols" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="96" name="Values" color="7" fill="1" visible="no" active="yes"/>
+<layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
+</layers>
+<library>
+<description>TLC5940 in DIP28 Package</description>
+<packages>
+<package name="DIP-28">
+<wire x1="-5.08" y1="-35.56" x2="-5.08" y2="0" width="0.127" layer="1"/>
+<wire x1="-5.08" y1="-35.56" x2="5.08" y2="-35.56" width="0.127" layer="1"/>
+<wire x1="5.08" y1="-35.56" x2="5.08" y2="0" width="0.127" layer="1"/>
+<wire x1="-5.08" y1="0" x2="5.08" y2="0" width="0.127" layer="1"/>
+<pad name="1" x="-3.81" y="-1.27" drill="0.8" shape="octagon"/>
+<pad name="2" x="-3.81" y="-3.81" drill="0.8" shape="octagon"/>
+<pad name="3" x="-3.81" y="-6.35" drill="0.8" shape="octagon"/>
+<pad name="4" x="-3.81" y="-8.89" drill="0.8" shape="octagon"/>
+<pad name="5" x="-3.81" y="-11.43" drill="0.8" shape="octagon"/>
+<pad name="6" x="-3.81" y="-13.97" drill="0.8" shape="octagon"/>
+<pad name="7" x="-3.81" y="-16.51" drill="0.8" shape="octagon"/>
+<pad name="8" x="-3.81" y="-19.05" drill="0.8" shape="octagon"/>
+<pad name="9" x="-3.81" y="-21.59" drill="0.8" shape="octagon"/>
+<pad name="10" x="-3.81" y="-24.13" drill="0.8" shape="octagon"/>
+<pad name="11" x="-3.81" y="-26.67" drill="0.8" shape="octagon"/>
+<pad name="12" x="-3.81" y="-29.21" drill="0.8" shape="octagon"/>
+<pad name="13" x="-3.81" y="-31.75" drill="0.8" shape="octagon"/>
+<pad name="14" x="-3.81" y="-34.29" drill="0.8" shape="octagon"/>
+<pad name="15" x="3.81" y="-34.29" drill="0.8" shape="octagon" rot="R180"/>
+<pad name="16" x="3.81" y="-31.75" drill="0.8" shape="octagon" rot="R180"/>
+<pad name="17" x="3.81" y="-29.21" drill="0.8" shape="octagon" rot="R180"/>
+<pad name="18" x="3.81" y="-26.67" drill="0.8" shape="octagon" rot="R180"/>
+<pad name="19" x="3.81" y="-24.13" drill="0.8" shape="octagon" rot="R180"/>
+<pad name="20" x="3.81" y="-21.59" drill="0.8" shape="octagon" rot="R180"/>
+<pad name="21" x="3.81" y="-19.05" drill="0.8" shape="octagon" rot="R180"/>
+<pad name="22" x="3.81" y="-16.51" drill="0.8" shape="octagon" rot="R180"/>
+<pad name="23" x="3.81" y="-13.97" drill="0.8" shape="octagon" rot="R180"/>
+<pad name="24" x="3.81" y="-11.43" drill="0.8" shape="octagon" rot="R180"/>
+<pad name="25" x="3.81" y="-8.89" drill="0.8" shape="octagon" rot="R180"/>
+<pad name="26" x="3.81" y="-6.35" drill="0.8" shape="octagon" rot="R180"/>
+<pad name="27" x="3.81" y="-3.81" drill="0.8" shape="octagon" rot="R180"/>
+<pad name="28" x="3.81" y="-1.27" drill="0.8" shape="octagon" rot="R180"/>
+<text x="0" y="-21.59" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="0" y="-11.43" size="1.27" layer="25" rot="R90">&gt;VALUE</text>
+</package>
+<package name="PWP-28">
+<smd name="P$1" x="-2.65" y="5.1" dx="0.6096" dy="0.3048" layer="1"/>
+<smd name="P$2" x="-2.65" y="4.45" dx="0.6096" dy="0.3048" layer="1"/>
+<smd name="P$3" x="-2.65" y="3.8" dx="0.6096" dy="0.3048" layer="1"/>
+<smd name="P$4" x="-2.65" y="3.15" dx="0.6096" dy="0.3048" layer="1"/>
+<smd name="P$5" x="-2.65" y="2.5" dx="0.6096" dy="0.3048" layer="1"/>
+<smd name="P$6" x="-2.65" y="1.85" dx="0.6096" dy="0.3048" layer="1"/>
+<smd name="P$7" x="-2.65" y="1.2" dx="0.6096" dy="0.3048" layer="1"/>
+<smd name="P$8" x="-2.65" y="0.55" dx="0.6096" dy="0.3048" layer="1"/>
+<smd name="P$9" x="-2.65" y="-0.1" dx="0.6096" dy="0.3048" layer="1"/>
+<smd name="P$10" x="-2.65" y="-0.75" dx="0.6096" dy="0.3048" layer="1"/>
+<smd name="P$11" x="-2.65" y="-1.4" dx="0.6096" dy="0.3048" layer="1"/>
+<smd name="P$12" x="-2.65" y="-2.05" dx="0.6096" dy="0.3048" layer="1"/>
+<smd name="P$13" x="-2.65" y="-2.7" dx="0.6096" dy="0.3048" layer="1"/>
+<smd name="P$14" x="-2.65" y="-3.35" dx="0.6096" dy="0.3048" layer="1"/>
+<smd name="P$15" x="3.2" y="-3.35" dx="0.6096" dy="0.3048" layer="1"/>
+<smd name="P$16" x="3.2" y="-2.7" dx="0.6096" dy="0.3048" layer="1"/>
+<smd name="P$17" x="3.2" y="-2.05" dx="0.6096" dy="0.3048" layer="1"/>
+<smd name="P$18" x="3.2" y="-1.4" dx="0.6096" dy="0.3048" layer="1"/>
+<smd name="P$19" x="3.2" y="-0.75" dx="0.6096" dy="0.3048" layer="1"/>
+<smd name="P$20" x="3.2" y="-0.1" dx="0.6096" dy="0.3048" layer="1"/>
+<smd name="P$21" x="3.2" y="0.55" dx="0.6096" dy="0.3048" layer="1"/>
+<smd name="P$22" x="3.2" y="1.2" dx="0.6096" dy="0.3048" layer="1"/>
+<smd name="P$23" x="3.2" y="1.85" dx="0.6096" dy="0.3048" layer="1"/>
+<smd name="P$24" x="3.2" y="2.5" dx="0.6096" dy="0.3048" layer="1"/>
+<smd name="P$25" x="3.2" y="3.15" dx="0.6096" dy="0.3048" layer="1"/>
+<smd name="P$26" x="3.2" y="3.8" dx="0.6096" dy="0.3048" layer="1"/>
+<smd name="P$27" x="3.2" y="4.45" dx="0.6096" dy="0.3048" layer="1"/>
+<smd name="P$28" x="3.2" y="5.1" dx="0.6096" dy="0.3048" layer="1"/>
+<pad name="TH@0" x="-0.48" y="4.85" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@1" x="0.02" y="4.85" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@2" x="-0.48" y="4.35" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@3" x="0.02" y="4.35" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@4" x="-0.48" y="3.85" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@5" x="0.02" y="3.85" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@6" x="-0.48" y="3.35" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@7" x="0.02" y="3.35" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@8" x="-0.48" y="2.85" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@9" x="0.02" y="2.85" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@10" x="-0.48" y="2.35" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@11" x="0.02" y="2.35" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@12" x="-0.48" y="1.85" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@13" x="0.02" y="1.85" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@14" x="-0.48" y="1.35" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@15" x="0.02" y="1.35" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@16" x="-0.48" y="0.85" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@17" x="0.02" y="0.85" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@18" x="-0.48" y="0.35" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@19" x="0.02" y="0.35" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@20" x="-0.48" y="-0.15" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@21" x="0.02" y="-0.15" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@22" x="-0.48" y="-0.65" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@23" x="0.02" y="-0.65" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@24" x="-0.48" y="-1.15" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@25" x="0.02" y="-1.15" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@26" x="-0.48" y="-1.65" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@27" x="0.02" y="-1.65" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@28" x="-0.48" y="-2.15" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@29" x="0.02" y="-2.15" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@30" x="-0.48" y="-2.65" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@31" x="0.02" y="-2.65" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@32" x="-0.48" y="-3.15" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@33" x="0.02" y="-3.15" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@34" x="0.52" y="4.85" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@35" x="0.52" y="4.35" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@36" x="0.52" y="3.85" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@37" x="0.52" y="3.35" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@38" x="0.52" y="2.85" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@39" x="0.52" y="2.35" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@40" x="0.52" y="1.85" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@41" x="0.52" y="1.35" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@42" x="0.52" y="0.85" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@43" x="0.52" y="0.35" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@44" x="0.52" y="-0.15" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@45" x="0.52" y="-0.65" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@46" x="0.52" y="-1.15" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@47" x="0.52" y="-1.65" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@48" x="0.52" y="-2.15" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@49" x="0.52" y="-2.65" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+<pad name="TH@50" x="0.52" y="-3.15" drill="0.3048" diameter="0.5" shape="square" stop="no"/>
+</package>
+</packages>
+<symbols>
+<symbol name="TLC5940">
+<wire x1="0" y1="-2.54" x2="0" y2="40.64" width="0.254" layer="94"/>
+<wire x1="0" y1="40.64" x2="-40.64" y2="40.64" width="0.254" layer="94"/>
+<wire x1="-40.64" y1="40.64" x2="-40.64" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-40.64" y1="-2.54" x2="0" y2="-2.54" width="0.254" layer="94"/>
+<text x="-40.64" y="41.148" size="1.778" layer="94">&gt;NAME</text>
+<text x="-30.988" y="-3.048" size="1.778" layer="94" rot="R180">&gt;VALUE</text>
+<pin name="OUT_1" x="2.54" y="35.56" length="short" direction="out" rot="R180"/>
+<pin name="OUT_15" x="2.54" y="0" length="short" direction="out" rot="R180"/>
+<pin name="XERR" x="-43.18" y="2.54" length="short" direction="out"/>
+<pin name="SOUT" x="-43.18" y="7.62" length="short" direction="out"/>
+<pin name="GSCLK" x="-43.18" y="27.94" length="short" direction="in" function="clk"/>
+<pin name="DCPRG" x="-43.18" y="25.4" length="short" direction="in"/>
+<pin name="IREF" x="-43.18" y="35.56" length="short" direction="pwr"/>
+<pin name="VCC" x="-43.18" y="38.1" length="short" direction="pwr"/>
+<pin name="GND" x="-43.18" y="33.02" length="short" direction="pwr"/>
+<pin name="BLANK" x="-43.18" y="20.32" length="short" direction="in"/>
+<pin name="XLAT" x="-43.18" y="5.08" length="short" direction="in"/>
+<pin name="SCLK" x="-43.18" y="12.7" length="short" direction="in" function="clk"/>
+<pin name="SIN" x="-43.18" y="10.16" length="short" direction="in"/>
+<pin name="VPRG" x="-43.18" y="22.86" length="short" direction="in"/>
+<pin name="OUT_0" x="2.54" y="38.1" length="short" direction="out" rot="R180"/>
+<pin name="OUT_2" x="2.54" y="33.02" length="short" direction="out" rot="R180"/>
+<pin name="OUT_3" x="2.54" y="30.48" length="short" direction="out" rot="R180"/>
+<pin name="OUT_4" x="2.54" y="27.94" length="short" direction="out" rot="R180"/>
+<pin name="OUT_5" x="2.54" y="25.4" length="short" direction="out" rot="R180"/>
+<pin name="OUT_6" x="2.54" y="22.86" length="short" direction="out" rot="R180"/>
+<pin name="OUT_7" x="2.54" y="20.32" length="short" direction="out" rot="R180"/>
+<pin name="OUT_8" x="2.54" y="17.78" length="short" direction="out" rot="R180"/>
+<pin name="OUT_9" x="2.54" y="15.24" length="short" direction="out" rot="R180"/>
+<pin name="OUT_10" x="2.54" y="12.7" length="short" direction="out" rot="R180"/>
+<pin name="OUT_11" x="2.54" y="10.16" length="short" direction="out" rot="R180"/>
+<pin name="OUT_12" x="2.54" y="7.62" length="short" direction="out" rot="R180"/>
+<pin name="OUT_13" x="2.54" y="5.08" length="short" direction="out" rot="R180"/>
+<pin name="OUT_14" x="2.54" y="2.54" length="short" direction="out" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="TLC5940">
+<gates>
+<gate name="G$1" symbol="TLC5940" x="2.54" y="0"/>
+</gates>
+<devices>
+<device name="NT" package="DIP-28">
+<connects>
+<connect gate="G$1" pin="BLANK" pad="23"/>
+<connect gate="G$1" pin="DCPRG" pad="19"/>
+<connect gate="G$1" pin="GND" pad="22"/>
+<connect gate="G$1" pin="GSCLK" pad="18"/>
+<connect gate="G$1" pin="IREF" pad="20"/>
+<connect gate="G$1" pin="OUT_0" pad="28"/>
+<connect gate="G$1" pin="OUT_1" pad="1"/>
+<connect gate="G$1" pin="OUT_10" pad="10"/>
+<connect gate="G$1" pin="OUT_11" pad="11"/>
+<connect gate="G$1" pin="OUT_12" pad="12"/>
+<connect gate="G$1" pin="OUT_13" pad="13"/>
+<connect gate="G$1" pin="OUT_14" pad="14"/>
+<connect gate="G$1" pin="OUT_15" pad="15"/>
+<connect gate="G$1" pin="OUT_2" pad="2"/>
+<connect gate="G$1" pin="OUT_3" pad="3"/>
+<connect gate="G$1" pin="OUT_4" pad="4"/>
+<connect gate="G$1" pin="OUT_5" pad="5"/>
+<connect gate="G$1" pin="OUT_6" pad="6"/>
+<connect gate="G$1" pin="OUT_7" pad="7"/>
+<connect gate="G$1" pin="OUT_8" pad="8"/>
+<connect gate="G$1" pin="OUT_9" pad="9"/>
+<connect gate="G$1" pin="SCLK" pad="25"/>
+<connect gate="G$1" pin="SIN" pad="26"/>
+<connect gate="G$1" pin="SOUT" pad="17"/>
+<connect gate="G$1" pin="VCC" pad="21"/>
+<connect gate="G$1" pin="VPRG" pad="27"/>
+<connect gate="G$1" pin="XERR" pad="16"/>
+<connect gate="G$1" pin="XLAT" pad="24"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="PWP" package="PWP-28">
+<connects>
+<connect gate="G$1" pin="BLANK" pad="P$2"/>
+<connect gate="G$1" pin="DCPRG" pad="P$26"/>
+<connect gate="G$1" pin="GND" pad="P$1"/>
+<connect gate="G$1" pin="GSCLK" pad="P$25"/>
+<connect gate="G$1" pin="IREF" pad="P$27"/>
+<connect gate="G$1" pin="OUT_0" pad="P$7"/>
+<connect gate="G$1" pin="OUT_1" pad="P$8"/>
+<connect gate="G$1" pin="OUT_10" pad="P$17"/>
+<connect gate="G$1" pin="OUT_11" pad="P$18"/>
+<connect gate="G$1" pin="OUT_12" pad="P$19"/>
+<connect gate="G$1" pin="OUT_13" pad="P$20"/>
+<connect gate="G$1" pin="OUT_14" pad="P$21"/>
+<connect gate="G$1" pin="OUT_15" pad="P$22"/>
+<connect gate="G$1" pin="OUT_2" pad="P$9"/>
+<connect gate="G$1" pin="OUT_3" pad="P$10"/>
+<connect gate="G$1" pin="OUT_4" pad="P$11"/>
+<connect gate="G$1" pin="OUT_5" pad="P$12"/>
+<connect gate="G$1" pin="OUT_6" pad="P$13"/>
+<connect gate="G$1" pin="OUT_7" pad="P$14"/>
+<connect gate="G$1" pin="OUT_8" pad="P$15"/>
+<connect gate="G$1" pin="OUT_9" pad="P$16"/>
+<connect gate="G$1" pin="SCLK" pad="P$4"/>
+<connect gate="G$1" pin="SIN" pad="P$5"/>
+<connect gate="G$1" pin="SOUT" pad="P$24"/>
+<connect gate="G$1" pin="VCC" pad="P$28"/>
+<connect gate="G$1" pin="VPRG" pad="P$6"/>
+<connect gate="G$1" pin="XERR" pad="P$23"/>
+<connect gate="G$1" pin="XLAT" pad="P$3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+</drawing>
+</eagle>
