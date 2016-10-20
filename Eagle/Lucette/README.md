@@ -7,9 +7,9 @@ Cette petite carte qui fonctionne sur batterie permet de contrôler plusieurs Lu
 
 ## Lucette caractéristiques
 - Interrupter ON/OFF
-- Microcontroller Atmeg328
+- Microcontroller Atmeg328 at 8MHz
 - Contrôleur 16 PWM 12bits (TLC5940)
-- Courant de sortie max : 3.3V - 60 mA
+ - Courant de sortie max : 3.3V - 60 mA
 - Chargeur lithium-ion intégré
 
 ## Important
@@ -28,32 +28,33 @@ Read fuses
 ```
 Write fuses
 ```
-./avrdude -C /Applications/Arduino_XXX.app/Contents/Resources/Java/hardware/tools/avr/etc/avrdude.conf -cusbtiny -pm328p -v -F -B10 -U lfuse:w:0xE2:m
-./avrdude -C /Applications/Arduino_XXX.app/Contents/Resources/Java/hardware/tools/avr/etc/avrdude.conf -pm328p -cusbtiny -v -F -B10 -U hfuse:w:0xDA:m
-./avrdude -C /Applications/Arduino_XXX.app/Contents/Resources/Java/hardware/tools/avr/etc/avrdude.conf -pm328p -cusbtiny -v -F -B10 -U efuse:w:0x05:m
+./avrdude -C ~/Applications/arduino-1.6.11/hardware/tools/avr/etc/avrdude.conf -cusbtiny -pm328p -v -F -B10 -U lfuse:w:0xE2:m
+./avrdude -C ~/Applications/arduino-1.6.11/hardware/tools/avr/etc/avrdude.conf -pm328p -cusbtiny -v -F -B10 -U hfuse:w:0xDA:m
+./avrdude -C ~/Applications/arduino-1.6.11/hardware/tools/avr/etc/avrdude.conf -pm328p -cusbtiny -v -F -B10 -U efuse:w:0x05:m
 ```
 Flash bootoader
 ```
-./avrdude -C /Applications/Arduino_XXX.app/Contents/Resources/Java/hardware/tools/avr/etc/avrdude.conf -cusbtiny -pm328p -v -F -B10 -U flash:w:/Applications/Arduino_XXX.app/Contents/Resources/Java/hardware/arduino/bootloaders/atmega/ATmegaBOOT_168_atmega328_pro_8MHz.hex
+./avrdude -C ~/Applications/arduino-1.6.11/hardware/tools/avr/etc/avrdude.conf -cusbtiny -pm328p -v -F -B10 -U flash:w:~/Applications/arduino-1.6.11/hardware/arduino/avr/bootloaders/atmega/ATmegaBOOT_168_atmega328_pro_8MHz.hex
 ```
 Arduino lock fuse
 ```
-./avrdude -C /Applications/Arduino_XXX.app/Contents/Resources/Java/hardware/tools/avr/etc/avrdude.conf -cusbtiny -pm328p -v -F -B10 -U lock:w:0x3f:m
-./avrdude -C /Applications/Arduino_XXX.app/Contents/Resources/Java/hardware/tools/avr/etc/avrdude.conf -cusbtiny -pm328p -v -F -B10 -U lock:w:0x0f:m
+./avrdude -C ~/Applications/arduino-1.6.11/hardware/tools/avr/etc/avrdude.conf -cusbtiny -pm328p -v -F -B10 -U lock:w:0x3f:m
+./avrdude -C ~/Applications/arduino-1.6.11/hardware/tools/avr/etc/avrdude.conf -cusbtiny -pm328p -v -F -B10 -U lock:w:0x0f:m
 ```
 
 ## Troubleshooting
-If you cant Read the fuses you will nead an extra arduino to feed the Lucette with 8MhZ clock
+If you cant Read the fuses you will nead an extra arduino board to feed the Lucette with 8MHz clock
 
 Set the Arduino fuse to activate clock out on Digital Pin 8
 ```
-./avrdude -C /Applications/Arduino_1.0.5.app/Contents/Resources/Java/hardware/tools/avr/etc/avrdude.conf -cusbtiny -pm328p -v -F -B10 -U lfuse:w:0xBF:m
+./avrdude -C ~/Applications/arduino-1.6.11/hardware/tools/avr/etc/avrdude.conf -cusbtiny -pm328p -v -F -B10 -U lfuse:w:0xBF:m
 ```
 Set the Arduino original fuse (see : http://www.engbedded.com/fusecalc)
 ```
-./avrdude -C /Applications/Arduino_1.0.5.app/Contents/Resources/Java/hardware/tools/avr/etc/avrdude.conf -cusbtiny -pm328p -v -F -B10 -U lfuse:w:0xFF:m
+./avrdude -C ~/Applications/arduino-1.6.11/hardware/tools/avr/etc/avrdude.conf -cusbtiny -pm328p -v -F -B10 -U lfuse:w:0xFF:m
 ```
 
-## TODO
+# TODO
 - add auto-reset with external components
+- replace the MAX 1555 by the MCP73831
 - add unused pins on the edge of the PCB
