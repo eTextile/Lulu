@@ -20,11 +20,11 @@ Cette petite carte qui fonctionne sur batterie permet de contrôler plusieurs Lu
 
 Localize avrdude
 ```
-cd /Applications/Arduino_XXX.app/Contents/Resources/Java/hardware/tools/avr/bin/avrdude
+cd ~/Applications/arduino-1.6.11/hardware/tools/avr/bin
 ```
 Read fuses
 ```
-./avrdude -C /Applications/Arduino_XXX.app/Contents/Resources/Java/hardware/tools/avr/etc/avrdude.conf -pm328p -c usbtiny -v
+./avrdude -C ~/Applications/arduino-1.6.11/hardware/tools/avr/etc/avrdude.conf -pm328p -c usbtiny -v
 ```
 Write fuses
 ```
