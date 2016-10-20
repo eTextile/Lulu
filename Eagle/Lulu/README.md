@@ -1,6 +1,6 @@
 #Lulu
-Lulu is an e-textile PCB for optical fibers light injection
-Les Lulu sont des petites cartes qui permettent d'injecter de la lumière dans des fibres optiques.
+Lulu is an e-textile PCB for optical fibers light injection.
+Lulu are small electronic boards which enable light injection into optical fibers.
 
 ![alt tag](https://farm2.staticflickr.com/1484/25915301344_d6258fcb50_z_d.jpg)
 
