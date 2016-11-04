@@ -17,5 +17,8 @@ Ces tissus sont des pièces uniques réalisés sur mesure.
 
 ![alt tag](https://farm6.staticflickr.com/5506/29792500474_7d4b125e57_z_d.jpg)
 
+## Make it
+[The tutorial on Datapaulette hackerspace wiki](http://wiki.datapaulette.org/doku.php/atelier/documentation/materiautheque/procedes_techniques/actionneurs_textiles/fibres_optiques)
+
 # TODO
 - translate the Luce text in english
