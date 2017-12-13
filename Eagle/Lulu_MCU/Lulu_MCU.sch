@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="8.4.3">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
@@ -129,6 +130,8 @@
 <layer number="229" name="229bmp" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="230" name="230bmp" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="231" name="231bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="232" name="Eagle3D_PG2" color="7" fill="1" visible="no" active="no"/>
+<layer number="233" name="Eagle3D_PG3" color="7" fill="1" visible="no" active="no"/>
 <layer number="248" name="Housing" color="7" fill="1" visible="no" active="yes"/>
 <layer number="249" name="Edge" color="7" fill="1" visible="no" active="yes"/>
 <layer number="250" name="Descript" color="3" fill="1" visible="no" active="no"/>
@@ -616,6 +619,115 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </deviceset>
 </devicesets>
 </library>
+<library name="microbuilder">
+<description>&lt;h2&gt;&lt;b&gt;microBuilder.eu&lt;/b&gt; Eagle Footprint Library&lt;/h2&gt;
+
+&lt;p&gt;Footprints for common components used in our projects and products.  This is the same library that we use internally, and it is regularly updated.  The newest version can always be found at &lt;b&gt;www.microBuilder.eu&lt;/b&gt;.  If you find this library useful, please feel free to purchase something from our online store. Please also note that all holes are optimised for metric drill bits!&lt;/p&gt;
+
+&lt;h3&gt;Obligatory Warning&lt;/h3&gt;
+&lt;p&gt;While it probably goes without saying, there are no guarantees that the footprints or schematic symbols in this library are flawless, and we make no promises of fitness for production, prototyping or any other purpose. These libraries are provided for information puposes only, and are used at your own discretion.  While we make every effort to produce accurate footprints, and many of the items found in this library have be proven in production, we can't make any promises of suitability for a specific purpose. If you do find any errors, though, please feel free to contact us at www.microbuilder.eu to let us know about it so that we can update the library accordingly!&lt;/p&gt;
+
+&lt;h3&gt;License&lt;/h3&gt;
+&lt;p&gt;This work is placed in the public domain, and may be freely used for commercial and non-commercial work with the following conditions:&lt;/p&gt;
+&lt;p&gt;THIS SOFTWARE IS PROVIDED ''AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE INSTITUTE OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+&lt;/p&gt;</description>
+<packages>
+<package name="MLF20_4X4MM_0.5MM_ATMEL">
+<wire x1="-2" y1="2" x2="2" y2="2" width="0.127" layer="51"/>
+<wire x1="2" y1="2" x2="2" y2="-2" width="0.127" layer="51"/>
+<wire x1="2" y1="-2" x2="-2" y2="-2" width="0.127" layer="51"/>
+<wire x1="-2" y1="-2" x2="-2" y2="2" width="0.127" layer="51"/>
+<smd name="THERMAL" x="0" y="0" dx="2.6" dy="2.6" layer="1" cream="no"/>
+<smd name="1" x="-2" y="1" dx="0.8" dy="0.25" layer="1" roundness="100"/>
+<smd name="2" x="-2" y="0.5" dx="0.8" dy="0.25" layer="1" roundness="100"/>
+<smd name="3" x="-2" y="0" dx="0.8" dy="0.25" layer="1" roundness="100"/>
+<smd name="4" x="-2" y="-0.5" dx="0.8" dy="0.25" layer="1" roundness="100"/>
+<smd name="5" x="-2" y="-1" dx="0.8" dy="0.25" layer="1" roundness="100"/>
+<smd name="6" x="-1" y="-2" dx="0.8" dy="0.25" layer="1" roundness="100" rot="R90"/>
+<smd name="7" x="-0.5" y="-2" dx="0.8" dy="0.25" layer="1" roundness="100" rot="R90"/>
+<smd name="8" x="0" y="-2" dx="0.8" dy="0.25" layer="1" roundness="100" rot="R90"/>
+<smd name="9" x="0.5" y="-2" dx="0.8" dy="0.25" layer="1" roundness="100" rot="R90"/>
+<smd name="10" x="1" y="-2" dx="0.8" dy="0.25" layer="1" roundness="100" rot="R90"/>
+<smd name="11" x="2" y="-1" dx="0.8" dy="0.25" layer="1" roundness="100" rot="R180"/>
+<smd name="12" x="2" y="-0.5" dx="0.8" dy="0.25" layer="1" roundness="100" rot="R180"/>
+<smd name="13" x="2" y="0" dx="0.8" dy="0.25" layer="1" roundness="100" rot="R180"/>
+<smd name="14" x="2" y="0.5" dx="0.8" dy="0.25" layer="1" roundness="100" rot="R180"/>
+<smd name="15" x="2" y="1" dx="0.8" dy="0.25" layer="1" roundness="100" rot="R180"/>
+<smd name="16" x="1" y="2" dx="0.8" dy="0.25" layer="1" roundness="100" rot="R270"/>
+<smd name="17" x="0.5" y="2" dx="0.8" dy="0.25" layer="1" roundness="100" rot="R270"/>
+<smd name="18" x="0" y="2" dx="0.8" dy="0.25" layer="1" roundness="100" rot="R270"/>
+<smd name="19" x="-0.5" y="2" dx="0.8" dy="0.25" layer="1" roundness="100" rot="R270"/>
+<smd name="20" x="-1" y="2" dx="0.8" dy="0.25" layer="1" roundness="100" rot="R270"/>
+<text x="-2.012" y="2.77" size="0.8128" layer="25" ratio="18">&gt;NAME</text>
+<text x="-2.012" y="-3.032" size="0.4064" layer="27" ratio="10">&gt;VALUE</text>
+<circle x="-3" y="1" radius="0.15" width="0.3" layer="21"/>
+<wire x1="-2.1" y1="1.4" x2="-2.1" y2="2.1" width="0.127" layer="21"/>
+<wire x1="-2.1" y1="2.1" x2="-1.4" y2="2.1" width="0.127" layer="21"/>
+<wire x1="1.4" y1="2.1" x2="2.1" y2="2.1" width="0.127" layer="21"/>
+<wire x1="2.1" y1="2.1" x2="2.1" y2="1.4" width="0.127" layer="21"/>
+<wire x1="-1.4" y1="-2.1" x2="-2.1" y2="-2.1" width="0.127" layer="21"/>
+<wire x1="-2.1" y1="-2.1" x2="-2.1" y2="-1.4" width="0.127" layer="21"/>
+<wire x1="2.1" y1="-1.4" x2="2.1" y2="-2.1" width="0.127" layer="21"/>
+<wire x1="2.1" y1="-2.1" x2="1.4" y2="-2.1" width="0.127" layer="21"/>
+<rectangle x1="-1.016" y1="-1.016" x2="-0.254" y2="-0.254" layer="31"/>
+<rectangle x1="-1.016" y1="0.254" x2="-0.254" y2="1.016" layer="31"/>
+<rectangle x1="0.254" y1="0.254" x2="1.016" y2="1.016" layer="31"/>
+<rectangle x1="0.254" y1="-1.016" x2="1.016" y2="-0.254" layer="31"/>
+</package>
+</packages>
+<symbols>
+<symbol name="ATTINY85">
+<pin name="(MOSI/DI/SDA/AIN0/OC0A/OC1A/AREF/PCINT0)PB0" x="-38.1" y="7.62" length="short"/>
+<pin name="(MISO/DO/AIN1/OC0B/OC1A/PCINT1)PB1" x="-38.1" y="5.08" length="short"/>
+<pin name="(SCK/USCK/SCL/ADC1/T0/INT0/PCINT2)PB2" x="-38.1" y="2.54" length="short"/>
+<pin name="(XTAL1/CLKI/OC1B/ADC3/PCINT3)PB3" x="-38.1" y="0" length="short"/>
+<pin name="(XTAL2/CLK0/OC1B/ADC2/PCINT4)PB4" x="-38.1" y="-2.54" length="short"/>
+<pin name="(RESET/DW/ADC0/PCINT5)PB5" x="-38.1" y="-5.08" length="short"/>
+<pin name="GND" x="38.1" y="-5.08" length="short" direction="pwr" rot="R180"/>
+<pin name="VCC" x="38.1" y="-2.54" length="short" direction="pwr" rot="R180"/>
+<wire x1="-35.56" y1="10.16" x2="35.56" y2="10.16" width="0.254" layer="94" style="shortdash"/>
+<wire x1="35.56" y1="10.16" x2="35.56" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="35.56" y1="-7.62" x2="-35.56" y2="-7.62" width="0.254" layer="94" style="shortdash"/>
+<wire x1="-35.56" y1="-7.62" x2="-35.56" y2="10.16" width="0.254" layer="94"/>
+<wire x1="-35.56" y1="10.16" x2="-35.56" y2="15.24" width="0.254" layer="94"/>
+<wire x1="-35.56" y1="15.24" x2="35.56" y2="15.24" width="0.254" layer="94"/>
+<wire x1="35.56" y1="15.24" x2="35.56" y2="10.16" width="0.254" layer="94"/>
+<wire x1="-35.56" y1="-7.62" x2="-35.56" y2="-15.24" width="0.254" layer="94"/>
+<wire x1="-35.56" y1="-15.24" x2="35.56" y2="-15.24" width="0.254" layer="94"/>
+<wire x1="35.56" y1="-15.24" x2="35.56" y2="-7.62" width="0.254" layer="94"/>
+<text x="0" y="12.7" size="1.778" layer="94" align="center">ATTINY85</text>
+<text x="0" y="-11.43" size="1.778" layer="94" align="center">VCC: 1.8-5.5V (25V/45V/85V)
+VCC: 2.7-5.5V (25/45/85)</text>
+<text x="-35.56" y="17.78" size="1.778" layer="95">&gt;NAME</text>
+<text x="-35.56" y="-17.78" size="1.778" layer="96">&gt;VALUE</text>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="ATTINY85" prefix="U" uservalue="yes">
+<description>&lt;p&gt;ATTINT85&lt;/p&gt;</description>
+<gates>
+<gate name="G$1" symbol="ATTINY85" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="MLF20_4X4MM_0.5MM_ATMEL">
+<connects>
+<connect gate="G$1" pin="(MISO/DO/AIN1/OC0B/OC1A/PCINT1)PB1" pad="12"/>
+<connect gate="G$1" pin="(MOSI/DI/SDA/AIN0/OC0A/OC1A/AREF/PCINT0)PB0" pad="11"/>
+<connect gate="G$1" pin="(RESET/DW/ADC0/PCINT5)PB5" pad="1"/>
+<connect gate="G$1" pin="(SCK/USCK/SCL/ADC1/T0/INT0/PCINT2)PB2" pad="14"/>
+<connect gate="G$1" pin="(XTAL1/CLKI/OC1B/ADC3/PCINT3)PB3" pad="2"/>
+<connect gate="G$1" pin="(XTAL2/CLK0/OC1B/ADC2/PCINT4)PB4" pad="5"/>
+<connect gate="G$1" pin="GND" pad="8 THERMAL"/>
+<connect gate="G$1" pin="VCC" pad="15"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -629,6 +741,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="JP3" library="LilyPad-Wearables" deviceset="SEWTAP" device="4" value="SEWTAP4"/>
 <part name="JP4" library="LilyPad-Wearables" deviceset="SEWTAP" device="4" value="SEWTAP4"/>
 <part name="U$1" library="OSRAM" deviceset="OSRAM_SMT" device=""/>
+<part name="U1" library="microbuilder" deviceset="ATTINY85" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -638,6 +751,7 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <instance part="JP3" gate="G$1" x="17.78" y="38.1" rot="R180"/>
 <instance part="JP4" gate="G$1" x="50.8" y="38.1"/>
 <instance part="U$1" gate="LED" x="35.56" y="38.1"/>
+<instance part="U1" gate="G$1" x="38.1" y="7.62"/>
 </instances>
 <busses>
 </busses>
@@ -661,4 +775,10 @@ You are welcome to use this library for commercial purposes. For attribution, we
 </sheets>
 </schematic>
 </drawing>
+<compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+</compatibility>
 </eagle>
