@@ -29,7 +29,8 @@ The Lulu opticals fibers are sandblasted see the [tutorial on the Data Paulette 
 
 # TODO
 - Add communication bus system to reduce interconnections and simplify the light sources programming.
- - Ref: WS2812 LEDs ;-)
- - Ref: the pixie project : https://github.com/ytai/pixie
+  - Ref: WS2812 LEDs ;-)
+  - Ref: the pixie project : https://github.com/ytai/pixie
 - Optimize the heat dissipation produced by the power LED
 - Identifying distributors in Europe
+- Look for side LEDs 60-150 mA
