@@ -1,6 +1,6 @@
 # Lulu_MCU
 
-### Lulu is small electronic board that enable light injection into optical fibers.
+Lulu is small electronic board made for light injection into optic fibers.
 
 ## About The project
 Lulu is a smal e-textile solution that facilitate the use of optics fibers in textile and fashion design.
