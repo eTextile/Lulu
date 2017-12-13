@@ -1,6 +1,6 @@
 #Lulu
 Lulu are small e-textile electronic components that enable light injection into optical fibers.
-The Lulu opticals fibers are sandblasted see the [tutorial on the Data Paulette e-textile hackerspace](http://wiki.datapaulette.org/doku.php/atelier/documentation/materiautheque/procedes_techniques/actionneurs_textiles/fibres_optiques).
+The Lulu opticals fibers are sandblasted see the [tutorial on the Data Paulette e-textile hackerspace](http://wiki.datapaulette.org/doku.php/atelier/documentation/materiautheque/materiaux/electronique_textile/actionneurs_textiles/fibres_optiques).
 
 ![alt tag](https://farm2.staticflickr.com/1484/25915301344_d6258fcb50_z_d.jpg)
 
