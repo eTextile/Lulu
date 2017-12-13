@@ -1,6 +1,6 @@
-#Lulu
+# Lulu
 Lulu are small e-textile electronic components that enable light injection into optical fibers.
-The Lulu opticals fibers are sandblasted see the [tutorial on the Data Paulette e-textile hackerspace](http://wiki.datapaulette.org/doku.php/atelier/documentation/materiautheque/materiaux/electronique_textile/actionneurs_textiles/fibres_optiques).
+The Lulu opticals fibers are sandblasted see the [tutorial on the Data Paulette e-textile hackerspace](http://wiki.datapaulette.org/doku.php/atelier/documentation/materiautheque/procedes_techniques/actionneurs_textiles/fibres_optiques).
 
 ![alt tag](https://farm2.staticflickr.com/1484/25915301344_d6258fcb50_z_d.jpg)
 
@@ -27,5 +27,8 @@ The Lulu opticals fibers are sandblasted see the [tutorial on the Data Paulette 
 - 35 optical fibres diameter 0.25mm ($ TODO)
 
 # TODO
-- add onboard small microcontroleur to allow bus addressing light control like the WS2812 LEDs ;-)
- - see the pixie project : https://github.com/ytai/pixie
+- Add communication bus system to reduce interconnections and simplify the light sources programming.
+ - Ref: WS2812 LEDs ;-)
+ - Ref: the pixie project : https://github.com/ytai/pixie
+- Optimize the heat dissipation produced by the power LED
+- Identifying distributors in Europe
