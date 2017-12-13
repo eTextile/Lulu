@@ -43,7 +43,7 @@ Arduino lock fuse
 ```
 
 ## Troubleshooting
-If you cant Read the fuses you will nead an extra arduino board to feed the Lucette with 8MHz clock
+If you cant read the fuses you will nead an extra Arduino board to feed the Lucette with 8MHz clock.
 
 Set the Arduino fuse to activate clock out on Digital Pin 8
 ```
