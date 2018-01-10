@@ -37,15 +37,14 @@ This solution featuring a system for light injection into the optic fibers and a
 
 ### Wiring the ATTiny10 to ICSP programmer
 
-| ATTINY10   | PIN FONCTION |  ICSP       |
-| PIN        |              | - connector |
-|------------|--------------|-------------|
-|  1-PB0     |   TPIDATA    |  1-MISO     |
-|  2-GND     |   GND        |  6-GND      |
-|  3-PB1     |   TPICLK     |  3-SCK      |
-|  4-PB2     |   NC         |  4-MOSI     |
-|  5-VCC     |   +5V        |  2-5V      |
-|  6-PB3     |   RESET      |  5-RESET    |
+| ATTINY10 - PIN   | PIN FONCTION |  ICSP-connector |
+|------------------|--------------|-----------------|
+|  1-PB0           |   TPIDATA    |  1-MISO         |
+|  2-GND           |   GND        |  6-GND          |
+|  3-PB1           |   TPICLK     |  3-SCK          |
+|  4-PB2           |   NC         |  4-MOSI         |
+|  5-VCC           |   +5V        |  2-5V           |
+|  6-PB3           |   RESET      |  5-RESET        |
 
 ## Setup
     sudo add-apt-repository ppa:ubuntuhandbook1/apps
