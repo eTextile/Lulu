@@ -35,16 +35,17 @@ This solution featuring a system for light injection into the optic fibers and a
       SCK 3 - - 4 MOSI
     RESET 5 - - 6 GND
 
-### Wirin ATTiny10 to ICSP
+### Wiring the ATTiny10 to ICSP programmer
 
-| MCU PIN | MCU FONCTION |  ICSP    |
-|---------|--------------|----------|
-|  PB0    |   TPIDATA    |  1-MISO  |
-|  GND    |   GND        |  6-GND   |
-|  PB1    |   TPICLK     |  3-SCK   |
-|  PB2    |   NC         |  4-MOSI  |
-|  VCC    |   +5V        |  2-+5V   |
-|  PB3    |   RESET      |  5-RESET |
+| ATTINY10   | PIN FONCTION |  ICSP       |
+| PIN        |              | - connector |
+|------------|--------------|-------------|
+|  1-PB0     |   TPIDATA    |  1-MISO     |
+|  2-GND     |   GND        |  6-GND      |
+|  3-PB1     |   TPICLK     |  3-SCK      |
+|  4-PB2     |   NC         |  4-MOSI     |
+|  5-VCC     |   +5V        |  2-5V      |
+|  6-PB3     |   RESET      |  5-RESET    |
 
 ## Setup
     sudo add-apt-repository ppa:ubuntuhandbook1/apps
