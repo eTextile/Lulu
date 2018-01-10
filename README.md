@@ -25,9 +25,9 @@ This solution featuring a system for light injection into the optic fibers and a
 
 ## ATTiny10 pin mapping
 
-         (PCINT0/TPIDATA/OC0A/ADC0/AIN0) PB0 -|    |- PB3 (RESET/PCINT3/ADC3)
-                                         GND -|    |- VCC
-(PCINT1/TPICLK/CLKI/ICP0/OC0B/ADC1/AIN1) PB1 -|    |- PB2 (T0/CLKO/PCINT2/INT0/ADC2)
+             (PCINT0/TPIDATA/OC0A/ADC0/AIN0) PB0 -|    |- PB3 (RESET/PCINT3/ADC3)
+                                             GND -|    |- VCC
+    (PCINT1/TPICLK/CLKI/ICP0/OC0B/ADC1/AIN1) PB1 -|    |- PB2 (T0/CLKO/PCINT2/INT0/ADC2)
 
 | MCU PIN | MCU FONCTION |  ICSP    |
 |---------|--------------|----------|
