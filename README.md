@@ -23,18 +23,26 @@ This solution featuring a system for light injection into the optic fibers and a
 - MCU: ATTiny10
 [![Lulu by Maurin 0b0275a0c920353b - Upverter](https://upverter.com/Maurin/0b0275a0c920353b/Lulu/embed_img/15136192700000/)](https://upverter.com/Maurin/0b0275a0c920353b/Lulu/#/)
 
-## ATTiny10 pin mapping
+### ATTiny10 pin mapping
 
              (PCINT0/TPIDATA/OC0A/ADC0/AIN0) PB0 -|    |- PB3 (RESET/PCINT3/ADC3)
                                              GND -|    |- VCC
     (PCINT1/TPICLK/CLKI/ICP0/OC0B/ADC1/AIN1) PB1 -|    |- PB2 (T0/CLKO/PCINT2/INT0/ADC2)
+
+### ICSP pin mapping
+
+     MISO 1 - - 2 VCC
+      SCK 3 - - 4 MOSI
+    RESET 5 - - 6 GND
+
+### Wirin ATTiny10 to ICSP
 
 | MCU PIN | MCU FONCTION |  ICSP    |
 |---------|--------------|----------|
 |  PB0    |   TPIDATA    |  1-MISO  |
 |  GND    |   GND        |  6-GND   |
 |  PB1    |   TPICLK     |  3-SCK   |
-|  PB2    |   CLKO       |  4-NC    |
+|  PB2    |   NC         |  4-MOSI  |
 |  VCC    |   +5V        |  2-+5V   |
 |  PB3    |   RESET      |  5-RESET |
 
