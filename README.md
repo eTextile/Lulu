@@ -66,12 +66,15 @@ https://www.olimex.com/Products/AVR/Programmers/AVR-ISP-MK2/resources/AVR-ISP-MK
 |  6-PB3           |   RESET      |  5-RESET        |
 
 Check if you are in the dialout group
+
     cd /etc/udev/rules.d
 
 Read the chip ID
+
     avrdude -p t10 -P usb -c avrispmkii -B5
 
 Flash the chip
+
     avrdude -p t10 -P usb -c avrispmkii -B5 -U flash:w:test.elf
 
 ## REFs
