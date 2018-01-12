@@ -56,7 +56,7 @@ https://www.olimex.com/Products/AVR/Programmers/AVR-ISP-MK2/resources/AVR-ISP-MK
 
 #### Wiring the ATTiny10 to TPI programmer
 
-| ATTINY10 - PIN   | PIN FONCTION |  ICSP-connector |
+| ATTINY10 - PIN   | PIN FONCTION |  TPI-connector  |
 |------------------|--------------|-----------------|
 |  1-PB0           |   TPIDATA    |  1-DATA         |
 |  2-GND           |   GND        |  6-GND          |
