@@ -6,8 +6,6 @@ Lulu is small electronic board made for light injection into optic fibers.
 Lulu is a smal e-textile solution that facilitate the use of optics fibers in textile and fashion design.
 This solution featuring a system for light injection into the optic fibers and a communication bus that alow easy light programing.
 
-
-![alt tag](https://farm8.staticflickr.com/7762/18261111032_ac43080403_z_d.jpg)
 ![alt tag](https://farm6.staticflickr.com/5506/29792500474_7d4b125e57_z_d.jpg)
 
      _______   _______   _______
@@ -19,8 +17,10 @@ This solution featuring a system for light injection into the optic fibers and a
     ______|_________|_________|_______ GND
 
 
-## Lulu hardware
+## Hardware design
 - MCU: ATTiny10
+- http://www.tbideas.com/blog/build-an-arduino-shield-to-drive-high-power-rgb-led/
+
 [![Lulu by Maurin 0b0275a0c920353b - Upverter](https://upverter.com/Maurin/0b0275a0c920353b/Lulu/embed_img/15136192700000/)](https://upverter.com/Maurin/0b0275a0c920353b/Lulu/#/)
 
 ### ATTiny10 pin mapping
@@ -82,3 +82,4 @@ Flash the chip
 - http://electronut.in/attiny10-hello/
 
 ## TODO
+- Thermal PCB that will help with heat dissipation
