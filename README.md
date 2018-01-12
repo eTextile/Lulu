@@ -45,16 +45,16 @@ This solution featuring a system for light injection into the optic fibers and a
     avr-size --mcu=attiny10 -C test.elf
 
 ### Hardwear setup
-## TPI programmer (NOT ICSP)
+#### TPI programmer (NOT ICSP)
 https://www.olimex.com/Products/AVR/Programmers/AVR-ISP-MK2/resources/AVR-ISP-MK2.pdf
 
-### TPI pin mapping
+#### TPI pin mapping
 
      DATA 1 - - 2 VTARGET
     CLOCK 3 - - 4 NA
     RESET 5 - - 6 GND
 
-### Wiring the ATTiny10 to ICSP programmer
+#### Wiring the ATTiny10 to TPI programmer
 
 | ATTINY10 - PIN   | PIN FONCTION |  ICSP-connector |
 |------------------|--------------|-----------------|
