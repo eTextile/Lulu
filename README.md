@@ -29,37 +29,50 @@ This solution featuring a system for light injection into the optic fibers and a
                                              GND -|    |- VCC
     (PCINT1/TPICLK/CLKI/ICP0/OC0B/ADC1/AIN1) PB1 -|    |- PB2 (T0/CLKO/PCINT2/INT0/ADC2)
 
-### ICSP pin mapping
 
-     MISO 1 - - 2 VCC
-      SCK 3 - - 4 MOSI
+## Programming
+### Softwear setup
+#### avrdude 6.3
+    avrdude -v
+    sudo add-apt-repository ppa:ubuntuhandbook1/apps
+    sudo apt-get update
+    sudo apt-get install avrdude avrdude-doc
+
+    sudo apt-get install gcc-avr binutils-avr gdb-avr avr-libc
+
+#### Compiling & linking
+    avr-gcc -mmcu=attiny10 -DF_CPU=1000000 -g -Os test.c -o test.elf
+    avr-size --mcu=attiny10 -C test.elf
+
+### Hardwear setup
+## TPI programmer (NOT ICSP)
+https://www.olimex.com/Products/AVR/Programmers/AVR-ISP-MK2/resources/AVR-ISP-MK2.pdf
+
+### TPI pin mapping
+
+     DATA 1 - - 2 VTARGET
+    CLOCK 3 - - 4 NA
     RESET 5 - - 6 GND
 
 ### Wiring the ATTiny10 to ICSP programmer
 
 | ATTINY10 - PIN   | PIN FONCTION |  ICSP-connector |
 |------------------|--------------|-----------------|
-|  1-PB0           |   TPIDATA    |  1-MISO         |
+|  1-PB0           |   TPIDATA    |  1-DATA         |
 |  2-GND           |   GND        |  6-GND          |
-|  3-PB1           |   TPICLK     |  3-SCK          |
-|  4-PB2           |   NC         |  4-MOSI         |
-|  5-VCC           |   +5V        |  2-5V           |
+|  3-PB1           |   TPICLK     |  3-CLOCK        |
+|  4-PB2           |   NC         |  4-NA           |
+|  5-VCC           |   +5V        |  2-VTARGET      |
 |  6-PB3           |   RESET      |  5-RESET        |
 
-## Setup
-    sudo add-apt-repository ppa:ubuntuhandbook1/apps
-    sudo apt-get update
-    sudo apt-get install avrdude avrdude-doc
+- Check if you are in the dialout group
+    cd /etc/udev/rules.d
 
-    sudo apt-get install gcc-avr binutils-avr gdb-avr avr-libc avrdude
+- Read the chip ID
+    avrdude -p t10 -P usb -c avrispmkii -B5
 
-## Compiling & linking
-    avr-gcc -mmcu=attiny10 -DF_CPU=1000000 -g -Os test.c -o test.elf
-    avr-size --mcu=attiny10 -C test.elf
-
-## Programming
-    avrdude -c usbtiny -p t10
-    avrdude -c usbtiny -p t10 -U flash:w:test.elf
+- Flash the chip
+    avrdude -p t10 -P usb -c avrispmkii -B5 -U flash:w:test.elf
 
 ## REFs
 - http://irq5.io/2017/09/09/writing-code-for-the-attiny10/
