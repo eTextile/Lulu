@@ -54,7 +54,7 @@ https://www.olimex.com/Products/AVR/Programmers/AVR-ISP-MK2/resources/AVR-ISP-MK
     CLOCK 3 - - 4 NA
     RESET 5 - - 6 GND
 
-#### Wiring the ATTiny10 to TPI programmer
+#### Wiring the ATTiny10 to TPI programmer (AVR-ISP-MK2)
 
 | ATTINY10 - PIN   | PIN FONCTION |  TPI-connector  |
 |------------------|--------------|-----------------|
@@ -80,6 +80,7 @@ Flash the chip
 ## REFs
 - http://irq5.io/2017/09/09/writing-code-for-the-attiny10/
 - http://electronut.in/attiny10-hello/
+- https://github.com/kcuzner/onewire-leds.git
 
 ## TODO
 - Thermal PCB that will help with heat dissipation
