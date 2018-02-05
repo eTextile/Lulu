@@ -1,17 +1,15 @@
 # Lulu
-### Programming light into textile
-Lulu is small electronic PCB made for optical fibers light injection.
+**Programming light into textile**
+Lulu is small electronic eTextie PCB made for optical fibers light injection.
 
 ### About The project
-Lulu is providing a simple, reliable toolset for people who whant to use side glow optical fiber in their eTextile and wearable technology.
+Lulu is providing a simple, reliable toolset for people who whant to use side glow optical fibers in their eTextile and wearable projects.
 Use of light in textile and fashion design is becoming more and more common and many schools started to teach this subject as a part of their textile design curriculum.
 Optic fibers could be embedded in textiles as embroidery, in weaving, knitting and knotting process and many textile designs have been realized in recent years.
 But often the designers lack the toolset for connecting the light sources with the embedded optic fibers, resulting in re-purposing bulky connectors and technology and hiding them behind the textiles.
 Currently each designer has to come up with their own re-purposed or DIY solution.
-Unreliable connections between fiber optics and light source result in poor illumination of the fiber.
-Instead of struggling to solve the light source and connection problem, the designer can concentrate in the aesthetic issues in the design process.
-The communication bus system will make it easy to use multiple light sources and program their behavior.
-As Lulu is small, light and sewable PCB that is suitable for soft circuitry, the entire electronics can be embedded in textile, making it flexible and wearable.
+Lulu is a connector that optimise the efficiency of the connection between the light source and the optical fibers to get a strong illumination.
+Instead of struggling to solve the light source and connection problem, the designer can concentrate in the aesthetic and textie making process issues.
 
 - Repository: https://github.com/eTextile/Lulu/tree/master
 - Project web page: www.eTextile.org/Lulu/ TODO
