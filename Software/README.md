@@ -62,6 +62,35 @@ Flash the chip
 
     avrdude -p t10 -P usb -c avrispmkii -B5 -U flash:w:test.elf
 
+## One-wire protocol
+The standard 1-wire protocol uses only two lines: power and ground. Data is
+transmitted to and from slave devices by a master device by toggling the power
+line low for short periods of time. The slave devices maintain their power
+during these short losses using a diode-capacitor rectifier circuit. However,
+this protocol is not suitable for devices requiring more than a few hundred
+microamps due to the fact that a large pullup resistor is used on the power
+line and drawing too much current causes an unacceptable voltage drop.
+
+## Modified One-wire protocol
+This device uses a modified version of the protocol that sacrifices the bi-directionality of the protocol to fit in 1k of flash memory.
+This protcol has been modified from the actual 1-wire specification to be simpler to use with a 100KHz tick rate on the master 
+in addition to necessary modifications due to the loss of bidirectionality.
+
+### Protocol synopsis
+ * A reset is performed by holding the line low for 480uS. This device will
+   listen for a continuously low input for the full 480uS without any additional
+   edges. The master should allow the line to float for another 480uS. Normally,
+   the presence pulse would be read during this time. However, there is no
+   presence pulse in this system.
+ * Following a reset, A falling edge must occur within 70uS. This marks the
+   start of the LSB of the transmitted byte.
+ * To write a 0, the master brings the line low for 60uS. The slave will sample
+   between 20-30uS following the falling edge. Following this, the master will
+   allow the line to float for 10uS before beginning the next bit.
+ * To write a 1, the master brings the line low for 10uS and releases it. The
+   slave will sample between 20-30uS following the falling edge. The master will
+   allow the line to float for 60uS after the initial low pulse.
+ * A transaction consists of the reset pulse following by 8 write pulses.
 
 # REFs
 - https://github.com/kcuzner/onewire-leds.git (Forked)
@@ -71,3 +100,6 @@ Flash the chip
 
 # TOTEST
 - https://github.com/neuoy/OneWireArduinoSlave
+
+# TODO
+- 
