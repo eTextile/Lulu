@@ -1,4 +1,4 @@
-# Lulu / Hardware design
+# Lulu / Hardware
 **Programming light into textile**
 
 ## Project content
@@ -13,10 +13,6 @@
 - Optical fibres:
   - Weaving solution : diameter 0.25mm, 35 pce
   - Embroidery solution : (TODO)
-
-## REFs
-- http://irq5.io/2017/09/09/writing-code-for-the-attiny10/
-- http://electronut.in/attiny10-hello/
 
 ## TODO
 - Thermal PCB that will help with heat dissipation

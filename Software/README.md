@@ -1,4 +1,7 @@
 # Lulu / Firmware
+**Programming light into textile**
+
+## Project content
 
 ## Hardware design
      _______   _______   _______
@@ -10,7 +13,6 @@
     ______|_________|_________|_______ GND
 
 ### ATTiny10 pin mapping
-
              (PCINT0/TPIDATA/OC0A/ADC0/AIN0) PB0 -|    |- PB3 (RESET/PCINT3/ADC3)
                                              GND -|    |- VCC
     (PCINT1/TPICLK/CLKI/ICP0/OC0B/ADC1/AIN1) PB1 -|    |- PB2 (T0/CLKO/PCINT2/INT0/ADC2)
@@ -34,13 +36,11 @@
 https://www.olimex.com/Products/AVR/Programmers/AVR-ISP-MK2/resources/AVR-ISP-MK2.pdf
 
 #### TPI pin mapping
-
      DATA 1 - - 2 VTARGET
     CLOCK 3 - - 4 NA
     RESET 5 - - 6 GND
 
 #### Wiring the ATTiny10 to TPI programmer (AVR-ISP-MK2)
-
 | ATTINY10 - PIN   | PIN FONCTION |  TPI-connector  |
 |------------------|--------------|-----------------|
 |  1-PB0           |   TPIDATA    |  1-DATA         |
@@ -65,6 +65,9 @@ Flash the chip
 
 # REFs
 - https://github.com/kcuzner/onewire-leds.git (Forked)
+- http://irq5.io/2017/09/09/writing-code-for-the-attiny10/
+- http://electronut.in/attiny10-hello/
+- https://github.com/ytai/pixie
 
-# TODO
-- https://github.com/neuoy/OneWireArduinoSlave (TOTEST)
+# TOTEST
+- https://github.com/neuoy/OneWireArduinoSlave
