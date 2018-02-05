@@ -1,7 +1,12 @@
 # Lulu
 **Programming light into textile**
 
-Lulu is small electronic eTextie PCB made for optical fibers light injection.
+Lulu is a hardware solution that interfaces between an LED light source, an optic fiber strand or bundle and soft circuit connections.
+Providing an optic fiber connection toolset and workflow for E-Textiles and Wearable Technology applications.
+
+![alt tag](https://farm6.staticflickr.com/5506/29792500474_7d4b125e57_m_d.jpg)
+![alt tag](https://farm5.staticflickr.com/4607/25119732977_b1e0567c12_m_d.jpg)
+![alt tag](https://farm5.staticflickr.com/4536/24516632088_8533c86f3d_m_d.jpg)
 
 ### About The project
 Lulu is providing a simple, reliable toolset for people who whant to use side glow optical fibers in their eTextile and wearable projects.
@@ -16,9 +21,6 @@ Instead of struggling to solve the light source and connection problem, the desi
 - Project web page: www.eTextile.org/Lulu/ TODO
 - License: CC-BY-SA (see the License file)
 
-![alt tag](https://farm6.staticflickr.com/5506/29792500474_7d4b125e57_m_d.jpg)
-![alt tag](https://farm5.staticflickr.com/4607/25119732977_b1e0567c12_m_d.jpg)
-![alt tag](https://farm5.staticflickr.com/4536/24516632088_8533c86f3d_m_d.jpg)
 
 - IRC: [Riot](https://vector.im/develop/#/room/#lulu:matrix.org "Join us on the chat to collaborate in the development")
 - Pictures: [Flicker](https://www.flickr.com/groups/3908991@N25/ "Share your Lulu pictures project")
