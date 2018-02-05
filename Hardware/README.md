@@ -15,5 +15,6 @@
   - Embroidery solution : (TODO)
 
 ## TODO
-- Thermal PCB that will help with heat dissipation
-
+- Optimize the heat dissipation produced by the power LED
+- Identifying distributors in Europe
+- Look for side LEDs 60-150 mA
