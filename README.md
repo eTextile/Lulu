@@ -1,5 +1,6 @@
 # Lulu
 **Programming light into textile**
+
 Lulu is small electronic eTextie PCB made for optical fibers light injection.
 
 ### About The project
@@ -17,5 +18,5 @@ Instead of struggling to solve the light source and connection problem, the desi
 
 ![alt tag](https://farm6.staticflickr.com/5506/29792500474_7d4b125e57_z_d.jpg)
 
-- IRC : [Riot] (https://vector.im/develop/#/room/#lulu:matrix.org)
-- Pictures : [Flicker] (https://www.flickr.com/groups/3908991@N25/)
+- IRC: [Riot](https://vector.im/develop/#/room/#lulu:matrix.org "Join us on the chat to collaborate in the development")
+- Pictures: [Flicker](https://www.flickr.com/groups/3908991@N25/ "Share your Lulu pictures project")
