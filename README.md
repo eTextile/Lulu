@@ -1,86 +1,23 @@
-# Lulu_MCU
+# Lulu
+### Programming light into textile
+Lulu is small electronic PCB made for optical fibers light injection.
 
-Lulu is small electronic board made for light injection into optic fibers.
+### About The project
+Lulu is providing a simple, reliable toolset for people who whant to use side glow optical fiber in their eTextile and wearable technology.
+Use of light in textile and fashion design is becoming more and more common and many schools started to teach this subject as a part of their textile design curriculum.
+Optic fibers could be embedded in textiles as embroidery, in weaving, knitting and knotting process and many textile designs have been realized in recent years.
+But often the designers lack the toolset for connecting the light sources with the embedded optic fibers, resulting in re-purposing bulky connectors and technology and hiding them behind the textiles.
+Currently each designer has to come up with their own re-purposed or DIY solution.
+Unreliable connections between fiber optics and light source result in poor illumination of the fiber.
+Instead of struggling to solve the light source and connection problem, the designer can concentrate in the aesthetic issues in the design process.
+The communication bus system will make it easy to use multiple light sources and program their behavior.
+As Lulu is small, light and sewable PCB that is suitable for soft circuitry, the entire electronics can be embedded in textile, making it flexible and wearable.
 
-## About The project
-Lulu is a smal e-textile solution that facilitate the use of optics fibers in textile and fashion design.
-This solution featuring a system for light injection into the optic fibers and a communication bus that alow easy light programing.
+- Repository: https://github.com/eTextile/Lulu/tree/master
+- Project web page: www.eTextile.org/Lulu/ TODO
+- License: CC-BY-SA (see the License file)
 
 ![alt tag](https://farm6.staticflickr.com/5506/29792500474_7d4b125e57_z_d.jpg)
 
-     _______   _______   _______
-    |       | |       | |       |             ___/\/\/\___ GND
-    | LULU  | | LULU  | | LULU  |            |    1-5 MΩ
-    |_______| |_______| |_______|            |
-    ____|||_______|||_______|||_______ 3.3V  |
-    _____||________||________||______________|___ Data
-    ______|_________|_________|_______ GND
-
-
-## Hardware design
-- MCU: ATTiny10
-- http://www.tbideas.com/blog/build-an-arduino-shield-to-drive-high-power-rgb-led/
-
-[![Lulu by Maurin 0b0275a0c920353b - Upverter](https://upverter.com/Maurin/0b0275a0c920353b/Lulu/embed_img/15136192700000/)](https://upverter.com/Maurin/0b0275a0c920353b/Lulu/#/)
-
-### ATTiny10 pin mapping
-
-             (PCINT0/TPIDATA/OC0A/ADC0/AIN0) PB0 -|    |- PB3 (RESET/PCINT3/ADC3)
-                                             GND -|    |- VCC
-    (PCINT1/TPICLK/CLKI/ICP0/OC0B/ADC1/AIN1) PB1 -|    |- PB2 (T0/CLKO/PCINT2/INT0/ADC2)
-
-
-## Programming
-### Softwear setup
-#### avrdude 6.3
-    avrdude -v
-    sudo add-apt-repository ppa:ubuntuhandbook1/apps
-    sudo apt-get update
-    sudo apt-get install avrdude avrdude-doc
-
-    sudo apt-get install gcc-avr binutils-avr gdb-avr avr-libc
-
-#### Compiling & linking
-    avr-gcc -mmcu=attiny10 -DF_CPU=1000000 -g -Os test.c -o test.elf
-    avr-size --mcu=attiny10 -C test.elf
-
-### Hardwear setup
-#### TPI programmer (NOT ICSP)
-https://www.olimex.com/Products/AVR/Programmers/AVR-ISP-MK2/resources/AVR-ISP-MK2.pdf
-
-#### TPI pin mapping
-
-     DATA 1 - - 2 VTARGET
-    CLOCK 3 - - 4 NA
-    RESET 5 - - 6 GND
-
-#### Wiring the ATTiny10 to TPI programmer (AVR-ISP-MK2)
-
-| ATTINY10 - PIN   | PIN FONCTION |  TPI-connector  |
-|------------------|--------------|-----------------|
-|  1-PB0           |   TPIDATA    |  1-DATA         |
-|  2-GND           |   GND        |  6-GND          |
-|  3-PB1           |   TPICLK     |  3-CLOCK        |
-|  4-PB2           |   NC         |  4-NA           |
-|  5-VCC           |   +5V        |  2-VTARGET      |
-|  6-PB3           |   RESET      |  5-RESET        |
-
-Check if you are in the dialout group
-
-    cd /etc/udev/rules.d
-
-Read the chip ID
-
-    avrdude -p t10 -P usb -c avrispmkii -B5
-
-Flash the chip
-
-    avrdude -p t10 -P usb -c avrispmkii -B5 -U flash:w:test.elf
-
-## REFs
-- http://irq5.io/2017/09/09/writing-code-for-the-attiny10/
-- http://electronut.in/attiny10-hello/
-- https://github.com/kcuzner/onewire-leds.git
-
-## TODO
-- Thermal PCB that will help with heat dissipation
+- IRC : [Riot] (https://vector.im/develop/#/room/#lulu:matrix.org)
+- Pictures : [Flicker] (https://www.flickr.com/groups/3908991@N25/)
