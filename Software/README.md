@@ -1,5 +1,7 @@
-# Arduino Firmware
+# Lulu / Firmware design
+
+# REFs
+- https://github.com/kcuzner/onewire-leds.git (Forked)
 
 # TODO
-- test : https://github.com/M-o-a-T/owslave/
-- https://github.com/neuoy/OneWireArduinoSlave
+- https://github.com/neuoy/OneWireArduinoSlave (TOTEST)
