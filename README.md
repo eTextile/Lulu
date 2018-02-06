@@ -17,10 +17,12 @@ Currently each designer has to come up with their own re-purposed or DIY solutio
 Lulu is a connector that optimise the efficiency of the connection between the light source and the optical fibers to get a strong illumination.
 Instead of struggling to solve the light source and connection problem, the designer can concentrate in the aesthetic and textie making process issues.
 
-- Repository: https://github.com/eTextile/Lulu/tree/master
-- Project web page: www.eTextile.org/Lulu/ TODO
-- License: CC-BY-SA (see the License file)
+ * **Web page**: www.eTextile.org/Lulu/ TODO
+ * **Repository**: https://github.com/eTextile/Lulu/tree/master
+ * **License**: CC-BY-SA (see the License file)
+ * **Video**: [Lulu project by Hannah](https://www.youtube.com/watch?v=drAoLd_eUWk "Introduction to optical fiber and Lulu project")
+ * **Video**: [Lulu project by Maurin](https://vimeo.com/250555925 "Explanation of the eTextile bus solution")
+ * **Mail**: [lulu@etextile.org](mailto:lulu@etextile.org)
+ * **IRC**: [Riot](https://vector.im/develop/#/room/#lulu:matrix.org "Join us on the chat to collaborate in the development")
+ * **Pictures**: [Flicker](https://www.flickr.com/groups/3908991@N25/ "Share your Lulu pictures project")
 
-
-- IRC: [Riot](https://vector.im/develop/#/room/#lulu:matrix.org "Join us on the chat to collaborate in the development")
-- Pictures: [Flicker](https://www.flickr.com/groups/3908991@N25/ "Share your Lulu pictures project")
