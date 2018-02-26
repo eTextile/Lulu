@@ -10,7 +10,7 @@
 | MCU                  | ATTiny10                 |                                       |
 | LED                  | OSRAM 350mA (white)      | http://aliexpress.com ($0.65 / pièce) |
 | Brass tube           | 2 MM Hole X 10 MM Length | http://ebay.com ($0.05 / pièce)       |
-| JTE                  | 1.5 / 8mm                | OUTPUT of the 8:1 analog multiplexer  |
+| JTE                  | 1.5 / 8mm                |                                       |
 | Optical fibres PMMA  | 0.25                     |                                       |
 | Optical fibres TPU   | 1.5, 2, 3mm              |                                       |
 
