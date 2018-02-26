@@ -1,6 +1,9 @@
-/**
-   Modified 1-Wire Protocol
+/*
+   Lulu_1-Wire - 1-Wire modified protocol
+   This file is originally part of onewire-leds from Kevin Cuzner : https://github.com/kcuzner/onewire-leds
+   It has been modified to fit the Lulu project needs : http://lulu.eTextile.org
 */
+
 #include "onewire.h"
 
 #include <avr/interrupt.h>

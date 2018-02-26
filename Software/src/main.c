@@ -1,6 +1,9 @@
-/**
-   Lulu_MCU 1-Wire
+/*
+   Lulu_1-Wire
+   This file is originally part of onewire-leds from Kevin Cuzner : https://github.com/kcuzner/onewire-leds
+   It has been modified to fit the Lulu project needs : http://lulu.eTextile.org
 */
+
 // #include "leds.h"
 #include "onewire.h"
 
