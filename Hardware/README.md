@@ -2,6 +2,8 @@
 **Programming light into textile**
 
 ## Project content
+
+### PCB
 - [PCB](https://tools.upverter.com/eda/#tool=schematic,designId=0b0275a0c920353b "Made with Upverter, online PCB router software") Made with Upverter, online PCB router software
 
 ### Part list
@@ -16,5 +18,7 @@
 
 ## TODO
 - Optimize the heat dissipation produced by the power LED
+- Look for side LEDs 60-200 mA
+- Add POGO PINs on the PCB
+- Find a partner to develop the electronic
 - Identifying distributors in Europe
-- Look for side LEDs 60-150 mA
