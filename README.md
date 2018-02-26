@@ -18,16 +18,16 @@ Lulu is a connector that optimise the efficiency of the connection between the l
 Instead of struggling to solve the light source and connection problem, the designer can concentrate in the aesthetic and textie making process issues.
 
 ### Lulu branches
-* **Master** each Lulu have a built in MCU to allow one-wire communication bus system.
+* **Master** Each Lulu have a built in MCU to allow one-wire communication bus system.
 * **Lucette** Minimalist solution with only the power LED and the optic fiber connector.
 * More coming soon!
 
 ### Development tools & DOCs
- * **Web page**: [www.eTextile.org/Lulu/](www.eTextile.org/Lulu/) TODO
- * **Repository**: [https://github.com/eTextile/Lulu/tree/master](https://github.com/eTextile/Lulu/tree/master)
+ * **Web page**: [http://lulu.eTextile.org/](http://lulu.eTextile.org "Web page coming soon") TODO
+ * **Repository**: [https://github.com/eTextile/Lulu/tree/master](https://github.com/eTextile/Lulu/tree/master "The project repository")
  * **License**: [CC-BY-SA](https://github.com/eTextile/Lulu/blob/master/LICENSE "See the Lulu license project")
  * **Video**: [Lulu project by Hannah](https://www.youtube.com/watch?v=drAoLd_eUWk "Introduction to optical fiber and Lulu project")
  * **Video**: [Lulu project by Maurin](https://vimeo.com/250555925 "Explanation of the eTextile bus solution")
  * **Mail**: [lulu@etextile.org](mailto:lulu@etextile.org "eMail us")
  * **IRC**: [Riot](https://vector.im/develop/#/room/#lulu:matrix.org "Join us on the chat to collaborate in the development")
- * **Pictures**: [Flicker](https://www.flickr.com/groups/3908991@N25/ "Share your Lulu pictures project")
+ * **Pictures**: [Flickr](https://www.flickr.com/groups/3908991@N25/ "Share your Lulu pictures project")
