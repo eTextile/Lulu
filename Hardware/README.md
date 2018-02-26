@@ -2,7 +2,7 @@
 **Programming light into textile**
 
 ## Project content
-- [PCB](https://tools.upverter.com/eda/#tool=schematic,designId=0b0275a0c920353b "Made with Upverter, online router software")
+- [PCB](https://tools.upverter.com/eda/#tool=schematic,designId=0b0275a0c920353b "Made with Upverter, online PCB router software") Made with Upverter, online PCB router software
 
 ### Part list
 | Part                 | REF                      | Weblink                               |
@@ -17,4 +17,4 @@
 ## TODO
 - Optimize the heat dissipation produced by the power LED
 - Identifying distributors in Europe
-- Look for side LEDs 60-150 m
+- Look for side LEDs 60-150 mA
