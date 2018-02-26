@@ -100,6 +100,7 @@ in addition to necessary modifications due to the loss of bidirectionality.
 
 # TOTEST
 - https://github.com/neuoy/OneWireArduinoSlave
+- https://forum.pjrc.com/threads/23939-Strange-behavior-on-the-Onewireslave-library?p=33608&viewfull=1#post33608
 
 # TODO
 - 
