@@ -17,8 +17,8 @@
 | Optical fibres TPU   | 1.5, 2, 3mm              |                                       |
 
 ## TODO
-- Optimize the heat dissipation produced by the power LED
-- Look for side LEDs 60-200 mA
-- Add POGO PINs on the PCB
-- Find a partner to develop the electronic
-- Identifying distributors in Europe
+- [ ] Find a partner to develop the electronic
+- [ ] Optimize the heat dissipation produced by the power LED
+- [ ] Find a side LEDs 0.5W
+- [ ] Add POGO PINs on the PCB
+- [ ] Identifying distributors in Europe
