@@ -23,7 +23,7 @@ Instead of struggling to solve the light source and connection problem, the desi
 * More coming soon!
 
 ### Development tools & DOCs
- * **Web page**: [http://lulu.eTextile.org/](http://lulu.eTextile.org "Web page coming soon") TODO
+ * **Web page**: [http://lulu.eTextile.org/](http://lulu.eTextile.org "Web page coming soon")
  * **Repository**: [https://github.com/eTextile/Lulu/tree/master](https://github.com/eTextile/Lulu/tree/master "The project repository")
  * **License**: [CC-BY-SA](https://github.com/eTextile/Lulu/blob/master/LICENSE "See the Lulu license project")
  * **Video**: [Lulu project by Hannah](https://www.youtube.com/watch?v=drAoLd_eUWk "Introduction to optical fiber and Lulu project")
