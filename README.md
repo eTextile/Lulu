@@ -1,4 +1,5 @@
 # Lulu
+
 **Programming light into textile**
 
 Lulu is a hardware solution that interfaces between an LED light source, an optic fiber strand or bundle and soft circuit connections.
@@ -23,7 +24,8 @@ Instead of struggling to solve the light source and connection problem, the desi
 * More coming soon!
 
 ### Development tools & DOCs
- * **Web page**: [http://lulu.eTextile.org/](http://lulu.eTextile.org "Web page coming soon")
+ * **Web page eTextile.org**: [http://lulu.eTextile.org](http://lulu.eTextile.org "The project Web page")
+ * **Web page kobakant.at**: [http://www.kobakant.at/KOBA/lulu-developments](http://www.kobakant.at/KOBA/lulu-developments "Kobakant project Web page")
  * **Repository**: [https://github.com/eTextile/Lulu/tree/master](https://github.com/eTextile/Lulu/tree/master "The project repository")
  * **License**: [CC-BY-SA](https://github.com/eTextile/Lulu/blob/master/LICENSE "See the Lulu license project")
  * **Video**: [Lulu project by Hannah](https://www.youtube.com/watch?v=drAoLd_eUWk "Introduction to optical fiber and Lulu project")
