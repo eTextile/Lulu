@@ -10,13 +10,13 @@ Providing an optic fiber connection toolset and workflow for E-Textiles and Wear
 ![alt tag](https://farm5.staticflickr.com/4536/24516632088_8533c86f3d_m_d.jpg)
 
 ### About The project
-Lulu is providing a simple, reliable toolset for people who whant to use side glow optical fibers in their eTextile and wearable projects.
+Lulu is providing a simple, reliable toolset for people who want to use side glow optical fibers in their eTextile and wearable projects.
 Use of light in textile and fashion design is becoming more and more common and many schools started to teach this subject as a part of their textile design curriculum.
 Optic fibers could be embedded in textiles as embroidery, in weaving, knitting and knotting process and many textile designs have been realized in recent years.
 But often the designers lack the toolset for connecting the light sources with the embedded optic fibers, resulting in re-purposing bulky connectors and technology and hiding them behind the textiles.
-Currently each designer has to come up with their own re-purposed or DIY solution.
-Lulu is a connector that optimise the efficiency of the connection between the light source and the optical fibers to get a strong illumination.
-Instead of struggling to solve the light source and connection problem, the designer can concentrate in the aesthetic and textie making process issues.
+Currently, each designer has to come up with their own re-purposed or DIY solution.
+Lulu is a connector that optimizes the efficiency of the connection between the light source and the optical fibers to get a strong illumination.
+Instead of struggling to solve the light source and connection problem, the designer can concentrate on the aesthetic and textile making process issues.
 
 ### Lulu branches
 * **Master** Each Lulu have a built in MCU to allow one-wire communication bus system.
