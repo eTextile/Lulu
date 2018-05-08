@@ -15,11 +15,10 @@
 // ATTiny10 internal clock is set to 8Mhz
 // Timer0 (16-bits) is used for our timing
 // The presecaler is set at CLK/1
-// 70uS: 280 ticks
 // 480uS: 3840 ticks
+// 70uS: 208 ticks
 // 4 ticks is our sample time after a falling edge, landing at about 26uS
-// - NOTE: This is equivalent to 256 clock cycles, giving us ample
-//   computation time
+// - NOTE: This is equivalent to 256 clock cycles, giving us the sample computation time
 #define ONEWIRE_RESET_TICKS 3840
 #define ONEWIRE_READ_TICKS  208
 
@@ -70,7 +69,6 @@ void onewire_init(void) {
   OCR0BH = (char)(ONEWIRE_RESET_TICKS >> 8); // OCR0A[15:8]
 
 }
-
 
 uint8_t onewire_has_new_byte(void) {
   return byte_flag;
