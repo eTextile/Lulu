@@ -19,7 +19,7 @@ Lulu is a connector that optimizes the efficiency of the connection between the 
 Instead of struggling to solve the light source and connection problem, the designer can concentrate on the aesthetic and textile making process issues.
 
 ### Lulu branches
-* **Lulu-dev** (Master) The Lulu is as simple as posible - only the LED & LED driver is added to the PCB.
+* **Lulu-dev** (master) The Lulu is as simple as posible - only the LED & LED driver is added to the PCB.
 * **Lulu-MCU** Each Lulu have a built in MCU to allow one-wire communication bus system.
 * **Lulu** Minimalist solution with only the power LED and the optic fiber connector.
 
