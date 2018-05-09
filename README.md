@@ -5,6 +5,8 @@
 Lulu is a hardware solution that interfaces between an LED light source, an optic fiber strand or bundle and soft circuit connections.
 Providing an optic fiber connection toolset and workflow for E-Textiles and Wearable Technology applications.
 
+This project is still in a beta phase, where drastic changes may occur and backwards compatibility is not guaranteed until the final release.
+
 ![alt tag](https://farm6.staticflickr.com/5506/29792500474_7d4b125e57_m_d.jpg)
 ![alt tag](https://farm5.staticflickr.com/4607/25119732977_b1e0567c12_m_d.jpg)
 ![alt tag](https://farm5.staticflickr.com/4536/24516632088_8533c86f3d_m_d.jpg)
