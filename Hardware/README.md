@@ -3,6 +3,26 @@
 
 ## Project content
 
+## Hardware design
+
+      _______
+     |       |
+     | POWER |-----------------
+     |_______|--------------| |
+        | |                 | |
+      + | | -             + | | -
+     ___|_|____             | |
+    |         |           __| |__
+    |    A    |   PWM    |       |
+    |    R    |--------->| LULU  |
+    |    D    |          |_______|
+    |    U    |             | |
+    |    N    |           __| |__
+    |    I    |   PWM    |       |
+    |    O    |--------->| LULU  |
+    |_________|          |_______|
+                            | |
+
 ### PCB
 - [PCB](https://upverter.com/DataPaulette/0b0275a0c920353b/Lulu-dev/ "Made with Upverter, online PCB router software") Made with Upverter, online PCB router software
 
@@ -17,8 +37,7 @@
 
 ## TODO
 - [ ] Find a partner to develop the electronic
-- [ ] Find a side LEDs 0.5W
+- [ ] Find a 0.5W side LEDs
 - [ ] Chose between a small single LED driver & linear constant current circuitry
 - [ ] Optimize the power LED heat dissipation
-- [ ] Add POGO PINs on the PCB to flash the ATTiny10
 - [ ] Identifying distributors in Europe
