@@ -1,4 +1,4 @@
-# Lulu / Hardware
+# Lulu-star / Hardware
 **Programming light into textile**
 
 ## Project content
@@ -24,7 +24,7 @@
                             | |
 
 ### PCB
-- [PCB](https://upverter.com/DataPaulette/0b0275a0c920353b/Lulu-dev/ "Made with Upverter, online PCB router software") Made with Upverter, online PCB router software
+- [PCB](https://upverter.com/DataPaulette/0b0275a0c920353b/Lulu-star/ "Made with Upverter, online PCB router software") Made with Upverter, online PCB router software.
 
 ### Part list
 | Part                 | REF                      | Weblink                | Price per unit |
