@@ -1,7 +1,7 @@
 // Unit is mm
 pcbRadius = 6.5;
-ledWidth = 3;
-ledHeight = 3;
+ledWidth = 3; // OSRAM Oslon
+ledHeight = 3; // OSRAM Oslon
 pcbHeight = ledHeight/2;
 tubeLength = 10;
 tubeInner = 2;
@@ -16,19 +16,21 @@ module PCB() {
     difference(){
       cylinder(pcbHeight, r1=pcbRadius, r2=pcbRadius, center=true);  
       translate([0, tubeLength/2, 0])
-      cube([tubeOuter, tubeLength, pcbHeight],true);
+      cube([ledWidth, tubeLength, pcbHeight],true);
      }
   }
 }
 
 module LED() {
-  rotate([90, 0, 0]){
-    translate([0, 0, tubeInner/4])
-    cube([ledWidth, ledHeight, 1], true);
-    difference(){
-    sphere(tubeInner/2, $fn=20, $fa=12, $fs=2); 
-    translate([0, 0, tubeInner/2])
-    cube([tubeInner, tubeInner, tubeInner], true);
+  color("red", 0.6){
+    rotate([90, 0, 0]){
+      translate([0, 0, tubeInner/4])
+      cube([ledWidth, ledHeight, 1], true);
+      difference(){
+      sphere(tubeInner/2, $fn=20, $fa=12, $fs=2); 
+      translate([0, 0, tubeInner/2])
+      cube([tubeInner, tubeInner, tubeInner], true);
+      }
     }
   }
 }
