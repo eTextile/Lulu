@@ -1,4 +1,4 @@
-# Lulu
+# Lulu-daisy
 
 **Programming light into textile**
 
