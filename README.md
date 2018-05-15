@@ -1,4 +1,4 @@
-# Lulu
+# Lulu-MCU
 
 **Programming light into textile**
 
