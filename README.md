@@ -21,10 +21,14 @@ Lulu is a connector that optimizes the efficiency of the connection between the 
 Instead of struggling to solve the light source and connection problem, the designer can concentrate on the aesthetic and textile making process issues.
 
 ### Lulu branches
-* **Lulu-star** (master) The Lulu is as simple as posible - only the LED & LED driver is added to the PCB.
-* **Lulu-daisy** Each Lulu have an addressable LED (WS2812-mini, Dotstar, etc).
-* **Lulu-MCU** Each Lulu have a built in MCU (ATTiny10) to allow one-wire communication bus system.
-* **Lulu** Minimalist solution with only the power LED and the optic fiber connector.
+- **Lulu-star (master)**
+  - This branch provide a tiny PCB with a 350mA LED, PWM driver and an optic fiber connector.
+- **Lulu-daisy**
+  - This branch provide a tiny PCB with an addressable LED (WS2812-mini, Dotstar, etc) and an optic fiber connector.
+- **Lulu-MCU**
+  - This branch provide a tiny PCB with a built in MCU (ATTiny10) that allow one-wire communication bus system.
+- **Lulu**
+  - This branch provide a motherboard (Lucette) that drive up to 16 Lulu that only contain a power LED and an optic fiber connector.
 
 ### Development tools & DOCs
  * **Web page**: [http://lulu.eTextile.org](http://lulu.eTextile.org "The project Web page")
