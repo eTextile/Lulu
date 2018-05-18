@@ -1,4 +1,4 @@
-# Lulu / Hardware
+# Lulu-MCU / Hardware
 **Programming light into textile**
 
 ## Project content
