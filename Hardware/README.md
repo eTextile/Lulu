@@ -30,10 +30,15 @@
 | Part                 | REF                      | Weblink                | Price per unit |
 | -------------------- | ------------------------ | -----------------------|--------------- |
 | LED                  | OSRAM 350mA (white)      | http://aliexpress.com  | $0.65          |
-| Brass tube           | 2 mm Hole X 10 mm Length | http://ebay.com        | $0.05          |
+| Brass tube           | 2 mm Hole 5-10 mm Length | http://ebay.com        | $0.05          |
 | JTE                  | 1.5 / 8 mm               |                        |                |
 | Optical fibres PMMA  | 0.25 mm x 35 pce         |                        |                |
 | Optical fibres TPU   | 1.5, 2, 3 mm             |                        |                |
+| Q2 - MMBT2222A       |                          |                        | €0,044         |
+| Q1 - IRLML2060TRPBF  |                          |                        | €0,133         |
+| R1 - Resistor        | 47K Ohm 1206             |                        |                |
+| R2 - Resistor        |                          |                        |                |
+|                      |                          |                        |                |
 
 ## TODO
 - [ ] Find a partner to develop the electronic
