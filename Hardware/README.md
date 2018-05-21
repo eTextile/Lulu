@@ -2,6 +2,18 @@
 **Programming light into textile**
 
 ## Project content
+This branch is using a 350mA power LED.
+Lulu-star have three connections.
+- [+] 3.3 to 10 Voltes
+- [-] GND
+- [PWM] I/O PIN
+
+![alt tag](https://raw.githubusercontent.com/eTextile/Lulu/master/docs/pictures/footprint_connection.jpg)
+
+Easy to programmed, Lulu-star is using the Arduino IDE standard functions. No library required.
+
+    digitalWrite(LED_PIN, state);
+    analogWrite(LED_PIN, val);
 
 ## Hardware design
 
