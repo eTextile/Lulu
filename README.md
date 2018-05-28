@@ -41,7 +41,7 @@ Instead of struggling to solve the light source and connection problem, the desi
  * **IRC**: [Riot](https://vector.im/develop/#/room/#lulu:matrix.org "Join us on the chat to collaborate in the development")
  * **Pictures**: [Flickr](https://www.flickr.com/groups/3908991@N25/ "Share your Lulu pictures project")
 
-
+```
 *Editable / multipurpose
                                  Forkable
              Low|-------------------|//////////////////////////////////////////|High
@@ -89,3 +89,4 @@ Instead of struggling to solve the light source and connection problem, the desi
 
 *Peripherals
      Free (Open)|-------------------|-----------------------|------------------|Closed
+```
