@@ -40,3 +40,52 @@ Instead of struggling to solve the light source and connection problem, the desi
  * **Mail**: [lulu@etextile.org](mailto:lulu@etextile.org "eMail us")
  * **IRC**: [Riot](https://vector.im/develop/#/room/#lulu:matrix.org "Join us on the chat to collaborate in the development")
  * **Pictures**: [Flickr](https://www.flickr.com/groups/3908991@N25/ "Share your Lulu pictures project")
+
+
+*Editable / multipurpose
+                                 Forkable
+             Low|-------------------|//////////////////////////////////////////|High
+
+*Production method
+                            Crafter
+             DIY|--------------|///////////////////////////////////////////////|Industry
+
+*Price
+                                             6€
+             Low|////////////////////////////|---------------------------------|High
+
+*Skils level of users
+                                                 Crafter
+        Beginers|///////////////////////////////////|--------------------------|Expert
+
+*Level of integration
+               PCB                   PCB++
+        Standard|/////////////////////|----------------------------------------|Non standard (e-textile)
+
+*Level of complexity
+                                                                          Lulu + LED-driver
+                                                           Lulu + LED-driver   + MCU
+              Lulu               Lulu + LED-driver         Lulu + MCU          + Battery & charger
+             Low|/////////////////////| ------------------------|--------------|High
+
+*Robusness / Life span (Connectors, testing, evaluating)
+         Fragile|/////////////////////| ------------------------|--------------|Stong
+
+*Project ethics
+                                                         Sparkfun
+              DIY  Crow-fonded  Localy                   Adafruit  Seed      China
+            low|--------|--------|//////////////////////////|--------|---------|High
+
+*Fiber optics
+               20cm    1m     2m
+           Schot|------|///////|-----------------------------------------------|Long
+
+*Tech
+                                                OpenPCB                  Open-cylycium
+          Closed|-------------------------|////////|///////|-------------------|Free & Full Open
+
+*Liscence
+          Closed|--------------------------------------------------------------|Free & Open
+
+*Peripherals
+     Free (Open)|-------------------|-----------------------|------------------|Closed
