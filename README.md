@@ -74,7 +74,7 @@ Instead of struggling to solve the light source and connection problem, the desi
 *Project ethics
                                                          Sparkfun
               DIY  Crow-fonded  Localy                   Adafruit  Seed      China
-            low|--------|--------|//////////////////////////|--------|---------|High
+           High|--------|--------|//////////////////////////|--------|---------|low
 
 *Fiber optics
                20cm    1m     2m
