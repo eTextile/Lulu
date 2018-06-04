@@ -1,21 +1,27 @@
 // Unit is mm
-pcbRadius = 6.5;
+pcbRadius = 7;
 ledWidth = 3; // OSRAM Oslon
 ledHeight = 3; // OSRAM Oslon
 pcbHeight = ledHeight/2;
-tubeLength = 10;
+tubeLength = 5;
 tubeInner = 2;
 tubeOuter = 2.2;
+pos = 2;
 
-PCB();
-translate([0, 0, ledHeight/4]) LED();
-translate([0, 0, ledHeight/4]) tube();
+pinInner = 1;
+difference(){
+  PCB();
+  connector();
+}
+translate([0, pos, ledHeight/4]) LED();
+translate([0, pos, ledHeight/4]) tube();
+
 
 module PCB() {
   color("Olive", 0.6){
     difference(){
       cylinder(pcbHeight, r1=pcbRadius, r2=pcbRadius, center=true);  
-      translate([0, tubeLength/2, 0])
+      translate([0, pos + tubeLength/2, 0])
       cube([ledWidth, tubeLength, pcbHeight],true);
      }
   }
@@ -44,3 +50,23 @@ module tube(){
      }
    }
 }
+
+module connector(){
+    $fn = 30; // Number of fragments
+    translate([1.27, 0, -tubeLength/2])
+    cylinder(tubeLength, pinInner/2, pinInner/2, center=false);
+    translate([-1.27, 0, -tubeLength/2])
+    cylinder(tubeLength, pinInner/2, pinInner/2, center=false);
+    
+    translate([1.27, -2.54, -tubeLength/2])
+    cylinder(tubeLength, pinInner/2, pinInner/2, center=false);
+    translate([-1.27, -2.54, -tubeLength/2])
+    cylinder(tubeLength, pinInner/2, pinInner/2, center=false);
+    
+    translate([1.27, -5.08, -tubeLength/2])
+    cylinder(tubeLength, pinInner/2, pinInner/2, center=false);
+    translate([-1.27, -5.08, -tubeLength/2])
+    cylinder(tubeLength, pinInner/2, pinInner/2, center=false);
+}
+
+
