@@ -1,21 +1,15 @@
 # Lulu-star / Hardware
 **Programming light into textile**
 
-## Project content
-This branch is using a 350mA power LED.
+## Hardware design
+This branch is using a 200-350mA power LED.
+
 Lulu-star have three connections.
-- [+] 3.3 to 10 Voltes
-- [-] GND
+- [+] 3.3 to 60 Voltes
 - [PWM] I/O PIN
+- [-] GND
 
 ![alt tag](https://raw.githubusercontent.com/eTextile/Lulu/master/docs/pictures/footprint_connection.jpg)
-
-Easy to programmed, Lulu-star is using the Arduino IDE standard functions. No library required.
-
-    digitalWrite(LED_PIN, state);
-    analogWrite(LED_PIN, val);
-
-## Hardware design
 
       _______
      |       |
@@ -35,8 +29,31 @@ Easy to programmed, Lulu-star is using the Arduino IDE standard functions. No li
     |_________|          |_______|
                             | |
 
+Easy to programmed, Lulu-star is using the Arduino IDE standard functions.
+No library required.
+
+    digitalWrite(LED_PIN, state);
+    analogWrite(LED_PIN, val);
+
+
+### LED driver
+##### Constant Current Source
+
+![alt tag](./DOCs/driver_00.png)
+
+Resistor R1 is used to set the current limit and this doesn't depends on the voltage supply VDD.
+The equation for this can be given as 'R1=0.7/Required current'.
+- https://learn.adafruit.com/pixie-3-watt-smart-chainable-led-pixels/design
+- http://www.instructables.com/id/Circuits-for-using-High-Power-LED-s/
+
 ### PCB
-- [PCB](https://upverter.com/DataPaulette/5193c940bede1099/Lulu-star/ "Made with Upverter, online PCB router software") Made with Upverter, online PCB router software.
+To facilitate forkable design the PCB is made with Upverter an online PCB router software.
+We are looking for a shape that allow zero waste in the panelization process.
+
+The circle shape correspond to the more common eTextile PCB but doesn't fit the zero waste.
+- [Circle shape PCB](https://upverter.com/DataPaulette/5193c940bede1099/Lulu-star_20/ "Made with Upvetrter, online PCB router software").
+Triangle is a shape that fit the three wire connectors and the zero waste panelization process.
+- [triangle shape PCB](https://upverter.com/DataPaulette/08fe1452dfd87b08/Lulu-star_21/ "Made with Upvetrter, online PCB router software").
 
 ### Part list
 | Part                 | REF                      | Weblink                | Price per unit |
@@ -53,7 +70,6 @@ Easy to programmed, Lulu-star is using the Arduino IDE standard functions. No li
 |                      |                          |                        |                |
 
 ## TODO
-- [ ] Find a partner to develop the electronic
 - [ ] Find a 0.5W side LEDs
 - [ ] Chose between a small single LED driver & linear constant current circuitry
 - [ ] Optimize the power LED heat dissipation
