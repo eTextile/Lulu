@@ -38,9 +38,12 @@ No library required.
 
 ### LED driver
 ##### Constant Current Source
+
 **References**
 - https://learn.adafruit.com/pixie-3-watt-smart-chainable-led-pixels/design
 - http://www.instructables.com/id/Power-LED-s---simplest-light-with-constant-current/
+- https://scienceprog.com/building-simple-constant-current-power-led-driver/
+- http://www.pcbheaven.com/userpages/LED_driving_and_controlling_methods/?topic=worklog&p=3
 
 ![alt tag](./DOCs/driver_00.png)
 
@@ -48,8 +51,8 @@ No library required.
 | Part                         | REF                       | Package                | Weblink                | Price per unit |
 | ---------------------------- | ------------------------- | -----------------------| -----------------------|--------------- |
 | Power LED                    | OSRAM 200mA (white)       |                        |                        | $0.65          |
-| Q1 - large N-channel MOSFET  | IRLML2060TRPBF            | 23-SOT                 |                        | €0,133         |
-| T1 - small NPN transistor    | MMBT2222A                 |                        |                        | €0,044         |
+| Q1 - large N-channel MOSFET  | IRLML2060TRPBF            | SOT-23                 |                        | €0,133         |
+| T1 - small NPN transistor    | MMBT2222A                 | SOT-23                 |                        | €0,044         |
 | R1                           | Approximately 47k-ohm     |                        |                        |                |
 | R2 - current set resistor    | 2.9 ohms 1/4 watt         |                        |                        |                |
 
@@ -71,7 +74,7 @@ The same logic can be applied in the opposite direction. The conclusion is that 
 To facilitate forkable design the PCB is made with Upverter an online PCB router software.
 We are looking for a shape that allow zero waste in the panelization process.
 - [Circle shape](https://upverter.com/DataPaulette/5193c940bede1099/Lulu-star_20/ "Made with Upvetrter, online PCB router software"). The circle shape correspond to the more common eTextile PCB but doesn't fit the zero waste.
-- [triangle shape](https://upverter.com/DataPaulette/08fe1452dfd87b08/Lulu-star_21/ "Made with Upvetrter, online PCB router software"). Triangle is a shape that fit the three wire connectors and the zero waste panelization process.
+- [Triangle shape](https://upverter.com/DataPaulette/08fe1452dfd87b08/Lulu-star_21/ "Made with Upvetrter, online PCB router software"). Triangle is a shape that fit the three wire connectors and the zero waste panelization process.
 
 #### Part list
 | Part                 | REF                      | Weblink                | Price per unit |
