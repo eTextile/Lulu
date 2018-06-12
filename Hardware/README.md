@@ -72,14 +72,13 @@ We are looking for a shape that allow zero waste in the panelization process.
 - [Triangle shape](https://upverter.com/DataPaulette/08fe1452dfd87b08/Lulu-star_21/ "Made with Upvetrter, online PCB router software"). Triangle is a shape that fit the three wire connectors and the zero waste panelization process.
 
 #### Part list
-| Part                       | REF                      | Weblink                | Price per unit |
-| -------------------------- | ------------------------ | -----------------------|--------------- |
-| Brass tube                 | 2 mm Hole 5-10 mm Length |                        | $0.05          |
-| JTE connector              | 1.5 / 8 mm               |                        |                |
-| Optical fibres PMMA        | 0.25 mm x 35 pce         |                        |                |
-| Optical fibres TPU         | 1.5, 2, 3 mm             |                        |                |
-| Optical fibres tube + core |                          |                        |                |
-https://www.leds-and-more.de/catalog/15mm-lwl-lichtwellenleiter-lichtleiter-seitlich-leuchtend-p-1937.html?osCsid=2me5dl4q5amcvgb6tnbqfd87i5
+| Part                       | REF                      | Price per unit   | Weblink        |
+| -------------------------- | ------------------------ | -----------------|--------------- |
+| Brass tube                 | 2 mm Hole 5-10 mm Length |                  |                |
+| JTE connector              | 1.5 / 8 mm               |                  |                |
+| Optical fibres PMMA        | 0.25 mm x 35 pce         |                  |                |
+| Optical fibres TPU         | 1.5, 2, 3 mm             |                  |                |
+| Optical fibres tube + core |                          |                  | [www.leds-and-more.de](https://www.leds-and-more.de/catalog/15mm-lwl-lichtwellenleiter-lichtleiter-seitlich-leuchtend-p-1937.html?osCsid=2me5dl4q5amcvgb6tnbqfd87i5) |
 
 ## TODO
 - [ ] Find a 0.5W side LEDs
