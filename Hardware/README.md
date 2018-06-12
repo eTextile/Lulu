@@ -56,9 +56,9 @@ No library required.
 | R2 - current set resistor    | 2.7 ohms 1/4 watt         | 1206                   |                        | 0,0246 €       |
 
 - **R2** is used to set the current limit and this doesn't depends on the voltage supply VDD.
-- **Q1** is used as a variable resistor. Q1 starts out turned on by R1.
+- **Q1** is used as a variable resistor. **Q1** starts out turned on by **R1**.
 - **T1** is used as an over-current sensing switch, and **R2** is the "sense resistor" that triggers **T1** when too much current is flowing.
-- The main current flow is through the LED's, through **Q1**, and through **R2**. When too much current flows through **R2**, **T1** will start to turn on, which starts turning off **Q1**. Turning off Q1 reduces the current through the LED's and R2.
+- The main current flow is through the LED's, through **Q1**, and through **R2**. When too much current flows through **R2**, **T1** will start to turn on, which starts turning off **Q1**. Turning off **Q1** reduces the current through the LED's and R2.
 - So we've created a **feedback loop**, which continuously tracks the current and keeps it exactly at the set point at all times.
 
 The NPN transistors **T1** have a specified 0.6V drop between base and emitter when on.
