@@ -68,8 +68,8 @@ According to Ohm’s law, this means that the current through them will be '0.6 
 ### PCB design
 To facilitate forkable design the PCB is made with Upverter an online PCB router software.
 We are looking for a shape that allow zero waste in the panelization process.
-- [Circle shape](https://upverter.com/DataPaulette/5193c940bede1099/Lulu-star_20/ "Made with Upvetrter, online PCB router software"). The circle shape correspond to the more common eTextile PCB but doesn't fit the zero waste.
-- [Triangle shape](https://upverter.com/DataPaulette/08fe1452dfd87b08/Lulu-star_21/ "Made with Upvetrter, online PCB router software"). Triangle is a shape that fit the three wire connectors and the zero waste panelization process.
+- [Circle shape](https://upverter.com/DataPaulette/5193c940bede1099/Lulu-star_20/ "Made with Upvetrter, online PCB router software") : the circle shape correspond to the more common eTextile PCB but doesn't fit the zero waste.
+- [Triangle shape](https://upverter.com/DataPaulette/08fe1452dfd87b08/Lulu-star_21/ "Made with Upvetrter, online PCB router software") : triangle is a shape that fit the three wire connectors and the zero waste panelization process.
 
 #### Part list
 | Part                       | REF                      | Price per unit   | Weblink        |
@@ -81,7 +81,7 @@ We are looking for a shape that allow zero waste in the panelization process.
 | Optical fibres tube + core |                          |                  | [www.leds-and-more.de](https://www.leds-and-more.de/catalog/15mm-lwl-lichtwellenleiter-lichtleiter-seitlich-leuchtend-p-1937.html?osCsid=2me5dl4q5amcvgb6tnbqfd87i5) |
 
 ## TODO
-- [ ] Find a 0.5W side LEDs
+- [ ] Find 0.5W side LEDs
 - [ ] Chose between a small single LED driver & Constant current source circuitry
 - [ ] Optimize the power LED heat dissipation
 - [ ] Identifying distributors in Europe
