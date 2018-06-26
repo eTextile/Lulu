@@ -1,0 +1,38 @@
+%FSLAX33Y33*%
+%MOMM*%
+%ADD10C,1.5*%
+%ADD11C,1.*%
+%ADD12C,0.5*%
+%ADD13C,2.*%
+%ADD14C,2.*%
+%ADD15C,2.*%
+D10*
+%LNhole_traces*%
+%LNhole component ee4f7c3a749b9ae5*%
+G01*
+X4290Y-1943D03*
+X2290Y-1943D03*
+%LNhole component 6959a6c919ed1c6a*%
+D11*
+X0Y2286D03*
+D12*
+X-1100Y2286D03*
+X1100Y2286D03*
+%LNhole component a4a91ddb9f96ce23*%
+D13*
+X0Y-8275D03*
+%LNhole component 27f528e205d9f711*%
+D10*
+X-3750Y0597D03*
+X-5750Y0597D03*
+%LNhole component eef1e1cbe215c51d*%
+D14*
+X-7492Y4820D03*
+%LNhole component 397f7d45dedda475*%
+D10*
+X-0800Y-4483D03*
+X-2800Y-4483D03*
+%LNhole component e0d137f8182de863*%
+D15*
+X7492Y4820D03*
+M02*

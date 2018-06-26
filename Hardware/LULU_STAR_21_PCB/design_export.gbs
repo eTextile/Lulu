@@ -1,0 +1,52 @@
+%FSLAX33Y33*%
+%MOMM*%
+%ADD10C,1.7*%
+%ADD11C,1.2*%
+%ADD12C,0.7*%
+%ADD13C,2.5*%
+%ADD14C,2.5*%
+%ADD15C,2.5*%
+D10*
+%LNbottom solder mask_traces*%
+%LNbottom solder mask component ee4f7c3a749b9ae5*%
+G01*
+X4290Y-1943D03*
+X2290Y-1943D03*
+%LNbottom solder mask component 6959a6c919ed1c6a*%
+D11*
+X0Y2286D03*
+D12*
+X-1100Y2286D03*
+X1100Y2286D03*
+G36*
+X1500Y3261D02*
+G75*
+G03*
+X1500Y6761I-0421J1750D01*
+G01*
+X1500Y3261D01*
+X-1500Y6786D02*
+G75*
+G03*
+X-1500Y3286I0421J-1750D01*
+G01*
+X-1500Y6786D01*
+G37*
+%LNbottom solder mask component a4a91ddb9f96ce23*%
+D13*
+X0Y-8275D03*
+%LNbottom solder mask component 27f528e205d9f711*%
+D10*
+X-3750Y0597D03*
+X-5750Y0597D03*
+%LNbottom solder mask component eef1e1cbe215c51d*%
+D14*
+X-7492Y4820D03*
+%LNbottom solder mask component 397f7d45dedda475*%
+D10*
+X-0800Y-4483D03*
+X-2800Y-4483D03*
+%LNbottom solder mask component e0d137f8182de863*%
+D15*
+X7492Y4820D03*
+M02*
