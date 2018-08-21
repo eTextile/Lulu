@@ -65,11 +65,21 @@ The NPN transistors **T1** have a specified 0.6V drop between base and emitter w
 This means the voltage across their respective shunt resistors **R2** will always be 0.6V.
 According to Ohm’s law, this means that the current through them will be '0.6 V / 2.7 Ohm', or about 222mA.
 
+###  File Naming conventions / Version Control
+- First number is used to specify Lulu type
+  - 2.0.0 -> Lulu-star
+  - 3.0.0 -> Lulu-daisy
+  - 4.0.0 -> Lulu-MCU
+- Second number is used to specify the PCB shape
+  - 2.0.0 -> Lulu-star/Circle
+  - 2.1.0 -> Lulu-star/Triangle
+- Third number is used to specify the iteration
+
 ### PCB design
 To facilitate forkable design the PCB is made with Upverter an online PCB router software.
 We are looking for a shape that allow zero waste in the panelization process.
-- [Circle shape is 2.0.*](https://upverter.com/DataPaulette/5193c940bede1099/Lulu-star_20/ "Made with Upvetrter, online PCB router software") : the circle shape correspond to the more common eTextile PCB but doesn't fit the zero waste.
-- [Triangle shape is 2.1.*](https://upverter.com/DataPaulette/08fe1452dfd87b08/Lulu-star_21/ "Made with Upvetrter, online PCB router software") : triangle is a shape that fit the three wire connectors and the zero waste panelization process.
+- [2.0.*](https://upverter.com/DataPaulette/5193c940bede1099/Lulu-star_201/ "Made with Upvetrter, online PCB router software") : the circle shape correspond to the more common eTextile PCB but doesn't fit the zero waste.
+- [2.1.*](https://upverter.com/DataPaulette/08fe1452dfd87b08/Lulu-star_211/ "Made with Upvetrter, online PCB router software") : triangle is a shape that fit the three wire connectors and the zero waste panelization process.
 
 - Base Material : FR-4 TG13
 - No. of Layers : 2 layers
