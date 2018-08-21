@@ -68,8 +68,8 @@ According to Ohm’s law, this means that the current through them will be '0.6 
 ### PCB design
 To facilitate forkable design the PCB is made with Upverter an online PCB router software.
 We are looking for a shape that allow zero waste in the panelization process.
-- [Circle shape](https://upverter.com/DataPaulette/5193c940bede1099/Lulu-star_20/ "Made with Upvetrter, online PCB router software") : the circle shape correspond to the more common eTextile PCB but doesn't fit the zero waste.
-- [Triangle shape](https://upverter.com/DataPaulette/08fe1452dfd87b08/Lulu-star_21/ "Made with Upvetrter, online PCB router software") : triangle is a shape that fit the three wire connectors and the zero waste panelization process.
+- [Circle shape is 2.0.*](https://upverter.com/DataPaulette/5193c940bede1099/Lulu-star_20/ "Made with Upvetrter, online PCB router software") : the circle shape correspond to the more common eTextile PCB but doesn't fit the zero waste.
+- [Triangle shape is 2.1.*](https://upverter.com/DataPaulette/08fe1452dfd87b08/Lulu-star_21/ "Made with Upvetrter, online PCB router software") : triangle is a shape that fit the three wire connectors and the zero waste panelization process.
 
 - Base Material : FR-4 TG13
 - No. of Layers : 2 layers
