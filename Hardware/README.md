@@ -64,10 +64,10 @@ No library required.
 | Part                         | REF                       | Package                | Price per unit | Weblink                |
 | ---------------------------- | ------------------------- | -----------------------|--------------- |------------------------|
 | Power LED / OSRAM 200mA      | LY CN5M                   |                        | 0.65 $         | [https://fr.aliexpress.com/](https://fr.aliexpress.com/item/OSRAM-OSLON-SX-High-Power-LED-0-5W-3030-Yellow-LY-CN5M/32865040281.html?spm=a2g0s.9042311.0.0.27426c371XVtDl) |
-| Q1 - large N-channel MOSFET  | IRLML2060TRPBF            | SOT-23                 | 0,134 €        |                        |
-| T1 - small NPN transistor    | MMBT2222A                 | SOT-23                 | 0,0412 €       |                        |
-| R1                           | Approximately 47k-ohm     | 0603                   | 0,0147 €       |                        |
-| R2 - current set resistor    | 2.7 ohms 1/4 watt         | 1206                   | 0,0246 €       |                        |
+| Q1 - large N-channel MOSFET  | IRLML2060TRPBF            | SOT-23                 | 0,126 €        | [https://fr.farnell.com/IRLML2060TRPBF](https://fr.farnell.com/infineon/irlml2060trpbf/mosfet-n-ch-60v-1-2a-sot-23/dp/1791578) |
+| T1 - small NPN transistor    | MMBT2222A                 | SOT-23                 | 0,0412 €       | [https://fr.farnell.com/MMBT2222A](https://fr.farnell.com/on-semiconductor/mmbt2222att1g/transistor-bipol-npn-40v-sc-75/dp/2464039) |
+| R1                           | Approximately 47k-ohm     | 0603                   | 0,0147 €       | [https://fr.farnell.com/R-47k-ohm ](https://fr.farnell.com/vishay/crcw060347k0fkea/res-couche-epaisse-47k-1-0-1w/dp/1469811) |
+| R2 - current set resistor    | 2.7 ohms 1/4 watt         | 1206                   | 0,0246 €       | [https://fr.farnell.com/R-2.7-ohm](https://fr.farnell.com/walsin/wr12w2r70ftl/resist-couche-epaisse-2-7r-1-0/dp/2668305 |
 
 **R2** is used to set the current limit and this doesn't depends on the voltage supply VDD.
 **Q1** is used as a variable resistor. **Q1** starts out turned on by **R1**.
@@ -95,7 +95,7 @@ According to Ohm’s law, this means that the current through them will be '0.6 
   - Plated Half-holes / Castellated Holes : YES
   - Impedance Control : NO
 
-#### Part list
+#### Extra Part list
 | Part                       | REF                      | Price per unit   | Weblink        |
 | -------------------------- | ------------------------ | -----------------|--------------- |
 | Brass tube                 | 2 mm Hole 5-10 mm Length |                  |                |
