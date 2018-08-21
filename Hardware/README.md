@@ -49,7 +49,7 @@ No library required.
 #### Circuit part list
 | Part                         | REF                       | Package                | Price per unit | Weblink                |
 | ---------------------------- | ------------------------- | -----------------------|--------------- |------------------------|
-| Power LED                    | OSRAM 200mA               |                        | 0.65 $         | [https://fr.aliexpress.com/](https://fr.aliexpress.com/item/OSRAM-OSLON-SX-High-Power-LED-0-5W-3030-Yellow-LY-CN5M/32865040281.html?spm=a2g0s.9042311.0.0.27426c371XVtDl) |
+| Power LED / OSRAM 200mA      | LY CN5M                   |                        | 0.65 $         | [https://fr.aliexpress.com/](https://fr.aliexpress.com/item/OSRAM-OSLON-SX-High-Power-LED-0-5W-3030-Yellow-LY-CN5M/32865040281.html?spm=a2g0s.9042311.0.0.27426c371XVtDl) |
 | Q1 - large N-channel MOSFET  | IRLML2060TRPBF            | SOT-23                 | 0,134 €        |                        |
 | T1 - small NPN transistor    | MMBT2222A                 | SOT-23                 | 0,0412 €       |                        |
 | R1                           | Approximately 47k-ohm     | 0603                   | 0,0147 €       |                        |
@@ -58,7 +58,7 @@ No library required.
 - **R2** is used to set the current limit and this doesn't depends on the voltage supply VDD.
 - **Q1** is used as a variable resistor. **Q1** starts out turned on by **R1**.
 - **T1** is used as an over-current sensing switch, and **R2** is the "sense resistor" that triggers **T1** when too much current is flowing.
-- The main current flow is through the LED's, through **Q1**, and through **R2**. When too much current flows through **R2**, **T1** will start to turn on, which starts turning off **Q1**. Turning off **Q1** reduces the current through the LED's and R2.
+- The main current flow is through the LED's, through **Q1**, and through **R2**. When too much current flows through **R2**, **T1** will start to turn on, which starts turning off **Q1**. Turning off **Q1** reduces the current through the LED's and **R2**.
 - So we've created a **feedback loop**, which continuously tracks the current and keeps it exactly at the set point at all times.
 
 The NPN transistors **T1** have a specified 0.6V drop between base and emitter when on.
