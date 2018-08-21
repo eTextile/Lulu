@@ -11,8 +11,8 @@
   - 2.1.0 -> Lulu-star/Triangle (this shape fit the three wire connectors and zero waste panelization process).
   - 2.2.0 -> Lulu-star/Blob...
 - Third number is used to specify the iteration
-  - 2.1.1 -> [Made with Upverter an online PCB router software.](https://upverter.com/DataPaulette/5193c940bede1099/Lulu-star_211/ "Made with Upvetrter, online PCB router software") 
-  - 2.1.2 -> [Made with KiCad 5.0.0](./kicad_Lulu_star/Lulu_star_212/Lulu_star_212.pro "Made with KiCad 5.0.0") 
+  - 2.1.1 -> [Made with Upverter an online PCB router software.](https://upverter.com/DataPaulette/08fe1452dfd87b08/Lulu-star_211/ "Made with Upvetrter, online PCB router software") 
+  - 2.1.2 -> [Made with KiCad 5.0.0](./kicad_Lulu_star/Lulu_star_212/ "Made with KiCad 5.0.0") 
 
 ## Hardware design
 This branch is using a 200mA power LED with current current circuitry.
