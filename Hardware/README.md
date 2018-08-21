@@ -1,8 +1,22 @@
 # Lulu-star / Hardware
 **Programming light into textile**
 
+###  File Naming conventions / Version Control
+- First number is used to specify Lulu type
+  - 2.0.0 -> Lulu-star
+  - 3.0.0 -> Lulu-daisy
+  - 4.0.0 -> Lulu-MCU
+- Second number is used to specify the PCB shape
+  - 2.0.0 -> Lulu-star/Circle (this is the most common eTextile PCB shape but doesn't fit the zero waste).
+  - 2.1.0 -> Lulu-star/Triangle (this shape fit the three wire connectors and zero waste panelization process).
+  - 2.2.0 -> Lulu-star/Blob...
+- Third number is used to specify the iteration
+  - 2.1.1 -> [Made with Upverter an online PCB router software.](https://upverter.com/DataPaulette/5193c940bede1099/Lulu-star_211/ "Made with Upvetrter, online PCB router software") 
+  - 2.1.2 -> [Made with KiCad 5.0.0](./kicad_Lulu_star/Lulu_star_212/Lulu_star_212.pro "Made with KiCad 5.0.0") 
+
 ## Hardware design
-This branch is using a 200mA power LED.
+This branch is using a 200mA power LED with current current circuitry.
+We are looking for a shape that allow zero waste in the panelization process.
 
 Lulu-star have three connections.
 - [+] 3.3 to 60 Voltes
@@ -55,44 +69,31 @@ No library required.
 | R1                           | Approximately 47k-ohm     | 0603                   | 0,0147 €       |                        |
 | R2 - current set resistor    | 2.7 ohms 1/4 watt         | 1206                   | 0,0246 €       |                        |
 
-- **R2** is used to set the current limit and this doesn't depends on the voltage supply VDD.
-- **Q1** is used as a variable resistor. **Q1** starts out turned on by **R1**.
-- **T1** is used as an over-current sensing switch, and **R2** is the "sense resistor" that triggers **T1** when too much current is flowing.
-- The main current flow is through the LED's, through **Q1**, and through **R2**. When too much current flows through **R2**, **T1** will start to turn on, which starts turning off **Q1**. Turning off **Q1** reduces the current through the LED's and **R2**.
-- So we've created a **feedback loop**, which continuously tracks the current and keeps it exactly at the set point at all times.
-
+**R2** is used to set the current limit and this doesn't depends on the voltage supply VDD.
+**Q1** is used as a variable resistor. **Q1** starts out turned on by **R1**.
+**T1** is used as an over-current sensing switch, and **R2** is the "sense resistor" that triggers **T1** when too much current is flowing.
+The main current flow is through the LED's, through **Q1**, and through **R2**.
+When too much current flows through **R2**, **T1** will start to turn on, which starts turning off **Q1**. Turning off **Q1** reduces the current through the LED's and **R2**.
+So we've created a **feedback loop**, which continuously tracks the current and keeps it exactly at the set point at all times.
 The NPN transistors **T1** have a specified 0.6V drop between base and emitter when on.
 This means the voltage across their respective shunt resistors **R2** will always be 0.6V.
 According to Ohm’s law, this means that the current through them will be '0.6 V / 2.7 Ohm', or about 222mA.
 
-###  File Naming conventions / Version Control
-- First number is used to specify Lulu type
-  - 2.0.0 -> Lulu-star
-  - 3.0.0 -> Lulu-daisy
-  - 4.0.0 -> Lulu-MCU
-- Second number is used to specify the PCB shape
-  - 2.0.0 -> Lulu-star/Circle
-  - 2.1.0 -> Lulu-star/Triangle
-- Third number is used to specify the iteration
+### PCB manufacturing characteristics
 
-### PCB design
-To facilitate forkable design the PCB is made with Upverter an online PCB router software.
-We are looking for a shape that allow zero waste in the panelization process.
-- [2.0.*](https://upverter.com/DataPaulette/5193c940bede1099/Lulu-star_201/ "Made with Upvetrter, online PCB router software") : the circle shape correspond to the more common eTextile PCB but doesn't fit the zero waste.
-- [2.1.*](https://upverter.com/DataPaulette/08fe1452dfd87b08/Lulu-star_211/ "Made with Upvetrter, online PCB router software") : triangle is a shape that fit the three wire connectors and the zero waste panelization process.
-
-- Base Material : FR-4 TG13
-- No. of Layers : 2 layers
-- PCB Thickness : 1.6
-- PCB Color : Black
-- Surface Finish : HASL
-- Minimum Solder Mask Dam : 0.4 mm
-- Copper Weight : 1oz
-- Minimum Drill Hole Size : 0.3 mm
-- Trace Width / Spacing : 5/5 mil
-- Blind or Buried Vias : NO
-- Plated Half-holes / Castellated Holes : YES
-- Impedance Control : NO
+- **V2.0.0** and **V2.1.0** have been produced in small batch with this characteristics (20 pce)
+  - Base Material : FR-4 TG13
+  - No. of Layers : 2 layers
+  - PCB Thickness : 1.6
+  - PCB Color : Black
+  - Surface Finish : HASL
+  - Minimum Solder Mask Dam : 0.4 mm
+  - Copper Weight : 1oz
+  - Minimum Drill Hole Size : 0.3 mm
+  - Trace Width / Spacing : 5/5 mil
+  - Blind or Buried Vias : NO
+  - Plated Half-holes / Castellated Holes : YES
+  - Impedance Control : NO
 
 #### Part list
 | Part                       | REF                      | Price per unit   | Weblink        |
