@@ -16,7 +16,7 @@
 
 ## Hardware design
 This branch is using a 200mA power LED with current current circuitry.
-We are looking for a shape that allow zero waste in the panelization process.
+We are looking for a shape that allow zero waste in the PCB panelization process.
 
 Lulu-star have three connections.
 - [+] 3.3 to 60 Voltes
@@ -63,7 +63,7 @@ No library required.
 #### Circuit part list
 | Part                         | REF                       | Package                | Price per unit | Weblink                |
 | ---------------------------- | ------------------------- | -----------------------|--------------- |------------------------|
-| Power LED / OSRAM 200mA      | LY CN5M                   |                        | 0.65 $         | [https://fr.aliexpress.com/](https://fr.aliexpress.com/item/OSRAM-OSLON-SX-High-Power-LED-0-5W-3030-Yellow-LY-CN5M/32865040281.html?spm=a2g0s.9042311.0.0.27426c371XVtDl) |
+| Power LED / OSRAM 200mA      | LY CN5M                   |                        | 0.65 $         | [https://fr.aliexpress.com/LY-CN5M](https://fr.aliexpress.com/item/OSRAM-OSLON-SX-High-Power-LED-0-5W-3030-Yellow-LY-CN5M/32865040281.html?spm=a2g0s.9042311.0.0.27426c371XVtDl) |
 | Q1 - large N-channel MOSFET  | IRLML2060TRPBF            | SOT-23                 | 0,126 €        | [https://fr.farnell.com/IRLML2060TRPBF](https://fr.farnell.com/infineon/irlml2060trpbf/mosfet-n-ch-60v-1-2a-sot-23/dp/1791578) |
 | T1 - small NPN transistor    | MMBT2222A                 | SOT-23                 | 0,0412 €       | [https://fr.farnell.com/MMBT2222A](https://fr.farnell.com/on-semiconductor/mmbt2222att1g/transistor-bipol-npn-40v-sc-75/dp/2464039) |
 | R1                           | Approximately 47k-ohm     | 0603                   | 0,0147 €       | [https://fr.farnell.com/R-47k-ohm ](https://fr.farnell.com/vishay/crcw060347k0fkea/res-couche-epaisse-47k-1-0-1w/dp/1469811) |
