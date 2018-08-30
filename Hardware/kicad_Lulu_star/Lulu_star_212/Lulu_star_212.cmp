@@ -1,0 +1,51 @@
+Cmp-Mod V01 Created by PcbNew   date = Wed 29 Aug 2018 02:30:45 PM CEST
+
+BeginCmp
+TimeStamp = 5B7F786B
+Path = /5B7C84D4
+Reference = LED1;
+ValeurCmp = LED_PAD;
+IdModule  = LED_SMD:LED_Cree-XP;
+EndCmp
+
+BeginCmp
+TimeStamp = 5B7E7F86
+Path = /5B7D3F18
+Reference = J1;
+ValeurCmp = Conn_01x03_Female;
+IdModule  = Lulu_footprints:Lulu_LED;
+EndCmp
+
+BeginCmp
+TimeStamp = 5B7F784E
+Path = /5B7C8DF6
+Reference = T1;
+ValeurCmp = Q_NPN_BEC;
+IdModule  = Package_TO_SOT_SMD:SOT-23;
+EndCmp
+
+BeginCmp
+TimeStamp = 5B7F7839
+Path = /5B7C8ADD
+Reference = Q1;
+ValeurCmp = Q_NMOS_GSD;
+IdModule  = Package_TO_SOT_SMD:SOT-23;
+EndCmp
+
+BeginCmp
+TimeStamp = 5B7F7824
+Path = /5B7CC755
+Reference = R1;
+ValeurCmp = 47 K;
+IdModule  = Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5B7F7813
+Path = /5B7C8445
+Reference = R2;
+ValeurCmp = 2.7 Ohm;
+IdModule  = Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder;
+EndCmp
+
+EndListe
