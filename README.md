@@ -22,7 +22,7 @@ Instead of struggling to solve the light source and connection problem, the desi
 
 ### Lulu branches
 - **Lulu-star** (master)
-  - This branch provide a tiny PCB with a 350mA LED, PWM driver and an optic fiber connector.
+  - This branch provide a tiny PCB with a 200mA LED, PWM driver and optic fiber connector.
 - **Lulu-daisy**
   - This branch provide a tiny PCB with an addressable LED (WS2812-mini, Dotstar, etc) and an optic fiber connector.
 - **Lulu-MCU**
