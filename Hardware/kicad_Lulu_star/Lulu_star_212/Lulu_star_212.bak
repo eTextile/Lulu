@@ -53,8 +53,8 @@ U 1 1 5B7C84D4
 P 5800 3550
 F 0 "LED1" V 5846 3692 50  0000 L CNN
 F 1 "LED_PAD" V 5755 3692 50  0000 L CNN
-F 2 "Lulu_footprints:LED_Lulu_side" H 5800 3550 50  0001 C CNN
-F 3 "" H 5800 3550 50  0001 C CNN
+F 2 "Lulu_footprints:Lulu_side_LED" H 5800 3550 50  0001 C CNN
+F 3 "https://github.com/eTextile/Lulu/blob/master/Hardware/DOCs/OSRAM_OSLON.pdf" H 5800 3550 50  0001 C CNN
 	1    5800 3550
 	0    -1   -1   0   
 $EndComp
@@ -149,7 +149,7 @@ U 1 1 5B7D3F18
 P 7250 4200
 F 0 "J1" H 7277 4226 50  0000 L CNN
 F 1 "Conn_01x03_Female" H 7277 4135 50  0000 L CNN
-F 2 "Lulu_footprints:Lulu_LED" H 7250 4200 50  0001 C CNN
+F 2 "Lulu_footprints:Lulu_plug_3" H 7250 4200 50  0001 C CNN
 F 3 "~" H 7250 4200 50  0001 C CNN
 	1    7250 4200
 	1    0    0    -1  

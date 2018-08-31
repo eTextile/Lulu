@@ -53,7 +53,7 @@ U 1 1 5B7C84D4
 P 5800 3550
 F 0 "LED1" V 5846 3692 50  0000 L CNN
 F 1 "LED_PAD" V 5755 3692 50  0000 L CNN
-F 2 "Lulu_footprints:LED_Lulu_side" H 5800 3550 50  0001 C CNN
+F 2 "Lulu_footprints:Lulu_side_LED" H 5800 3550 50  0001 C CNN
 F 3 "https://github.com/eTextile/Lulu/blob/master/Hardware/DOCs/OSRAM_OSLON.pdf" H 5800 3550 50  0001 C CNN
 	1    5800 3550
 	0    -1   -1   0   
