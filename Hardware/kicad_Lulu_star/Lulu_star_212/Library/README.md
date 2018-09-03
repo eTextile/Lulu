@@ -1,9 +1,9 @@
-# KiCAD 3D Parts
+# KiCad 3D Parts
 
-## KiCAD 3D parts using OpenSCAD and Wings3D
+## KiCad 3D parts using OpenScad and Wings3D
 http://happyrobotlabs.com/posts/tutorials/tutorial-3d-kicad-parts-using-openscad-and-wings3d/
 
-### This tutorial is using meshconv
+### This tutorial is using
 - http://www.openscad.org/
 - http://www.patrickmin.com/meshconv/
 - http://www.wings3d.com/
@@ -11,9 +11,9 @@ http://happyrobotlabs.com/posts/tutorials/tutorial-3d-kicad-parts-using-openscad
 ### Step by step
 - Make & export .stl from OpenScad
 - Clean the .stl wth meshconv
-  - $ meshconv -c stl INPUTFILE.stl -o OUTPUTFILE
+  - $ meshconv -c stl INPUT_FILE.stl -o OUTPUT_FILE
 - Open the cleaned .stl with wings3d
-- Export in VRML 2.0 (.wrl)
+- Export it in VRML 2.0 (.wrl)
 - Link the .wrl into KiCad part
 
 ## Workaround
