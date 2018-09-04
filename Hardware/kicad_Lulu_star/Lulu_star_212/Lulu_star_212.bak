@@ -8,7 +8,7 @@ Sheet 1 1
 Title "Lulu_star"
 Date "2018-08-21"
 Rev "2.1.2"
-Comp "lulu.eTextile.org"
+Comp "https://lulu.etextile.org/"
 Comment1 ""
 Comment2 ""
 Comment3 ""
