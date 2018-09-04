@@ -88,12 +88,14 @@ According to Ohm’s law, this means that the current through them will be '0.6 
   - PCB Color : Black
   - Surface Finish : HASL
   - Minimum Solder Mask Dam : 0.4 mm
-  - Copper Weight : 1oz
+  - Copper Weight : 1oz (35 µm)
+    - For 300 mA we nead 0.15mm cpoer traces (https://www.4pcb.com/trace-width-calculator.html)
   - Minimum Drill Hole Size : 0.3 mm
   - Trace Width / Spacing : 5/5 mil
   - Blind or Buried Vias : NO
   - Plated Half-holes / Castellated Holes : YES
   - Impedance Control : NO
+
 
 #### Extra Part list
 | Part                       | REF                      | Price per unit   | Weblink        |
