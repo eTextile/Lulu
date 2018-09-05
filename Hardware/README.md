@@ -1,8 +1,8 @@
 # Lulu-star / Hardware
 **Programming light into textile**
 
-![Lulu_212_KiCad-3D_recto](https://farm2.staticflickr.com/1866/42677197680_7de2dc2bb7_m_d.jpg)
-![Lulu_212_KiCad-3D_verso](https://farm2.staticflickr.com/1842/42677197530_d0e99c28d2_m_d.jpg)
+![Lulu_212_KiCad-3D_recto](https://farm2.staticflickr.com/1866/42677197680_7de2dc2bb7_z_d.jpg)
+![Lulu_212_KiCad-3D_verso](https://farm2.staticflickr.com/1842/42677197530_d0e99c28d2_z_d.jpg)
 
 ###  File Naming conventions / Version Control
 - First number is used to specify Lulu type
@@ -92,7 +92,7 @@ According to Ohm’s law, this means that the current through them will be '0.6 
   - Surface Finish : HASL
   - Minimum Solder Mask Dam : 0.4 mm
   - Copper Weight : 1oz (35 µm)
-    - For 300 mA we nead 0.15mm cpoer traces (https://www.4pcb.com/trace-width-calculator.html)
+    - For 300 mA we nead 0.15mm copper traces (https://www.4pcb.com/trace-width-calculator.html)
   - Minimum Drill Hole Size : 0.3 mm
   - Trace Width / Spacing : 5/5 mil
   - Blind or Buried Vias : NO
