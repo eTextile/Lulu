@@ -80,17 +80,6 @@ F 3 "https://github.com/eTextile/Lulu/blob/master/Hardware/DOCs/MMBT2222A.pdf" H
 	1    5250 4400
 	-1   0    0    -1  
 $EndComp
-$Comp
-L Device:R R1
-U 1 1 5B7CC755
-P 4700 4050
-F 0 "R1" V 4493 4050 50  0000 C CNN
-F 1 "47 K" V 4584 4050 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 4630 4050 50  0001 C CNN
-F 3 "~" H 4700 4050 50  0001 C CNN
-	1    4700 4050
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	4850 4050 5150 4050
 Wire Wire Line
@@ -119,7 +108,7 @@ Connection ~ 5150 4900
 Wire Wire Line
 	5150 4900 5150 5000
 Wire Wire Line
-	4550 4050 4050 4050
+	4550 4050 4350 4050
 Text Label 4100 4050 0    50   ~ 0
 PWM
 Wire Wire Line
@@ -188,4 +177,44 @@ F 3 "" H 6750 3900 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	6750 3900 6750 4100
+$Comp
+L Device:R R1
+U 1 1 5B7CC755
+P 4700 4050
+F 0 "R1" V 4493 4050 50  0000 C CNN
+F 1 "47 K" V 4584 4050 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 4630 4050 50  0001 C CNN
+F 3 "~" H 4700 4050 50  0001 C CNN
+	1    4700 4050
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 5B90D0C4
+P 4350 4400
+F 0 "R3" V 4143 4400 50  0000 C CNN
+F 1 "10 K" V 4234 4400 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 4280 4400 50  0001 C CNN
+F 3 "~" H 4350 4400 50  0001 C CNN
+	1    4350 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4350 4250 4350 4050
+Connection ~ 4350 4050
+Wire Wire Line
+	4350 4050 4050 4050
+$Comp
+L power:GND #PWR0106
+U 1 1 5B90D60D
+P 4350 5000
+F 0 "#PWR0106" H 4350 4750 50  0001 C CNN
+F 1 "GND" H 4355 4827 50  0000 C CNN
+F 2 "" H 4350 5000 50  0001 C CNN
+F 3 "" H 4350 5000 50  0001 C CNN
+	1    4350 5000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4350 4550 4350 5000
 $EndSCHEMATC
