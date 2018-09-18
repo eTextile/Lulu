@@ -99,7 +99,6 @@ According to Ohm’s law, this means that the current through them will be '0.6 
   - Plated Half-holes / Castellated Holes : YES
   - Impedance Control : NO
 
-
 #### Extra Part list
 | Part                       | REF                      | Price per unit   | Weblink        |
 | -------------------------- | ------------------------ | -----------------|--------------- |
