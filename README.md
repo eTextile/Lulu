@@ -1,4 +1,4 @@
-# Lulu-star
+# Lulu-MCU++
 
 **Programming light into textile**
 
@@ -27,6 +27,8 @@ Instead of struggling to solve the light source and connection problem, the desi
   - This branch provide a tiny PCB with an addressable LED (WS2812-mini, Dotstar, etc) and an optic fiber connector.
 - **Lulu-MCU**
   - This branch provide a tiny PCB with a built in MCU (ATTiny10) that allow one-wire communication bus system.
+- **Lulu-MCU++**
+  - This branch provide a tiny PCB with a built in MCU (ATTiny85) that allow onboard light programming with Arduino software.
 - **Lulu**
   - This branch provide a motherboard (Lucette) that drive up to 16 Lulu that only contain a power LED and an optic fiber connector.
 
@@ -40,53 +42,3 @@ Instead of struggling to solve the light source and connection problem, the desi
  * **Mail**: [lulu@etextile.org](mailto:lulu@etextile.org "eMail us")
  * **IRC**: [Riot](https://vector.im/develop/#/room/#lulu:matrix.org "Join us on the chat to collaborate in the development")
  * **Pictures**: [Flickr](https://www.flickr.com/groups/3908991@N25/ "Share your Lulu pictures project")
-
-```
-*Editable / multipurpose
-                                 Forkable
-             Low|-------------------|//////////////////////////////////////////|High
-
-*Production method
-                            Crafter
-             DIY|--------------|///////////////////////////////////////////////|Industry
-
-*Price
-                                             6€
-             Low|////////////////////////////|---------------------------------|High
-
-*Skils level of users
-                                                 Crafter
-        Beginers|///////////////////////////////////|--------------------------|Expert
-
-*Level of integration
-               PCB                   PCB++
-        Standard|/////////////////////|----------------------------------------|Non standard (e-textile)
-
-*Level of complexity
-                                                                          Lulu + LED-driver
-                                                           Lulu + LED-driver   + MCU
-              Lulu               Lulu + LED-driver         Lulu + MCU          + Battery & charger
-             Low|/////////////////////| ------------------------|--------------|High
-
-*Robusness / Life span (Connectors, testing, evaluating)
-         Fragile|/////////////////////| ------------------------|--------------|Stong
-
-*Project ethics
-                                                         Sparkfun
-              DIY  Crow-fonded  Localy                   Adafruit  Seed      China
-           High|--------|--------|//////////////////////////|--------|---------|low
-
-*Fiber optics
-               20cm    1m     2m
-           Schot|------|///////|-----------------------------------------------|Long
-
-*Tech
-                                                OpenPCB                  Open-cylycium
-          Closed|-------------------------|////////|///////|-------------------|Free & Full Open
-
-*Liscence
-          Closed|--------------------------------------------------------------|Free & Open
-
-*Peripherals
-     Free (Open)|-------------------|-----------------------|------------------|Closed
-```

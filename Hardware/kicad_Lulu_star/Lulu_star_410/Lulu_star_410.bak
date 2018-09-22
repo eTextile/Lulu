@@ -1,5 +1,5 @@
 EESchema Schematic File Version 4
-LIBS:Lulu_star_212-cache
+LIBS:Lulu_star_410-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -217,4 +217,15 @@ F 3 "" H 4350 5000 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	4350 4550 4350 5000
+$Comp
+L MCU_Microchip_ATtiny:ATtiny85-20MU U?
+U 1 1 5BA516BD
+P 2650 4150
+F 0 "U?" H 2110 4196 50  0000 R CNN
+F 1 "ATtiny85-20MU" H 2110 4105 50  0000 R CNN
+F 2 "Package_DFN_QFN:QFN-20-1EP_4x4mm_P0.5mm_EP2.25x2.25mm" H 2650 4150 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/atmel-2586-avr-8-bit-microcontroller-attiny25-attiny45-attiny85_datasheet.pdf" H 2650 4150 50  0001 C CNN
+	1    2650 4150
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

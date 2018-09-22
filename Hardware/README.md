@@ -1,8 +1,8 @@
 # Lulu-star / Hardware
 **Programming light into textile**
 
-![Lulu_212_KiCad-3D_recto](https://farm2.staticflickr.com/1866/42677197680_7de2dc2bb7_z_d.jpg)
-![Lulu_212_KiCad-3D_verso](https://farm2.staticflickr.com/1842/42677197530_d0e99c28d2_z_d.jpg)
+![Lulu_410_KiCad-3D_recto](...)
+![Lulu_410_KiCad-3D_verso](...)
 
 ###  File Naming conventions / Version Control
 - First number is used to specify Lulu type
@@ -21,36 +21,16 @@
 This branch is using a 200mA power LED with current current circuitry.
 We are looking for a shape that allow zero waste in the PCB panelization process.
 
-Lulu-star have three connections.
-- [+] 3.3 to 60 Voltes
-- [PWM] I/O PIN
+Lulu-MCU++ PINs.
+- [+] 3.3 to 5 Voltes
 - [-] GND
 
 ![alt tag](https://raw.githubusercontent.com/eTextile/Lulu/master/docs/pictures/footprint_connection.jpg)
 
-      _______
-     |       |
-     | POWER |-----------------
-     |_______|--------------| |
-        | |                 | |
-      + | | -             + | | -
-     ___|_|____             | |
-    |         |           __| |__
-    |    A    |   PWM    |       |
-    |    R    |--------->| LULU  |
-    |    D    |          |_______|
-    |    U    |             | |
-    |    N    |           __| |__
-    |    I    |   PWM    |       |
-    |    O    |--------->| LULU  |
-    |_________|          |_______|
-                            | |
+Lulu-MCU++ is using the Arduino IDE
 
-Easy to programmed, Lulu-star is using the Arduino IDE standard functions.
-No library required.
-
-    digitalWrite(LED_PIN, state);
-    analogWrite(LED_PIN, val);
+    digitalWrite(LED_BUILTIN, state); // Blink the Lulu
+    analogWrite(LED_BUILTIN, val);    // Fade the Lulu
 
 ### LED driver
 ##### Constant current source
@@ -87,7 +67,7 @@ According to Ohm’s law, this means that the current through them will be '0.6 
 - **V2.0.0** and **V2.1.0** have been produced in small batch with this characteristics (20 pce)
   - Base Material : FR-4 TG13
   - No. of Layers : 2 layers
-  - PCB Thickness : 1.6
+  - PCB Thickness : 1 mm
   - PCB Color : Black
   - Surface Finish : HASL
   - Minimum Solder Mask Dam : 0.4 mm
