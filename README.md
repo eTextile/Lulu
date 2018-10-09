@@ -1,5 +1,7 @@
 # Lulu-star
 
+here is the change I made
+
 **Programming light into textile**
 
 Lulu is a hardware solution that interfaces between an LED light source, an optic fiber strand or bundle and soft circuit connections.
