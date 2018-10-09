@@ -28,7 +28,7 @@ Instead of struggling to solve the light source and connection problem, the desi
 - **Lulu-MCU**
   - This branch provide a tiny PCB with a built in MCU (ATTiny10) that allow one-wire communication bus system.
 - **Lulu**
-  - This branch provide a motherboard (Lucette) that drive up to 16 Lulu that only contain a power LED and an optic fiber connector.
+  - This branch provides a motherboard (Lucette) that drives up to 16 Lulus that each only contain a power LED and an optic fiber connector.
 
 ### Development tools & DOCs
  * **Web page**: [http://lulu.eTextile.org](http://lulu.eTextile.org "The project Web page")
