@@ -18,11 +18,19 @@
   - 2.1.2 -> [Made with KiCad 5.0.0](./kicad_Lulu_star/Lulu_star_212/ "Made with KiCad 5.0.0") 
 
 ## Hardware design
-This branch is using a 200mA power LED with current current circuitry.
-We are looking for a shape that allow zero waste in the PCB panelization process.
+This branch of the Lulu project is using a 200mA power LED with current current circuitry.
+As the project is focussing on embedded electronics we chosed an high power OSRAM OSLON LED that can have a good autonomy with a small Lypo battry (1000 mA).
+As this kind of LED is seeking 200 mA (5 hour of autonomy with a 1000 mA battery).
+The LED is also providing a narrow angle (60°) to focus the light in the optic fiber tranche.
+	See datasheet: https://github.com/eTextile/Lulu/blob/master/Hardware/DOCs/LY_CN5M.pdf
+The brass tube connector have been selected to fit the outer diameter of the LED package.
+The PCB triangle shape have been selected to fit the zero waste in the production process.
+All the components are SMD package to reduce the size and price of th PCB.
+We have been experiencing a new way to hand solder the LED on the edge of the PCB but it is still not so handy to do it manually.
+Custom tooling will be designed and tested to help in that soldering process.
 
 Lulu-star have three connections.
-- [+] 3.3 to 60 Voltes
+- [+] 3.3 to 5 Voltes
 - [PWM] I/O PIN
 - [-] GND
 
@@ -46,14 +54,19 @@ Lulu-star have three connections.
     |_________|          |_______|
                             | |
 
-Easy to programmed, Lulu-star is using the Arduino IDE standard functions.
-No library required.
+### Lulu Powering
+The Lulu board must be powered with a voltage betwin 3.7V to 5V.
+DO NOT USE 3V single coin battery - voltage is too low and it will not work for long.
+Prefer the use of rechargeable Lipo battery with small Lipo harger.
+
+### Lulu Arduino programming
+Easy to programmed, Lulu-star is using the Arduino IDE standard functions - no library required.
 
     digitalWrite(LED_PIN, state);
     analogWrite(LED_PIN, val);
 
-### LED driver
-##### Constant current source
+### Lulu LED driver built-in
+##### Constant current source circuitry
 
 **References**
 - https://learn.adafruit.com/pixie-3-watt-smart-chainable-led-pixels/design
