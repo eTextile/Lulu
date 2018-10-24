@@ -76,7 +76,7 @@ Instead of struggling to solve the light source and connection problem, the desi
               DIY  Crow-fonded  Localy                   Adafruit  Seed      China
            High|--------|--------|//////////////////////////|--------|---------|low
 
-*Fiber optics
+*Optic Fibers
                20cm    1m     2m
            Schot|------|///////|-----------------------------------------------|Long
 
@@ -89,4 +89,5 @@ Instead of struggling to solve the light source and connection problem, the desi
 
 *Peripherals
      Free (Open)|-------------------|-----------------------|------------------|Closed
+
 ```
