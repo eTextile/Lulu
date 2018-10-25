@@ -4,19 +4,6 @@
 ![Lulu_212_KiCad-3D_recto](https://farm2.staticflickr.com/1866/42677197680_7de2dc2bb7_z_d.jpg)
 ![Lulu_212_KiCad-3D_verso](https://farm2.staticflickr.com/1842/42677197530_d0e99c28d2_z_d.jpg)
 
-###  File Naming conventions / Version Control
-- First number is used to specify Lulu type
-  - 2.0.0 -> Lulu-star
-  - 3.0.0 -> Lulu-daisy
-  - 4.0.0 -> Lulu-MCU
-- Second number is used to specify the PCB shape
-  - 2.0.0 -> Lulu-star/Circle (this is the most common eTextile PCB shape but doesn't fit the zero waste).
-  - 2.1.0 -> Lulu-star/Triangle (this shape fit the three wire connectors and zero waste panelization process).
-  - 2.2.0 -> Lulu-star/Blob...
-- Third number is used to specify the iteration
-  - 2.1.1 -> [Made with Upverter an online PCB router software.](https://upverter.com/DataPaulette/08fe1452dfd87b08/Lulu-star_211/ "Made with Upvetrter, online PCB router software") 
-  - 2.1.2 -> [Made with KiCad 5.0.0](./kicad_Lulu_star/Lulu_star_212/ "Made with KiCad 5.0.0") 
-
 ## Hardware design
 This branch of the Lulu project is using a 200mA power LED with current current circuitry.
 As the project is focussing on embedded electronics we chosed an high power OSRAM OSLON LED that can have a good autonomy with a small Lypo battry (1000 mA).
@@ -28,6 +15,17 @@ The PCB triangle shape have been selected to fit the zero waste in the productio
 All the components are SMD package to reduce the size and price of th PCB.
 We have been experiencing a new way to hand solder the LED on the edge of the PCB but it is still not so handy to do it manually.
 Custom tooling will be designed and tested to help in that soldering process.
+
+## Lulu 2.1.2
+	Initial release
+
+## Lulu 2.1.3
+	Clearance of top and bottom ground plane have been Increased to avoid shortcuts due to the board edge cut to close.
+	Resistor R2 have been flipped and the brass tube soldering pad moved.
+	Brass tube soldering pad have been updated to be connected to the ground plane.
+
+TODO
+Improving connectivity master slave.
 
 Lulu-star have three connections.
 - [+] 3.3 to 5 Voltes
