@@ -30,7 +30,7 @@ Instead of struggling to solve the light source and connection problem, the desi
 - **Lulu**
   - This branch provide a motherboard (Lucette) that drive up to 16 Lulu that only contain a power LED and an optic fiber connector.
 
-###  File Naming conventions / Version Control
+###  Branche naming conventions / Version Control
 - First number is used to specify Lulu type
   - 2.0.0 -> Lulu-star
   - 3.0.0 -> Lulu-daisy
