@@ -30,6 +30,19 @@ Instead of struggling to solve the light source and connection problem, the desi
 - **Lulu**
   - This branch provide a motherboard (Lucette) that drive up to 16 Lulu that only contain a power LED and an optic fiber connector.
 
+###  File Naming conventions / Version Control
+- First number is used to specify Lulu type
+  - 2.0.0 -> Lulu-star
+  - 3.0.0 -> Lulu-daisy
+  - 4.0.0 -> Lulu-MCU
+- Second number is used to specify the PCB shape
+  - 2.0.0 -> Lulu-star/Circle (this is the most common eTextile PCB shape but doesn't fit the zero waste).
+  - 2.1.0 -> Lulu-star/Triangle (this shape fit the three wire connectors and zero waste panelization process).
+  - 2.2.0 -> Lulu-star/Blob...
+- Third number is used to specify the iteration
+  - 2.1.1 -> [Made with Upverter an online PCB router software.](https://upverter.com/DataPaulette/08fe1452dfd87b08/Lulu-star_211/ "Made with Upvetrter, online PCB router software") 
+  - 2.1.2 -> [Made with KiCad 5.0.0](./kicad_Lulu_star/Lulu_star_212/ "Made with KiCad 5.0.0") 
+
 ### Development tools & DOCs
  * **Web page**: [http://lulu.eTextile.org](http://lulu.eTextile.org "The project Web page")
  * **Kobakant web page**: [http://www.kobakant.at/KOBA/lulu-developments](http://www.kobakant.at/KOBA/lulu-developments "Kobakant project Web page")
