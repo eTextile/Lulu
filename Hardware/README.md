@@ -16,21 +16,21 @@ All the components are SMD package to reduce the size and price of th PCB.
 We have been experiencing a new way to hand solder the LED on the edge of the PCB but it is still not so handy to do it manually.
 Custom tooling will be designed and tested to help in that soldering process.
 
-## Lulu 2.1.2
+## Release notes
+### Lulu 2.1.2
 	Initial release
-
-## Lulu 2.1.3
-	Clearance of top and bottom ground plane have been Increased to avoid shortcuts due to the board edge cut to close.
+### Lulu 2.1.3
+	Clearance of top and bottom ground plane have been increased to avoid shortcuts due to the board edge cut to close.
 	Resistor R2 have been flipped and the brass tube soldering pad moved.
-	Brass tube soldering pad have been updated to be connected to the ground plane.
-
-TODO
-Improving connectivity master slave.
+	Updated brass tube soldering pad to be connected to the ground plane, (thermal inertia during brass tube assembling? will see).
+	Increased size of sewing holes (not eTextile connectors!).
+	Increased board size by ... mm
+	Reorganized eTextile connectors order, this is more convenient for many purposes.
 
 Lulu-star have three connections.
 - [+] 3.3 to 5 Voltes
-- [PWM] I/O PIN
 - [-] GND
+- [PWM] I/O PIN
 
 ![alt tag](https://raw.githubusercontent.com/eTextile/Lulu/master/docs/pictures/footprint_connection.jpg)
 
@@ -53,9 +53,9 @@ Lulu-star have three connections.
                             | |
 
 ### Lulu Powering
-The Lulu board must be powered with a voltage betwin 3.7V to 5V.
+The Lulu board must be powered with a voltage betwin 3.3V to 5V.
 DO NOT USE 3V single coin battery - voltage is too low and it will not work for long.
-Prefer the use of rechargeable Lipo battery with small Lipo harger.
+Prefer the use of rechargeable Lipo battery with small Lipo charger.
 
 ### Lulu Arduino programming
 Easy to programmed, Lulu-star is using the Arduino IDE standard functions - no library required.
@@ -79,7 +79,7 @@ Easy to programmed, Lulu-star is using the Arduino IDE standard functions - no l
 | ---------------------------- | ------------------------- | -----------------------|--------------- |------------------------|
 | Power LED / OSRAM 200mA      | LY CN5M                   |                        | 0.65 $         | [https://fr.aliexpress.com/LY-CN5M](https://fr.aliexpress.com/item/OSRAM-OSLON-SX-High-Power-LED-0-5W-3030-Yellow-LY-CN5M/32865040281.html?spm=a2g0s.9042311.0.0.27426c371XVtDl) |
 | Q1 - large N-channel MOSFET  | IRLML2060TRPBF            | SOT-23                 | 0,126 €        | [https://fr.farnell.com/IRLML2060TRPBF](https://fr.farnell.com/infineon/irlml2060trpbf/mosfet-n-ch-60v-1-2a-sot-23/dp/1791578) |
-| T1 - small NPN transistor    | MMBT2222A                 | SOT-23                 | 0,0412 €       | [https://fr.farnell.com/MMBT2222A](https://fr.farnell.com/on-semiconductor/mmbt2222att1g/transistor-bipol-npn-40v-sc-75/dp/2464039) |
+| T1 - small NPN transistor    | SST2222AHZGT116           | SOT-23                 | 0,0412 €       | [https://fr.farnell.com/MMBT2222A](https://fr.farnell.com/webapp/wcs/stores/servlet/ProductDisplay?catalogId=10001&langId=-2&urlRequestType=Base&partNumber=2764539&storeId=10160) |
 | R1                           | Approximately 47k-ohm     | 0603                   | 0,0147 €       | [https://fr.farnell.com/R-47k-ohm ](https://fr.farnell.com/vishay/crcw060347k0fkea/res-couche-epaisse-47k-1-0-1w/dp/1469811) |
 | R2 - current set resistor    | 2.7 ohms 1/4 watt         | 1206                   | 0,0246 €       | [https://fr.farnell.com/R-2.7-ohm](https://fr.farnell.com/walsin/wr12w2r70ftl/resist-couche-epaisse-2-7r-1-0/dp/2668305) |
 
@@ -94,12 +94,10 @@ This means the voltage across their respective shunt resistors **R2** will alway
 According to Ohm’s law, this means that the current through them will be '0.6 V / 2.7 Ohm', or about 222mA.
 
 ### PCB manufacturing characteristics
-
-- **V2.0.0** and **V2.1.0** have been produced in small batch with this characteristics (20 pce)
   - Base Material : FR-4 TG13
   - No. of Layers : 2 layers
-  - PCB Thickness : 1.6
-  - PCB Color : Black
+  - PCB Thickness : 1 mm
+  - PCB Color : Yelow
   - Surface Finish : HASL
   - Minimum Solder Mask Dam : 0.4 mm
   - Copper Weight : 1oz (35 µm)
