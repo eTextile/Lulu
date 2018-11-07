@@ -16,7 +16,7 @@ All the components are SMD package to reduce the size and price of th PCB.
 We have been experiencing a new way to hand solder the LED on the edge of the PCB but it is still not so handy to do it manually.
 Custom tooling will be designed and tested to help in that soldering process.
 
-## Release notes
+## Release notes
 ### Lulu 2.1.2
 - Initial release
 ### Lulu 2.1.3
