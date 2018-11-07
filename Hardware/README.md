@@ -27,7 +27,7 @@ Custom tooling will be designed and tested to help in that soldering process.
 - Increased board size by ... mm
 - Reorganized eTextile connectors order, this is more convenient for many purposes.
 
-Lulu-star have three connections.
+## Lulu connecting
 - [+] 3.3 to 5 Voltes
 - [-] GND
 - [PWM] I/O PIN
@@ -52,19 +52,19 @@ Lulu-star have three connections.
     |_________|          |_______|
                             | |
 
-### Lulu Powering
+## Lulu Powering
 The Lulu board must be powered with a voltage betwin 3.3V to 5V.
 DO NOT USE 3V single coin battery - voltage is too low and it will not work for long.
 Prefer the use of rechargeable Lipo battery with small Lipo charger.
 
-### Lulu Arduino programming
+## Lulu Arduino programming
 Easy to programmed, Lulu-star is using the Arduino IDE standard functions - no library required.
 
     digitalWrite(LED_PIN, state);
     analogWrite(LED_PIN, val);
 
-### Lulu LED driver built-in
-##### Constant current source circuitry
+## Lulu LED driver built-in
+### Constant current source circuitry
 
 **References**
 - https://learn.adafruit.com/pixie-3-watt-smart-chainable-led-pixels/design
@@ -74,7 +74,7 @@ Easy to programmed, Lulu-star is using the Arduino IDE standard functions - no l
 
 ![alt tag](./DOCs/driver_00.png)
 
-#### Circuit part list
+### Circuit part list
 | Part                         | REF                       | Package                | Price per unit | Weblink                |
 | ---------------------------- | ------------------------- | -----------------------|--------------- |------------------------|
 | Power LED / OSRAM 200mA      | LY CN5M                   |                        | 0.65 $         | [https://fr.aliexpress.com/LY-CN5M](https://fr.aliexpress.com/item/OSRAM-OSLON-SX-High-Power-LED-0-5W-3030-Yellow-LY-CN5M/32865040281.html?spm=a2g0s.9042311.0.0.27426c371XVtDl) |
@@ -93,7 +93,7 @@ The NPN transistors **T1** have a specified 0.6V drop between base and emitter w
 This means the voltage across their respective shunt resistors **R2** will always be 0.6V.
 According to Ohm’s law, this means that the current through them will be '0.6 V / 2.7 Ohm', or about 222mA.
 
-### PCB manufacturing characteristics
+## PCB manufacturing characteristics
   - Base Material : FR-4 TG13
   - No. of Layers : 2 layers
   - PCB Thickness : 1 mm
@@ -108,7 +108,7 @@ According to Ohm’s law, this means that the current through them will be '0.6 
   - Plated Half-holes / Castellated Holes : YES
   - Impedance Control : NO
 
-#### Extra Part list
+### Extra Part list
 | Part                       | REF                      | Price per unit   | Weblink        |
 | -------------------------- | ------------------------ | -----------------|--------------- |
 | Brass tube                 | 2 mm Hole 5-10 mm Length |                  |                |
