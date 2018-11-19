@@ -1,12 +1,12 @@
 G04 #@! TF.GenerationSoftware,KiCad,Pcbnew,5.0.1-33cea8e~68~ubuntu18.04.1*
-G04 #@! TF.CreationDate,2018-11-19T12:32:52+01:00*
+G04 #@! TF.CreationDate,2018-11-19T14:12:30+01:00*
 G04 #@! TF.ProjectId,Lulu_star_213,4C756C755F737461725F3231332E6B69,2.1.2*
 G04 #@! TF.SameCoordinates,Original*
 G04 #@! TF.FileFunction,Paste,Top*
 G04 #@! TF.FilePolarity,Positive*
 %FSLAX46Y46*%
 G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
-G04 Created by KiCad (PCBNEW 5.0.1-33cea8e~68~ubuntu18.04.1) date Mon 19 Nov 2018 12:32:52 PM CET*
+G04 Created by KiCad (PCBNEW 5.0.1-33cea8e~68~ubuntu18.04.1) date Mon 19 Nov 2018 02:12:30 PM CET*
 %MOMM*%
 %LPD*%
 G01*
@@ -333,6 +333,6 @@ X66694080Y-37165280D03*
 G04 #@! TD*
 D13*
 G04 #@! TO.C,P1*
-X75800000Y-39550000D03*
+X75312320Y-39186780D03*
 G04 #@! TD*
 M02*
