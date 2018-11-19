@@ -1,8 +1,8 @@
 # Lulu-star / Hardware
 **Programming light into textile**
 
-![Lulu_212_KiCad-3D_recto](https://farm2.staticflickr.com/1866/42677197680_7de2dc2bb7_z_d.jpg)
-![Lulu_212_KiCad-3D_verso](https://farm2.staticflickr.com/1842/42677197530_d0e99c28d2_z_d.jpg)
+![Lulu_212_KiCad-3D_recto](https://farm5.staticflickr.com/4857/45228663424_4ba29975d1_z_d.jpg)
+![Lulu_212_KiCad-3D_verso](https://farm5.staticflickr.com/4808/31013864907_860edcc788_z_d.jpg)
 
 ## Hardware design
 This branch of the Lulu project is using a 200mA power LED with current current circuitry.
@@ -28,8 +28,8 @@ Custom tooling will be designed and tested to help in that soldering process.
 - Reorganized eTextile connectors order, this is more convenient for many purposes.
 
 ## Lulu connecting
-- [+] 3.3 to 5 Voltes
-- [-] GND
+- [VCC] (+) 3.3 to 5 Voltes
+- [GND] (-) GND
 - [PWM] I/O PIN
 
 ![alt tag](https://raw.githubusercontent.com/eTextile/Lulu/master/docs/pictures/footprint_connection.jpg)
@@ -75,13 +75,14 @@ Easy to programmed, Lulu-star is using the Arduino IDE standard functions - no l
 ![alt tag](./DOCs/driver_00.png)
 
 ### Circuit part list
-| Part                         | REF                       | Package                | Price per unit | Weblink                |
-| ---------------------------- | ------------------------- | -----------------------|--------------- |------------------------|
-| Power LED / OSRAM 200mA      | LY CN5M                   |                        | 0.65 $         | [https://fr.aliexpress.com/LY-CN5M](https://fr.aliexpress.com/item/OSRAM-OSLON-SX-High-Power-LED-0-5W-3030-Yellow-LY-CN5M/32865040281.html?spm=a2g0s.9042311.0.0.27426c371XVtDl) |
-| Q1 - large N-channel MOSFET  | IRLML2060TRPBF            | SOT-23                 | 0,126 €        | [https://fr.farnell.com/IRLML2060TRPBF](https://fr.farnell.com/infineon/irlml2060trpbf/mosfet-n-ch-60v-1-2a-sot-23/dp/1791578) |
-| T1 - small NPN transistor    | SST2222AHZGT116           | SOT-23                 | 0,0412 €       | [https://fr.farnell.com/MMBT2222A](https://fr.farnell.com/webapp/wcs/stores/servlet/ProductDisplay?catalogId=10001&langId=-2&urlRequestType=Base&partNumber=2764539&storeId=10160) |
-| R1                           | Approximately 47k-ohm     | 0603                   | 0,0147 €       | [https://fr.farnell.com/R-47k-ohm ](https://fr.farnell.com/vishay/crcw060347k0fkea/res-couche-epaisse-47k-1-0-1w/dp/1469811) |
-| R2 - current set resistor    | 2.7 ohms 1/4 watt         | 1206                   | 0,0246 €       | [https://fr.farnell.com/R-2.7-ohm](https://fr.farnell.com/walsin/wr12w2r70ftl/resist-couche-epaisse-2-7r-1-0/dp/2668305) |
+| Designator                                      | MPN                       | Package                | Price per unit | Weblink                |
+| ----------------------------------------------- | ------------------------- | -----------------------|--------------- |------------------------|
+| Power LED / OSRAM 200mA                         | LY CN5M                   |                        | 0.65 $         | [LY-CN5M](https://fr.aliexpress.com/item/OSRAM-OSLON-SX-High-Power-LED-0-5W-3030-Yellow-LY-CN5M/32865040281.html?spm=a2g0s.9042311.0.0.27426c371XVtDl) |
+| Q1 - large N-channel MOSFET                     | IRLML2060TRPBF            | SOT-23                 | 0,126 €        | [IRLML2060TRPBF](https://www.digikey.com/product-detail/en/infineon-technologies/IRLML2060TRPBF/IRLML2060TRPBFCT-ND/2271917) |
+| T1 - small NPN transistor                       | MMBT2222A                 | SOT-23                 | 0,0412 €       | [MMBT2222A](https://www.digikey.com/product-detail/en/diodes-incorporated/MMBT2222A-7-F/MMBT2222A-FDICT-ND/815723) |
+| R1 - 47k-ohm resistor                           | RT0603DRD0747KL           | 0603                   | 0,0147 €       | [R-47k-ohm ](https://www.digikey.com/product-detail/en/yageo/RT0603DRD0747KL/311-47KDCT-ND/1035828) |
+| R2 - current set resistor - 2.7 ohms 1/4 watt   |                           | 1206                   | 0,0246 €       | [R-2.7-ohm](https://fr.farnell.com/walsin/wr12w2r70ftl/resist-couche-epaisse-2-7r-1-0/dp/2668305) |
+| R3 - 10k pull-down resistor                     | RT0603DRD0710KL           | 0603                   | 0,     €       | [R-10k-ohm](https://www.digikey.com/product-detail/en/yageo/RT0603DRD0710KL/311-10KDCT-ND/1035680) |
 
 **R2** is used to set the current limit and this doesn't depends on the voltage supply VDD.
 **Q1** is used as a variable resistor. **Q1** starts out turned on by **R1**.
