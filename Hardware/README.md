@@ -22,8 +22,9 @@ Custom tooling will be designed and tested to help in that soldering process.
 ### Lulu 2.1.3
 - Clearance of top and bottom ground plane have been increased to avoid shortcuts due to the board edge cut to close.
 - Resistor R2 have been flipped and the brass tube soldering pad moved.
-- Updated brass tube soldering pad to be connected to the ground plane, (thermal inertia during brass tube assembling? will see).
-- Increased size of sewing holes (not eTextile connectors!).
+- Updated brass tube soldering pad to be connected to the ground plane with thermals.
+- Increased size of sewing holes to : 2mm
+- Increased size of eTextile connectors to : 1mm
 - Increased board size by ... mm
 - Reorganized eTextile connectors order, this is more convenient for many purposes.
 
