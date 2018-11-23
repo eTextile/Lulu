@@ -33,25 +33,24 @@ Custom tooling will be designed and tested to help in that soldering process.
 - [GND] (-) GND
 - [PWM] I/O PIN
 
-![alt tag](https://raw.githubusercontent.com/eTextile/Lulu/master/docs/pictures/footprint_connection.jpg)
+![footprint_connection.jpg](./DOCs/footprint_connection.jpg)
 
-      _______
-     |       |
-     | POWER |-----------------
-     |_______|--------------| |
-        | |                 | |
-      + | | -             + | | -
-     ___|_|____             | |
-    |         |           __| |__
-    |    A    |   PWM    |       |
-    |    R    |--------->| LULU  |
-    |    D    |          |_______|
-    |    U    |             | |
-    |    N    |           __| |__
-    |    I    |   PWM    |       |
-    |    O    |--------->| LULU  |
-    |_________|          |_______|
-                            | |
+      +---+--------------+-------------------+-----
+      |   |              |                   |
+  + __|__ |              |                   |
+  -  ___  |              |                   |
+      |   |              |                   |
+      +---|--------------|--+----------------|--+--
+      |   |              |  |                |  |
+      |   |              |  |                |  |
+      |   |            __|__|__              |  |
+     _|___|_           \ +  - /              |  |
+    | +   - |           \    /               |  |
+    |   M   |--- PWM --> \  /              __|__|__
+    |   C   |             \/               \ +  - /
+    |   U   |                               \    /
+    |       |--- PWM ----------------------> \  /
+    |_______|                                 \/
 
 ## Lulu Powering
 The Lulu board must be powered with a voltage betwin 3.3V to 5V.
