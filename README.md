@@ -11,7 +11,7 @@ This project is still in a beta phase, where drastic changes may occur and backw
 
 ![alt tag](https://farm6.staticflickr.com/5506/29792500474_7d4b125e57_m_d.jpg)
 ![alt tag](https://farm5.staticflickr.com/4607/25119732977_b1e0567c12_m_d.jpg)
-![alt tag](https://farm5.staticflickr.com/4536/24516632088_8533c86f3d_m_d.jpg)
+![alt tag](https://farm5.staticflickr.com/4803/45934332611_41c4e09240_m_d.jpg)
 
 ### About The project
 Lulu is providing a simple, reliable toolset for people who want to use side glow optical fibers in their eTextile and wearable projects.
