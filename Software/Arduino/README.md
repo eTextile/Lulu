@@ -1,0 +1,6 @@
+# Lulu-star
+
+**Programming light into textile**
+
+- Lulu_ATTiny85_Digispark_demo_00 : ...
+- Lulu_ATTiny85_Digispark_demo_01 : ...

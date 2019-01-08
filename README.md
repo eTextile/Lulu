@@ -1,5 +1,7 @@
 # Lulu-star
 
+here is the change I made
+
 **Programming light into textile**
 
 Lulu is a hardware solution that interfaces between an LED light source, an optic fiber strand or bundle and soft circuit connections.
@@ -9,7 +11,7 @@ This project is still in a beta phase, where drastic changes may occur and backw
 
 ![alt tag](https://farm6.staticflickr.com/5506/29792500474_7d4b125e57_m_d.jpg)
 ![alt tag](https://farm5.staticflickr.com/4607/25119732977_b1e0567c12_m_d.jpg)
-![alt tag](https://farm5.staticflickr.com/4536/24516632088_8533c86f3d_m_d.jpg)
+![alt tag](https://farm5.staticflickr.com/4803/45934332611_41c4e09240_m_d.jpg)
 
 ### About The project
 Lulu is providing a simple, reliable toolset for people who want to use side glow optical fibers in their eTextile and wearable projects.
@@ -29,6 +31,19 @@ Instead of struggling to solve the light source and connection problem, the desi
   - This branch provide a tiny PCB with a built in MCU (ATTiny10) that allow one-wire communication bus system.
 - **Lulu**
   - This branch provides a motherboard (Lucette) that drives up to 16 Lulus that each only contain a power LED and an optic fiber connector.
+
+###  Branche naming conventions / Version Control
+- First number is used to specify Lulu type
+  - 2.0.0 -> Lulu-star
+  - 3.0.0 -> Lulu-daisy
+  - 4.0.0 -> Lulu-MCU
+- Second number is used to specify the PCB shape
+  - 2.0.0 -> Lulu-star/Circle (this is the most common eTextile PCB shape but doesn't fit the zero waste).
+  - 2.1.0 -> Lulu-star/Triangle (this shape fit the three wire connectors and zero waste panelization process).
+  - 2.2.0 -> Lulu-star/Blob...
+- Third number is used to specify the iteration
+  - 2.1.1 -> [Made with Upverter an online PCB router software.](https://upverter.com/DataPaulette/08fe1452dfd87b08/Lulu-star_211/ "Made with Upvetrter, online PCB router software") 
+  - 2.1.2 -> [Made with KiCad 5.0.0](./kicad_Lulu_star/Lulu_star_212/ "Made with KiCad 5.0.0") 
 
 ### Development tools & DOCs
  * **Web page**: [http://lulu.eTextile.org](http://lulu.eTextile.org "The project Web page")
@@ -76,7 +91,7 @@ Instead of struggling to solve the light source and connection problem, the desi
               DIY  Crow-fonded  Localy                   Adafruit  Seed      China
            High|--------|--------|//////////////////////////|--------|---------|low
 
-*Fiber optics
+*Optic Fibers
                20cm    1m     2m
            Schot|------|///////|-----------------------------------------------|Long
 
@@ -89,4 +104,5 @@ Instead of struggling to solve the light source and connection problem, the desi
 
 *Peripherals
      Free (Open)|-------------------|-----------------------|------------------|Closed
+
 ```
