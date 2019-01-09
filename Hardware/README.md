@@ -2,7 +2,11 @@
 **Programming light into textile**
 This page currently contains documentation for both Lulu Star and Lulu Daisy. should we seperate this?
 
-#__________________________________________
+
+
+
+
+
 # Lulu Daisy
 
 ![Lulu_Daisy_Bumblebee prototype](https://farm2.staticflickr.com/1949/45682829022_ee6c608767_z.jpg)
@@ -19,7 +23,11 @@ This page currently contains documentation for both Lulu Star and Lulu Daisy. sh
 ![connection options 1](https://farm1.staticflickr.com/811/39105799930_7f1ce94b0e.jpg)
 ![connection options 2](https://farm1.staticflickr.com/811/27044760328_02e841f585.jpg)
 
-#__________________________________________
+
+
+
+
+
 # Lulu Star
 
 ![Lulu_212_KiCad-3D_recto](https://farm5.staticflickr.com/4857/45228663424_4ba29975d1_z_d.jpg)
