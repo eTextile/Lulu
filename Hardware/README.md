@@ -1,5 +1,26 @@
-# Lulu-star / Hardware
+# Lulu / Hardware
 **Programming light into textile**
+This page currently contains documentation for both Lulu Star and Lulu Daisy. should we seperate this?
+
+#__________________________________________
+# Lulu Daisy
+
+![Lulu_Daisy_Bumblebee prototype](https://farm2.staticflickr.com/1949/45682829022_ee6c608767_z.jpg)
+![Lulu_Daisy_Bumblebee prototype](https://farm5.staticflickr.com/4833/30792862237_8be1c0b737_z.jpg)
+![Design sketches](https://farm2.staticflickr.com/1971/45414239042_31dfa488f4_b.jpg)
+
+
+## Connections
+- [VCC] (+) 5 Voltes
+- [GND] (-) GND
+- [Din] I/O PIN
+- [Dout] Din on another Lulu Daisy
+
+![connection options 1](https://farm1.staticflickr.com/811/39105799930_7f1ce94b0e.jpg)
+![connection options 2](https://farm1.staticflickr.com/811/27044760328_02e841f585.jpg)
+
+#__________________________________________
+# Lulu Star
 
 ![Lulu_212_KiCad-3D_recto](https://farm5.staticflickr.com/4857/45228663424_4ba29975d1_z_d.jpg)
 ![Lulu_212_KiCad-3D_verso](https://farm5.staticflickr.com/4808/31013864907_860edcc788_z_d.jpg)
