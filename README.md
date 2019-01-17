@@ -2,7 +2,7 @@
 
 **Programming light into textile**
 
-Lulu is a hardware solution that interfaces between an LED light source, an optic fiber strand or bundle and soft circuit connections.
+Lulu is a hardware solution that interfaces between an LED light source, an optic fiber strand or bundle and soft circuit connections. 
 Providing an optic fiber connection toolset and workflow for E-Textiles and Wearable Technology applications.
 
 This project is still in a beta phase, where drastic changes may occur and backwards compatibility is not guaranteed until the final release.
