@@ -25,6 +25,4 @@ Lulu-daisy provide a tiny PCB with an addressable LED and an optic fiber connect
 
 
 # TODO
--Choose the onboard LED WS2812-mini, Dotstar, etc.
--Add an Arduino code example
-- ...
+
