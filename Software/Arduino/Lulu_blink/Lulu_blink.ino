@@ -16,7 +16,7 @@
 
    (+) is 3.3 to 5V 200 mA
 */
-#include <elapsedMillis.h>
+#include <elapsedMillis.h> // https://github.com/pfeerick/elapsedMillis
 
 elapsedMillis timer;
 
