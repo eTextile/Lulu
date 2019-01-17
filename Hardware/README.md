@@ -1,8 +1,7 @@
-# Lulu / Hardware
+# Lulu-star / Hardware
 **Programming light into textile**
-This page currently contains documentation for both Lulu Star and Lulu Daisy. should we seperate this?
 
-# Lulu Star
+# Lulu-star
 
 ![Lulu_212_KiCad-3D_recto](https://farm5.staticflickr.com/4857/45228663424_4ba29975d1_z_d.jpg)
 ![Lulu_212_KiCad-3D_verso](https://farm5.staticflickr.com/4808/31013864907_860edcc788_z_d.jpg)
@@ -20,9 +19,9 @@ We have been experiencing a new way to hand solder the LED on the edge of the PC
 Custom tooling will be designed and tested to help in that soldering process.
 
 ## Release notes
-### Lulu 2.1.2
+### Lulu-star 2.1.2
 - Initial release
-### Lulu 2.1.3
+### Lulu-star 2.1.3
 - Clearance of top and bottom ground plane have been increased to avoid shortcuts due to the board edge cut to close.
 - Resistor R2 have been flipped and the brass tube soldering pad moved.
 - Updated brass tube soldering pad to be connected to the ground plane with thermals.
@@ -36,7 +35,7 @@ Custom tooling will be designed and tested to help in that soldering process.
 - [GND] (-) GND
 - [PWM] I/O PIN
 
-![footprint_connection.jpg](./DOCs/footprint_connection.jpg)
+![Footprint_connection](./DOCs/footprint_connection.jpg)
 
 
         +---+--------------+-------------------+-----
@@ -57,18 +56,18 @@ Custom tooling will be designed and tested to help in that soldering process.
       |_______|                                 \/
 
 
-## Lulu Powering
+## Lulu-star Powering
 The Lulu board must be powered with a voltage betwin 3.3V to 5V.
 DO NOT USE 3V single coin battery - voltage is too low and it will not work for long.
 Prefer the use of rechargeable Lipo battery with small Lipo charger.
 
-## Lulu Arduino programming
+## Lulu-star Arduino programming
 Easy to programmed, Lulu-star is using the Arduino IDE standard functions - no library required.
 
     digitalWrite(LED_PIN, state);
     analogWrite(LED_PIN, val);
 
-## Lulu LED driver built-in
+## Lulu-star LED driver built-in
 ### Constant current source circuitry
 
 **References**
