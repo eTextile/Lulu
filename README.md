@@ -1,7 +1,5 @@
 # Lulu-star
 
-here is the change I made
-
 **Programming light into textile**
 
 Lulu is a hardware solution that interfaces between an LED light source, an optic fiber strand or bundle and soft circuit connections.
@@ -9,9 +7,9 @@ Providing an optic fiber connection toolset and workflow for E-Textiles and Wear
 
 This project is still in a beta phase, where drastic changes may occur and backwards compatibility is not guaranteed until the final release.
 
-![alt tag](https://farm6.staticflickr.com/5506/29792500474_7d4b125e57_m_d.jpg)
-![alt tag](https://farm5.staticflickr.com/4607/25119732977_b1e0567c12_m_d.jpg)
-![alt tag](https://farm5.staticflickr.com/4803/45934332611_41c4e09240_m_d.jpg)
+![Lulu-star](https://farm6.staticflickr.com/5506/29792500474_7d4b125e57_m_d.jpg)
+![Lulu-star](https://farm5.staticflickr.com/4607/25119732977_b1e0567c12_m_d.jpg)
+![Lulu-star](https://farm5.staticflickr.com/4803/45934332611_41c4e09240_m_d.jpg)
 
 ### About The project
 Lulu is providing a simple, reliable toolset for people who want to use side glow optical fibers in their eTextile and wearable projects.
