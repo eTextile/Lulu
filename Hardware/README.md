@@ -3,8 +3,22 @@
 
 ## Project content
 
+# Lulu-Daisy
+
+![Lulu_Daisy_Bumblebee prototype](https://farm2.staticflickr.com/1949/45682829022_ee6c608767_z.jpg)
+![Lulu_Daisy_Bumblebee prototype](https://farm5.staticflickr.com/4833/30792862237_8be1c0b737_z.jpg)
+![Design sketches](https://farm2.staticflickr.com/1971/45414239042_31dfa488f4_b.jpg)
+
+## Connections
+- [VCC] (+) 5 Voltes
+- [GND] (-) GND
+- [Din] I/O PIN
+- [Dout] Din on another Lulu Daisy
+
+![Connection options 1](https://farm1.staticflickr.com/811/39105799930_7f1ce94b0e.jpg)
+![Connection options 2](https://farm1.staticflickr.com/811/27044760328_02e841f585.jpg)
+
 ### PCB
-- [PCB](https://upverter.com/DataPaulette/0b0275a0c920353b/Lulu-daisy/ "Made with Upverter, online PCB router software") Made with Upverter, online PCB router software
 
 ### Part list
 | Part                 | REF                      | Weblink                | Price per unit |
@@ -16,6 +30,4 @@
 | Optical fibres TPU   | 1.5, 2, 3 mm             |                        |                |
 
 ## TODO
-- [ ] Find an addressable side LEDs
-- [ ] Find a partner to develop & produce the electronic
-- [ ] Identifying distributors in Europe
+- [ ]...
