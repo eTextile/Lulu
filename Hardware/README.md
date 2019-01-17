@@ -20,14 +20,10 @@
 
 ### PCB
 
-### Part list
-| Part                 | REF                      | Weblink                | Price per unit |
-| -------------------- | ------------------------ | -----------------------|--------------- |
-| LED                  |                          |                        |                |
-| Brass tube           | 2 mm Hole X 10 mm Length | http://ebay.com        | $0.05          |
-| JTE                  | 1.5 / 8 mm               |                        |                |
-| Optical fibres PMMA  | 0.25 mm x 35 pce         |                        |                |
-| Optical fibres TPU   | 1.5, 2, 3 mm             |                        |                |
+### Circuit part list
+| Designator             | MPN                       | Package                | Price per unit | Weblink                |
+| -----------------------| ------------------------- | -----------------------|--------------- |------------------------|
+| WS2812-mini            |                           |                        | ... $          | [NAME](https://...)    |
 
 ## TODO
 - [ ]...
