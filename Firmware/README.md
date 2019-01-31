@@ -28,9 +28,12 @@
 https://www.olimex.com/Products/AVR/Programmers/AVR-ISP-MK2/resources/AVR-ISP-MK2.pdf
 
 #### TPI pin mapping
-     DATA 1 - - 2 VTARGET
-    CLOCK 3 - - 4 NA
-    RESET 5 - - 6 GND
+
+             ------
+     DATA 1 | +  + | 2 VTARGET
+    CLOCK 3 | +  + | 4 NA
+    RESET 5 | +  + | 6 GND
+             ------
 
 #### Wiring the ATTiny10 to TPI programmer
 | ATTINY10 - PIN   | PIN FONCTION |  TPI-connector  |
