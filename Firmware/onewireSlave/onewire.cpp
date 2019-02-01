@@ -1,13 +1,13 @@
 /*
-   Lulu_1-Wire - 1-Wire modified protocol
-   This file is originally part of onewire-leds from Kevin Cuzner : https://github.com/kcuzner/onewire-leds
-   It has been modified to fit the Lulu project needs : http://lulu.eTextile.org
+   Lulu-MCU 4.0.0
+   This file is part of Lulu-MCU project: http://lulu.eTextile.org
+   It has been foked from Kevin Cuzner : https://github.com/kcuzner/onewire-leds
+   This code implement 1-Wire modified protocol for ATTiny10 - 1-Wire: https://en.wikipedia.org/wiki/1-Wire
 */
 
 #include "onewire.h"
 
 #include <avr/interrupt.h>
-#include <util/delay.h>
 
 #define ONEWIRE_PIN_MASK (1<<ONEWIRE_PIN)
 #define ONEWIRE_PIN_VALUE (ONEWIRE_INPUT & ONEWIRE_PIN_MASK)
@@ -16,13 +16,12 @@
 // Timer0 (16-bits) is used for our timing
 // The presecaler is set at CLK/1
 // RESET is 480uS LOW: 3840 ticks (480uS = 0,00048S -> 8000000 * 0,00048 = 3840)
-// 32uS: 256 ticks (32uS = 0,000032S -> 8000000 * 0,000032 = 256)
-// 4 ticks is our sample time after a falling edge, landing at about 26uS
-// - NOTE: This is equivalent to 256 clock cycles, giving us the sample computation time
+// Sample time after a falling edge is 32uS: 256 ticks (32uS = 0,000032S -> 8000000 * 0,000032 = 256)
+// Sample time after a falling edge is 26uS: 130 ticks (26uS = 0,000026S -> 8000000 * 0,000032 = 256)
 
-//
 const unsigned int ONEWIRE_RESET_TICKS  = 3840;
 const unsigned int ONEWIRE_READ_TICKS = 256;
+//const unsigned int ONEWIRE_READ_TICKS = 130;
 
 // State machine - states
 // TODO: Make sure that a reset during a read or immediately following another reset is registered as a reset
@@ -105,17 +104,19 @@ ISR(INT0_vect) {
   //}
 }
 
-// Compare A: 70uS since last falling edge
+// Compare A: 32uS since last falling edge or since last timer overflow <-
+// Compare A: 26uS since last falling edge or since last timer overflow
 ISR(TIM0_COMPA_vect) {
 
   switch (state) {
     case READ:
       // It is time to sample
-      current_byte >>= 1;
-
-      if (!ONEWIRE_PIN_VALUE) { // Inverted values for our ground-based bus (0 = 1)
-        current_byte |= 0x80;   // LSB first
+      if (!ONEWIRE_PIN_VALUE) { // Inverted values for our ground-based bus (LOW = 1)
+        current_byte |= 0x80;   // Set the bit - LSB first
       }
+      //current_byte >>= 1;
+      current_byte = current_byte >> 1;
+
       next_bit++;
       if (next_bit > 7) {
         // Reading DONE - we can wait for the next reset
@@ -136,7 +137,6 @@ ISR(TIM0_COMPB_vect) {
 
     case BEGIN_RESET:
       if (ONEWIRE_PIN_VALUE) {  // If the signal is HIGH after 480uS we had a reset!
-        PORTB |= (1 << 0);      // Equivalent to digitalWrite(1, HIGH);
         state = RESET;
         current_byte = 0;
         next_bit = 0;
@@ -154,10 +154,6 @@ ISR(TIM0_COMPB_vect) {
 }
 
 ISR(TIM0_OVF_vect) {
-
-  //PORTB &= ~(1 << 0); // Equivalent to digitalWrite(1, LOW);
-  //PORTB &= ~(1 << 1); // Equivalent to digitalWrite(2, LOW);
-
   switch (state) {
     case RESET:
       // We don't mind overflowing the timer here
