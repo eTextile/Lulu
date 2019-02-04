@@ -19,7 +19,7 @@ We have been experiencing a new way to hand solder the LED on the edge of the PC
 Custom tooling will be designed and tested to help in that soldering process.
 
 ## Release notes
-### Lulu-star 2.1.2
+### Lulu-MCU 4.0.0
 - Initial release (forked from Lulu-star 2.1.3)
 
 ## Lulu-MCU connecting
@@ -49,8 +49,11 @@ Custom tooling will be designed and tested to help in that soldering process.
 The Lulu-MCU board must be powered with a voltage betwin 3.3V to 5V.
 DO NOT USE 3V single coin battery - voltage is too low and it will not work for long.
 Prefer the use of rechargeable Lipo battery with small Lipo charger.
+- https://www.powerstream.com/thin-primary-lithium.htm
+- Charger technology
+- Low discharge protection
 
-## Lulu-star LED driver built-in
+## Lulu-MCU built-in LED driver
 ### Constant current source circuitry
 
 **References**
@@ -59,7 +62,7 @@ Prefer the use of rechargeable Lipo battery with small Lipo charger.
 - https://scienceprog.com/building-simple-constant-current-power-led-driver/
 - http://www.pcbheaven.com/userpages/LED_driving_and_controlling_methods/?topic=worklog&p=3
 
-![alt tag](./DOCs/driver_00.png)
+![LED-driver](./DOCs/driver_00.png)
 
 ### Circuit part list
 | Designator                                      | MPN                       | Package                | Price per unit | Weblink                |
@@ -70,6 +73,8 @@ Prefer the use of rechargeable Lipo battery with small Lipo charger.
 | R1 - 47k-ohm resistor                           | RT0603DRD0747KL           | 0603                   | 0,0147 €       | [R-47k-ohm ](https://www.digikey.com/product-detail/en/yageo/RT0603DRD0747KL/311-47KDCT-ND/1035828) |
 | R2 - current set resistor - 2.7 ohms 1/4 watt   |                           | 1206                   | 0,0246 €       | [R-2.7-ohm](https://fr.farnell.com/walsin/wr12w2r70ftl/resist-couche-epaisse-2-7r-1-0/dp/2668305) |
 | R3 - 10k pull-down resistor                     | RT0603DRD0710KL           | 0603                   | 0,     €       | [R-10k-ohm](https://www.digikey.com/product-detail/en/yageo/RT0603DRD0710KL/311-10KDCT-ND/1035680) |
+| ATTiny10                                        |                           | SOT-                   | 0,     €       | [ATTiny10](...) |
+
 
 **R2** is used to set the current limit and this doesn't depends on the voltage supply VDD.
 **Q1** is used as a variable resistor. **Q1** starts out turned on by **R1**.
@@ -104,6 +109,7 @@ According to Ohm’s law, this means that the current through them will be '0.6 
 | Optical fibres PMMA        | 0.25 mm x 35 pce         |                  |                |
 | Optical fibres TPU         | 1.5, 2, 3 mm             |                  |                |
 | Optical fibres tube + core |                          |                  | [www.leds-and-more.de](https://www.leds-and-more.de/catalog/15mm-lwl-lichtwellenleiter-lichtleiter-seitlich-leuchtend-p-1937.html?osCsid=2me5dl4q5amcvgb6tnbqfd87i5) |
+| eTextile bus               |                          |                  |                |
 
 ## TODO
 - [ ] Add ATTiny10 ont the KiCad desin
