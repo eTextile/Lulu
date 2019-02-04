@@ -11,7 +11,7 @@
 
 #define F_CPU 8000000UL
 
-//#include "led.h"
+#include "led.h"
 #include "onewire.h"
 
 #include <avr/pgmspace.h>
@@ -20,18 +20,14 @@
 #include <util/delay.h>
 #include <avr/wdt.h>
 
-uint8_t I2C_ADDRES = 0xFF;
+const uint8_t I2C_ADDRES = 3;
+uint8_t ledPwm = 0;
 
 int main(void) {
 
   set_cpu_8Mhz();
 
-  DDRB |= (1 << 0);   // Equivalent to pinMode(1, OUTPUT);
-  DDRB |= (1 << 1);   // Equivalent to pinMode(2, OUTPUT);
-
-  PORTB &= ~(1 << 0); // Equivalent to digitalWrite(PB0, LOW); // Set by default
-  PORTB &= ~(1 << 1); // Equivalent to digitalWrite(PB1, LOW); // Set by default
-
+  led_init();
   onewire_init();
 
   wdt_enable(WDTO_15MS);
@@ -39,16 +35,17 @@ int main(void) {
 
   while (1) {
     wdt_reset();
-    // Serial.print(); is not hear ;-)
-    if (onewire_has_new_byte()) {
-      uint8_t incomingByte = onewire_get_byte();
-      if (incomingByte == 0xFF) {
-        PORTB |= (1 << 1); // Equivalent to digitalWrite(PB1, HIGH);
-        _delay_ms(50);
-        PORTB &= ~(1 << 1); // Equivalent to digitalWrite(PB1, LOW);
+    // Serial.print(); is not hear :-(
+    if (onewire_has_new_bytes()) {
+      uint16_t incomingByte = onewire_get_bytes();
+      if ((incomingByte & 0xFF) == I2C_ADDRES) {
+        incomingByte = incomingByte >> 8;
+        ledPwm = (uint8_t) incomingByte & 0xFF;
       }
       else {
+        // The address is not matching!
       }
     }
+    led_tick(ledPwm);
   }
 }

@@ -36,8 +36,8 @@ typedef enum {
 } state_t;
 
 volatile uint8_t byte_flag = 0;
-volatile uint8_t finished_byte = 0;
-volatile uint8_t current_byte = 0;
+volatile uint16_t finished_byte = 0;
+volatile uint16_t current_byte = 0;
 volatile uint8_t next_bit = 0;
 
 volatile state_t state = WAIT_RESET;
@@ -63,22 +63,22 @@ void onewire_init(void) {
   TIMSK0 = ((1 << OCIE0B) | (1 << OCIE0A) | (1 << TOIE0)); // Enable all interrupts for the timer
 
   // External interrupt INT0 is called at falling edge
-  
+
   // TIM0_COMPA: sample the oneWire bits values
   OCR0A = ONEWIRE_READ_TICKS;
-  
+
   // TIM0_COMPB: catch the oneWire RESET
   OCR0B = ONEWIRE_RESET_TICKS;
-  
-  // Overflow: It's been too long since the last falling edge
+
+  // TIM0_OVERFLOW: It's been too long since the last falling edge
 
 }
 
-uint8_t onewire_has_new_byte(void) {
+uint8_t onewire_has_new_bytes(void) {
   return byte_flag;
 }
 
-uint8_t onewire_get_byte(void) {
+uint16_t onewire_get_bytes(void) {
   byte_flag = 0;
   return finished_byte;
 }
@@ -116,10 +116,12 @@ ISR(TIM0_COMPA_vect) {
     case READ:
       // It is time to sample
       if (ONEWIRE_PIN_VALUE) {
-        current_byte |= 0x80;      // Set the bit - LSB first
+        //current_byte |= 0x80;        // Set the bit - LSB first
+        current_byte |= 0x8000;      // Set the bit - LSB first
+
       }
-      if (next_bit < 7) {
-        current_byte = current_byte >> 1;
+      if (next_bit < 15) {
+        current_byte >>= 1;
       }
       else {
         // Reading DONE - we can WAIT_RESET for the next reset

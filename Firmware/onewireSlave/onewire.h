@@ -20,9 +20,9 @@ void set_cpu_8Mhz(void);
 void onewire_init(void);
 
 // Returns whether or not the 1-wire bus has decoded a new byte
-uint8_t onewire_has_new_byte(void);
+uint8_t onewire_has_new_bytes(void);
 
 // Reads the last byte that has been read
-uint8_t onewire_get_byte(void);
+uint16_t onewire_get_bytes(void);
 
 #endif //_ONEWIRE_H_

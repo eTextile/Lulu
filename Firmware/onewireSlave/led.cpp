@@ -7,32 +7,27 @@
 
 #include "led.h"
 
-static uint8_t led_value = 0x80;
-static uint16_t off_timer = 0;
+uint8_t ledTcks = 0;
 
-void led_set(uint8_t value) {
-  led_value = value;
+void led_init(void) {
+
+  DDRB |= (1 << 0);   // Equivalent to pinMode(1, OUTPUT);
+  DDRB |= (1 << 1);   // Equivalent to pinMode(2, OUTPUT);
+
+  PORTB &= ~(1 << 0); // Equivalent to digitalWrite(PB0, LOW); // Set by default
+  PORTB &= ~(1 << 1); // Equivalent to digitalWrite(PB1, LOW); // Set by default
 }
 
-void led_begin_off(uint16_t period) {
-  off_timer = period;
-}
+void led_tick(uint8_t pwmValue) {
 
-void led_tick(void) {
-  static uint8_t count = 0;
+  ledTcks++;
+  ledTcks = ledTcks % 256;
 
-  if (off_timer > 0) {
-    LED_PORT |= LED_MASK;
+  if (ledTcks >= pwmValue) {
+    PORTB &= ~(1 << 0); // Equivalent to digitalWrite(PB0, LOW);
   }
   else {
-    if (count < led_value) {
-      LED_PORT &= ~LED_MASK;
-    }
-    else {
-      LED_PORT |= LED_MASK;
-    }
+    PORTB |= (1 << 0); // Equivalent to digitalWrite(PB1, HIGH);
   }
-  count++;
-  if (off_timer > 0)
-    off_timer--;
+
 }

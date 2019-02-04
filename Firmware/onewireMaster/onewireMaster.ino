@@ -9,19 +9,19 @@
 
 OneWire net(10);  // OneWire on Arduino PIN 10
 
-const int LED_PIN = 13;
+const uint8_t LULU_ID = 3;
+const uint8_t LED_PIN = 13;
 
 void setup(void) {
   pinMode(LED_PIN, OUTPUT);
 }
 
 void loop(void) {
-  /*
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
-  digitalWrite(LED_PIN, HIGH);
-  */
-  net.reset();
-  net.write(0xFF, 1);
+
+  for (int val = 0; val < 256; val++) {
+    net.reset();
+    net.write(LULU_ID, 1);
+    net.write(val, 1);
+    delay(10);
+  }
 }
