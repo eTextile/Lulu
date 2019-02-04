@@ -1,7 +1,8 @@
 /*
-   Lulu_1-Wire
-   This file is originally part of onewire-leds from Kevin Cuzner : https://github.com/kcuzner/onewire-leds
-   It has been modified to fit the Lulu project needs : http://lulu.eTextile.org
+   Lulu-MCU 4.0.0
+   This file is part of Lulu-MCU project: http://lulu.eTextile.org
+   It has been foked from Kevin Cuzner : https://github.com/kcuzner/onewire-leds
+   This code implement 1-Wire modified protocol for ATTiny10 - 1-Wire: https://en.wikipedia.org/wiki/1-Wire
 */
 
 #include "led.h"

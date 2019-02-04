@@ -23,6 +23,6 @@ void onewire_init(void);
 uint8_t onewire_has_new_byte(void);
 
 // Reads the last byte that has been read
-uint8_t onewire_read_byte(void);
+uint8_t onewire_get_byte(void);
 
 #endif //_ONEWIRE_H_
