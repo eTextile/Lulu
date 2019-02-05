@@ -15,6 +15,6 @@
 void led_init(void);
 
 // Sets the current LED color
-void led_tick(uint8_t fadeValue);
+void led_ticks(uint8_t fadeValue);
 
 #endif //_LED_H_

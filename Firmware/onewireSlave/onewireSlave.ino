@@ -20,7 +20,9 @@
 #include <util/delay.h>
 #include <avr/wdt.h>
 
-const uint8_t I2C_ADDRES = 3;
+const uint8_t ID_LULU = 3;
+const uint8_t ID_BRODCAST = 255;
+
 uint8_t ledPwm = 0;
 
 int main(void) {
@@ -37,15 +39,16 @@ int main(void) {
     wdt_reset();
     // Serial.print(); is not hear :-(
     if (onewire_has_new_bytes()) {
-      uint16_t incomingByte = onewire_get_bytes();
-      if ((incomingByte & 0xFF) == I2C_ADDRES) {
-        incomingByte = incomingByte >> 8;
-        ledPwm = (uint8_t) incomingByte & 0xFF;
+      uint16_t incomingBytes = onewire_get_bytes();
+      uint8_t adress = incomingBytes & 0xFF; // Get the address
+      if (adress == ID_LULU || adress == ID_BRODCAST){
+        uint8_t value =  (incomingBytes >> 8) & 0xFF; // Get the value
+        ledPwm = value;
       }
       else {
         // The address is not matching!
       }
     }
-    led_tick(ledPwm);
+    led_ticks(ledPwm);
   }
 }

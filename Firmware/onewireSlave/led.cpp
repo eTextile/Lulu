@@ -7,7 +7,7 @@
 
 #include "led.h"
 
-uint8_t ledTcks = 0;
+uint8_t ticks = 0;
 
 void led_init(void) {
 
@@ -18,12 +18,12 @@ void led_init(void) {
   PORTB &= ~(1 << 1); // Equivalent to digitalWrite(PB1, LOW); // Set by default
 }
 
-void led_tick(uint8_t pwmValue) {
+void led_ticks(uint8_t pwmValue) {
 
-  ledTcks++;
-  ledTcks = ledTcks % 256;
+  ticks++;
+  ticks = ticks % 256;
 
-  if (ledTcks >= pwmValue) {
+  if (ticks >= pwmValue) {
     PORTB &= ~(1 << 0); // Equivalent to digitalWrite(PB0, LOW);
   }
   else {
