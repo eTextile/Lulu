@@ -1,28 +1,57 @@
 /*
-  Lulu-MCU 4.0.0
-  This file is part of Lulu-MCU project: http://lulu.eTextile.org
-  Lulu-MCU provide an addressable LED with oneWire communication bus system.
-  This is implemented on a ATTiny10 MCU
+   Lulu-LID 4.0.0 / Light Interface Device
+
+  This file is part of Lulu project: http://lulu.eTextile.org
+  Lulu-LID provide an addressable LED with 1-Wire communication bus system implemented on ATTiny10 MCU
 */
 
 #include <OneWire.h>
 
-OneWire net(10);  // OneWire on Arduino PIN 10
+#define ONEWIRE_PIN     10 // 1-Wire on Arduino PIN
 
-const uint8_t ID_LULU = 3;
-const uint8_t ID_BRODCAST = 255;
-const uint8_t LED_PIN = 13;
+OneWire net(ONEWIRE_PIN);
+
+#define ID              0 // Byte 0 [7:4] (MSB) 0 for brodcast / 1-15 for address
+
+#define SLEEP_MODE      0 // Byte 0 [3:0] (LSB)
+#define SWITCH_ON       1 // Byte 0 [3:0] (LSB)
+#define SWITCH_OFF      2 // Byte 0 [3:0] (LSB)
+#define FADE_IN         3 // Byte 0 [3:0] (LSB)
+#define TIME_ON         4 // Byte 0 [3:0] (LSB)
+#define FADE_OUT        5 // Byte 0 [3:0] (LSB)
+#define TIME_OFF        6 // Byte 0 [3:0] (LSB)
+#define MAX_VAL         7 // Byte 0 [3:0] (LSB)
+#define MIN_VAL         8 // Byte 0 [3:0] (LSB)
+#define OFSET           9 // Byte 0 [3:0] (LSB)
+#define SYNC            10 // Byte 0 [3:0] (LSB)
 
 void setup(void) {
-  pinMode(LED_PIN, OUTPUT);
+
+  net.reset();
+  net.write(concatenate(ID, FADE_IN), 1);
+  net.write(val, 1); // Lulu-MCU DEFAULT 0
+  net.reset();
+  net.write(concatenate(ID, TIME_ON), 1);
+  net.write(val, 1); // Lulu-MCU DEFAULT 50
+  net.reset();
+  net.write(concatenate(ID, FADE_OUT), 1);
+  net.write(val, 1); // Lulu-MCU DEFAULT 0
+  net.reset();
+  net.write(concatenate(ID, TIME_OFF), 1);
+  net.write(val, 1); // Lulu-MCU DEFAULT 255
+  net.reset();
+  net.write(concatenate(ID, MAX_VAL), 1);
+  net.write(val, 1); // Lulu-MCU DEFAULT 255
+  net.reset();
+  net.write(concatenate(ID, MIN_VAL), 1);
+  net.write(val, 1); // Lulu-MCU DEFAULT 0
 }
 
 void loop(void) {
+}
 
-  for (int val = 0; val < 256; val++) {
-    net.reset();
-    net.write(ID_LULU, 1);
-    net.write(val, 1);
-    delay(10);
-  }
+uint8_t concatenate(uint8_t id, uint8_t mode) {
+  uint8_t concatenated
+  concatenated = (id << 4);
+  return concatenated;
 }
