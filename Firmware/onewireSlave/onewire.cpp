@@ -33,7 +33,7 @@ typedef enum {
   READ
 } state_t;
 
-volatile state_t state;
+volatile state_t state = WAIT_RESET;
 volatile uint8_t getCommande = 0;
 
 volatile uint16_t byteBuffer = 0;
@@ -59,12 +59,13 @@ void setupOnewirePin(void) {
 // External interrupt called at falling edge
 ISR(INT0_vect) {
 
-  getCommande = 1;
   //sleep_disable(); // TODO
 
   switch (state) {
 
     case WAIT_RESET:
+      getCommande = 1;
+
       // 1-Wire decoder hardware configuration
       TCCR0A = (0 << COM0B1) | (0 << COM0B0) | (0 << WGM01) | (0 << WGM00);            // Set Timer0 (TCNT0) to Normal operation - Compare Output Modes: disconnected
       TCCR0B = (0 << WGM03) | (0 << WGM02) | (0 << CS02) | (0 << CS01) | (1 << CS00);  // Set Timer0 clock speed to 8Mhz (clock-source/1 - No prescaling)

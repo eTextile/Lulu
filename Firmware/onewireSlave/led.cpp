@@ -37,10 +37,13 @@ void setupLedPin(void) {
 uint16_t dutyCycle = 0;
 
 void setupPwmMode(void) {
+  getCommande = 0;
   cli();                                                                           // Disable interrupts
   TCCR0A = (1 << WGM01) | (1 << WGM00) | (1 << COM0B1) | (0 << COM0B0);            // Fast PWM, 10-bit - Compare Output Modes: non-inverted
   TCCR0B = (0 << WGM03) | (1 << WGM02) | (0 << CS02) | (0 << CS01) | (1 << CS00);  // Fast PWM, 10-bit - set Timer0 clock speed to 8Mhz (clock-source/1 - No prescaling)
   TIMSK0 = (0 << OCIE0B) | (0 << OCIE0A) | (1 << TOIE0);                           // Disable COMPA & COMPB triggered by the timer0 - Enable overflow Interrupt
+  TCNT0 = 0;
+  curentTime = 0;
   sei();                                                                           // Enable global interrupts
 }
 
@@ -56,9 +59,9 @@ void updatePwm(void) {
       if (curentTime >= fadeIn) {
         curentTime = 0;
         dutyCycle += 1;     // Increment dutyCycle
-        cli();              // Disable interrupts
+        //cli();              // Disable interrupts
         OCR0B = dutyCycle;  // Update dutyCycle
-        sei();              // Enable global interrupts
+        //sei();              // Enable global interrupts
         if (dutyCycle >= (maxVal << 2)) {
           ledState = STAY_ON;
         }
@@ -69,9 +72,9 @@ void updatePwm(void) {
       if (curentTime >= fadeOut) {
         curentTime = 0;
         dutyCycle -= 1;     // Decrement dutyCycle
-        cli();              // Disable interrupts
+        //cli();              // Disable interrupts
         OCR0B = dutyCycle;  // Update dutyCycle
-        sei();              // Enable global interrupts
+        //sei();              // Enable global interrupts
         if (dutyCycle <= (minVal << 2)) {
           ledState = STAY_OFF;
         }

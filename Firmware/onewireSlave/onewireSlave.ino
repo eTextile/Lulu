@@ -17,7 +17,7 @@
 #include <avr/interrupt.h>
 #include <avr/wdt.h>
 
-#define ID       3
+#define ID       1
 #define BRODCAST 0
 
 int main(void) {
@@ -27,13 +27,11 @@ int main(void) {
   setupOnewirePin();
   setupLedPin();
 
-  DDRB |= (1 << PB0);   // Equivalent to pinMode(0, OUTPUT);
-
-  //wdt_enable(WDTO_15MS);
-  setupPwmMode();
+  wdt_enable(WDTO_15MS);
+  //setupPwmMode();
 
   while (1) {
-    //wdt_reset();
+    wdt_reset();
 
     if (flagBuffer) {
       flagBuffer = 0; // Clear the byteBuffer
@@ -62,14 +60,12 @@ int main(void) {
             break;
           case FADE_OUT:
             fadeOut = readVal;
-            if (fadeOut == 20) PORTB |= (1 << 0); // Equivalent to digitalRead(1, LOW);
             break;
           default:
             break;
         }
-        getCommande = 0;
-        setupPwmMode();
       }
+      setupPwmMode();
     }
     else {
       if (!getCommande) updatePwm(); // Fading pattern generator controlled by 1-Wire input parameters
