@@ -27,48 +27,52 @@ int main(void) {
   setupOnewirePin();
   setupLedPin();
 
+  DDRB |= (1 << PB0);   // Equivalent to pinMode(0, OUTPUT);
+
   //wdt_enable(WDTO_15MS);
+  setupPwmMode();
 
   while (1) {
     //wdt_reset();
 
-    if (onewire_has_new_bytes()) {
+    if (flagBuffer) {
+      flagBuffer = 0; // Clear the byteBuffer
 
-      uint16_t incomingBytes = onewire_get_bytes();     // Copy & free the byteBuffer for the next bytes to decode
-      uint8_t readID = ((incomingBytes >> 12) & 0xF);   // Get the address
-      uint8_t readMode = ((incomingBytes >> 8) & 0xF);  // Get the mode
-      uint8_t readval = (incomingBytes & 0xFF);         // Get the value
+      uint8_t readID = ((byteBuffer >> 12) & 0xF);   // Get the address
+      uint8_t readMode = ((byteBuffer >> 8) & 0xF);  // Get the mode
+      uint8_t readVal = (byteBuffer & 0xFF);         // Get the value
 
       if (readID == ID || readID == BRODCAST) {
+
         switch (readMode) {
           case MIN_VAL:
-            minVal = readval;
+            minVal = readVal;
             break;
           case MAX_VAL:
-            maxVal = readval;
+            maxVal = readVal;
             break;
           case TIME_ON:
-            timeOn = readval;
+            timeOn = readVal;
             break;
           case TIME_OFF:
-            timeOff = readval;
+            timeOff = readVal;
             break;
           case FADE_IN:
-            fadeIn = readval;
+            fadeIn = readVal;
             break;
           case FADE_OUT:
-            fadeOut = readval;
+            fadeOut = readVal;
+            if (fadeOut == 20) PORTB |= (1 << 0); // Equivalent to digitalRead(1, LOW);
             break;
           default:
             break;
         }
+        getCommande = 0;
         setupPwmMode();
       }
-      else {
-        // The address is not matching
-      }
     }
-    updatePwm(); // Fading pattern generator controlled by 1-Wire input parameters
+    else {
+      if (!getCommande) updatePwm(); // Fading pattern generator controlled by 1-Wire input parameters
+    }
   }
-
 }

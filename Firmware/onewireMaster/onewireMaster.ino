@@ -16,37 +16,37 @@ OneWire net(ONEWIRE_PIN);
 
 #define ID              0 // Byte 0 [7:4] (MSB) - 0 for brodcast / 1-15 for address
 
-#define MIN_VAL         2 // Byte 0 [3:0] (LSB)
-#define MAX_VAL         3 // Byte 0 [3:0] (LSB)
-#define TIME_ON         4 // Byte 0 [3:0] (LSB)
-#define TIME_OFF        5 // Byte 0 [3:0] (LSB)
-#define FADE_IN         6 // Byte 0 [3:0] (LSB)
-#define FADE_OUT        7 // Byte 0 [3:0] (LSB)
+#define MIN_VAL         2 // Byte 0 [3:0] (LSB) - DO NOT CHANGE
+#define MAX_VAL         3 // Byte 0 [3:0] (LSB) - DO NOT CHANGE
+#define TIME_ON         4 // Byte 0 [3:0] (LSB) - DO NOT CHANGE
+#define TIME_OFF        5 // Byte 0 [3:0] (LSB) - DO NOT CHANGE
+#define FADE_IN         6 // Byte 0 [3:0] (LSB) - DO NOT CHANGE
+#define FADE_OUT        7 // Byte 0 [3:0] (LSB) - DO NOT CHANGE
 
 void setup(void) {
   // The net.write(); is writing LSB first
   net.reset();
   net.write(0, 1); // Lulu-MCU DEFAULT 0
   net.write(concatenate(ID, MIN_VAL), 1);
-  delay(10);
+
   net.reset();
-  net.write(255, 1); // MIN-0 MAX-255 
+  net.write(255, 1); // MIN-0 MAX-255
   net.write(concatenate(ID, MAX_VAL), 1);
-  delay(10);
+
   net.reset();
-  net.write(0, 1); // Lulu-MCU DEFAULT 0
+  net.write(10, 1); // Lulu-MCU DEFAULT 0
   net.write(concatenate(ID, TIME_ON), 1);
-  delay(10);
+
   net.reset();
-  net.write(0, 1); // Lulu-MCU DEFAULT 100
+  net.write(10, 1); // Lulu-MCU DEFAULT 100
   net.write(concatenate(ID, TIME_OFF), 1);
-  delay(10);
+
   net.reset();
-  net.write(1, 1); // Lulu-MCU DEFAULT 10
+  net.write(0, 1); // Lulu-MCU DEFAULT 10
   net.write(concatenate(ID, FADE_IN), 1);
-  delay(10);
+
   net.reset();
-  net.write(1, 1); // Lulu-MCU DEFAULT 30
+  net.write(0, 1); // Lulu-MCU DEFAULT 30
   net.write(concatenate(ID, FADE_OUT), 1);
 }
 

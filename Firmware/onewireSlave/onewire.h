@@ -10,19 +10,19 @@
 #define _ONEWIRE_H_
 
 #include <avr/io.h>
+#include <stdint.h>
 
 #define ONEWIRE_PIN     PB2
 
 void set_cpu_8Mhz(void);
 
+extern volatile uint16_t byteBuffer;
+extern volatile uint8_t flagBuffer;
+
+extern volatile uint8_t getCommande;
+
 // 1-Wire PIN configuration
 //inline void hardware_onewirePin_setup(void); // FIXME
 void setupOnewirePin(void);
-
-// Returns whether or not the 1-Wire decoder has received new bytes
-uint8_t onewire_has_new_bytes(void);
-
-// Returns the bytes that has been decoded from the 1-Wire data line
-uint16_t onewire_get_bytes(void);
 
 #endif //_ONEWIRE_H_

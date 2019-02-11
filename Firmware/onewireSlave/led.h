@@ -9,19 +9,20 @@
 #ifndef _LED_H_
 #define _LED_H_
 
+#include <avr/io.h>
 #include <stdint.h>
 
 #define LED_PIN         PB1
 
 #define ID              1 // Byte 0 [7:4] (MSB) <- SET BY USER!
-#define BRODCAST        0 // Byte 0 [7:4] (MSB)
+#define BRODCAST        0 // Byte 0 [7:4] (MSB) <- DO NOT CHANGE!
 
-#define MIN_VAL         2 // Byte 0 [3:0] (LSB)
-#define MAX_VAL         3 // Byte 0 [3:0] (LSB)
-#define TIME_ON         4 // Byte 0 [3:0] (LSB)
-#define TIME_OFF        5 // Byte 0 [3:0] (LSB)
-#define FADE_IN         6 // Byte 0 [3:0] (LSB)
-#define FADE_OUT        7 // Byte 0 [3:0] (LSB)
+#define MIN_VAL         2 // Byte 0 [3:0] (LSB) <- DO NOT CHANGE!
+#define MAX_VAL         3 // Byte 0 [3:0] (LSB) <- DO NOT CHANGE!
+#define TIME_ON         4 // Byte 0 [3:0] (LSB) <- DO NOT CHANGE!
+#define TIME_OFF        5 // Byte 0 [3:0] (LSB) <- DO NOT CHANGE!
+#define FADE_IN         6 // Byte 0 [3:0] (LSB) <- DO NOT CHANGE!
+#define FADE_OUT        7 // Byte 0 [3:0] (LSB) <- DO NOT CHANGE!
 
 extern uint8_t minVal;
 extern uint8_t maxVal;
@@ -30,18 +31,18 @@ extern uint8_t timeOff;
 extern uint8_t fadeIn;
 extern uint8_t fadeOut;
 
-// void sensor_pin_setup(void); // TODO
+//void setupSensorPin(void); // TODO
 
 // LED_PIN configuration
 //inline void hardware_ledPin_setup(void); // FIXME
 void setupLedPin(void);
 
 // Hardware PWM configuration
-//inline void hardware_pwm_setup(void); // FIXME
+//static inline void setupPwmMode(void); // FIXME
 void setupPwmMode(void);
 
 // Apply all parameters to the LED
-//inline void updatePWM(void); // FIXME
+//static inline void updatePwm(void); // FIXME
 void updatePwm(void);
 
 #endif //_LED_H_

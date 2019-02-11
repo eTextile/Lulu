@@ -13,10 +13,8 @@
 
 #define ONEWIRE_PIN_VALUE (PINB & (1 << ONEWIRE_PIN))
 
-// ATTiny10 internal clock is set to 8Mhz
-// Timer0 (16-bits) is used for our timing
-// The presecaler is set at CLK/1
-// 1-Wire RESET is 480uS LOW
+// ATTiny10 clock-source is set to 8Mhz
+// Timer0 is used in two different mode for decoding 1-wire trames and fading the LED
 
 // TIM0_COMPB_vect
 // Catch RESET after 480uS: 8000000 * 0,00048 = 3840 ticks (480uS = 0,00048S)
@@ -35,95 +33,81 @@ typedef enum {
   READ
 } state_t;
 
-uint8_t onewire_setup_flag = 0;
+volatile state_t state;
+volatile uint8_t getCommande = 0;
 
-volatile uint8_t byte_flag = 0;
-volatile uint16_t finished_bytes = 0;
 volatile uint16_t byteBuffer = 0;
-volatile uint8_t next_bit = 0;
-
-volatile state_t state = WAIT_RESET;
-
-//volatile uint8_t curentMicros = 0;
-//volatile uint32_t curentMillis = 0;
+volatile uint8_t flagBuffer = 0;
+volatile uint8_t nextBit = 0;
 
 void set_cpu_8Mhz(void) {
-  // Set CPU speed by setting clock prescalar:
+  // Set CPU speed by setting clock prescalar
   // CCP register must first be written with the correct signature - 0xD8
   CCP = 0xD8;
   // CLKPS[3:0] sets the clock division factor
-  CLKPSR = ((0 << CLKPS0) | (0 << CLKPS1) | (0 << CLKPS2) | (0 << CLKPS3)); // 0000 - system clock is set to 8 MHz
+  CLKPSR = (0 << CLKPS0) | (0 << CLKPS1) | (0 << CLKPS2) | (0 << CLKPS3); // Set the system clock speed to 8 MHz
 }
 
 // ONEWIRE_PIN configuration
 void setupOnewirePin(void) {
   DDRB &= ~(1 << ONEWIRE_PIN);            // Equivalent to pinMode(ONEWIRE_PIN, INPUT);
-  EICRA = ((1 << ISC01) | (0 << ISC00));  // called the INT0 interrupt on falling edge
+  EICRA = (1 << ISC01) | (0 << ISC00);    // Called the INT0 interrupt on falling edge
   EIMSK = (1 << INT0);                    // Enable the external interrupt
-  sei();                                  // Enabling interrupts
-}
-
-uint8_t onewire_has_new_bytes(void) {
-  return byte_flag;
-}
-
-uint16_t onewire_get_bytes(void) {
-  byte_flag = 0;
-  return finished_bytes;
+  sei();                                  // Enable global interrupts
 }
 
 // External interrupt called at falling edge
 ISR(INT0_vect) {
 
+  getCommande = 1;
   //sleep_disable(); // TODO
 
-  TCNT0 = 0; // Reset the timer on a falling edge
-
   switch (state) {
-    
+
     case WAIT_RESET:
       // 1-Wire decoder hardware configuration
-      TCCR0A = 0;                                              // timer0 - TCNT0 is set to Normal operation
-      TCCR0B = ((0 << CS02) | (0 << CS01) | (1 << CS00));      // No prescaling: clock source is clk/1
-      // Setup internal interrupts
-      TIMSK0 = ((1 << OCIE0B) | (1 << OCIE0A) | (1 << TOIE0)); // Enable COMPA & COMPB triggered by the timer0
-      OCR0A = ONEWIRE_READ_TICKS;                              // TIM0_COMPA: sample the 1-Wire bits values
-      OCR0B = ONEWIRE_RESET_TICKS;                             // TIM0_COMPB: catch the 1-Wire RESET
-                                                               // TIM0_OVERFLOW: It's been too long since the last falling edge
+      TCCR0A = (0 << COM0B1) | (0 << COM0B0) | (0 << WGM01) | (0 << WGM00);            // Set Timer0 (TCNT0) to Normal operation - Compare Output Modes: disconnected
+      TCCR0B = (0 << WGM03) | (0 << WGM02) | (0 << CS02) | (0 << CS01) | (1 << CS00);  // Set Timer0 clock speed to 8Mhz (clock-source/1 - No prescaling)
+      TIMSK0 = (1 << OCIE0B) | (1 << OCIE0A) | (0 << TOIE0);                           // Enable COMPA & COMPB triggered by the timer0 - Disable overflow Interrupt
+      OCR0A = ONEWIRE_READ_TICKS;                                                      // TIM0_COMPA: sample the 1-Wire bits values
+      OCR0B = ONEWIRE_RESET_TICKS;                                                     // TIM0_COMPB: catch the 1-Wire RESET
       state = BEGIN_RESET;
       break;
-    
+
     case RESET:
       // We are now reading a byte
       state = READ;
       break;
-    
+
     default:
       break;
   }
+  TCNT0 = 0; // Reset the timer0
 }
 
 // Compare A: 25uS since last falling edge or since last timer overflow
+//interrupt [TIM0_COMPA] void timer0_compa_isr(void) {
 ISR(TIM0_COMPA_vect) {
 
   switch (state) {
+
     case READ:
       // It is time to sample
       if (ONEWIRE_PIN_VALUE) {
-        //byteBuffer |= 0x80;      // Set the bit - LSB first - Used to decode one byte
-        byteBuffer |= 0x8000;      // Set the bit - LSB first - Used to decode two bytes
+        //byteBuffer |= 0x80;  // Set the bit - LSB first - Used to decode one byte
+        byteBuffer |= 0x8000;  // Set the bit - LSB first - Used to decode two bytes
       }
-      if (next_bit < 15) {
+
+      if (nextBit < 15) {
         byteBuffer >>= 1;
       }
       else {
         // Reading DONE - we can WAIT_RESET for the next reset
         state = WAIT_RESET;
-        finished_bytes = byteBuffer;
-        byte_flag = 1;
+        flagBuffer = 1;
         break;
       }
-      next_bit++;
+      nextBit++;
       break;
     default:
       break;
@@ -138,8 +122,7 @@ ISR(TIM0_COMPB_vect) {
     case BEGIN_RESET:
       if (ONEWIRE_PIN_VALUE) { // The signal is HIGH after 480uS we had a reset!
         state = RESET;
-        byteBuffer = 0;
-        next_bit = 0;
+        nextBit = 0;
       }
       else {
         state = WAIT_RESET;
@@ -151,8 +134,4 @@ ISR(TIM0_COMPB_vect) {
       state = WAIT_RESET;
       break;
   }
-}
-
-ISR(TIM0_OVF_vect) {
-  state = WAIT_RESET;
 }
