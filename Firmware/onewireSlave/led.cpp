@@ -28,7 +28,7 @@ uint8_t timeOff = 0;
 uint8_t fadeIn = 20;
 uint8_t fadeOut = 20;
 
-volatile uint16_t curentTime = 0;
+volatile uint16_t timer = 0;
 
 void setupLedPin(void) {
   DDRB |= (1 << LED_PIN);   // Equivalent to pinMode(1, OUTPUT);
@@ -37,13 +37,13 @@ void setupLedPin(void) {
 uint16_t dutyCycle = 0;
 
 void setupPwmMode(void) {
-  getCommande = 0;
+  //getCommande = 0;
   cli();                                                                           // Disable interrupts
   TCCR0A = (1 << WGM01) | (1 << WGM00) | (1 << COM0B1) | (0 << COM0B0);            // Fast PWM, 10-bit - Compare Output Modes: non-inverted
   TCCR0B = (0 << WGM03) | (1 << WGM02) | (0 << CS02) | (0 << CS01) | (1 << CS00);  // Fast PWM, 10-bit - set Timer0 clock speed to 8Mhz (clock-source/1 - No prescaling)
   TIMSK0 = (0 << OCIE0B) | (0 << OCIE0A) | (1 << TOIE0);                           // Disable COMPA & COMPB triggered by the timer0 - Enable overflow Interrupt
   TCNT0 = 0;
-  curentTime = 0;
+  timer = 0;
   sei();                                                                           // Enable global interrupts
 }
 
@@ -51,17 +51,14 @@ void setupPwmMode(void) {
 void updatePwm(void) {
   // Timer0 (TCNT0) is couning at 8Mhz
   // Timer0 (TCNT0) is set to 10-bit (0-1024)
-  // PWM frequency: 8000000 / 1024*2 =
+  // PWM frequency: 8000000 / 1024*2 = TO FAST - This cause time shifting between each Lulu-MCU - FIXME!
 
   switch (ledState) {
 
     case FADEIN:
-      if (curentTime >= fadeIn) {
-        curentTime = 0;
+      if (timer >= fadeIn) {
+        timer = 0;
         dutyCycle += 1;     // Increment dutyCycle
-        //cli();              // Disable interrupts
-        OCR0B = dutyCycle;  // Update dutyCycle
-        //sei();              // Enable global interrupts
         if (dutyCycle >= (maxVal << 2)) {
           ledState = STAY_ON;
         }
@@ -69,12 +66,9 @@ void updatePwm(void) {
       break;
 
     case FADEOUT:
-      if (curentTime >= fadeOut) {
-        curentTime = 0;
+      if (timer >= fadeOut) {
+        timer = 0;
         dutyCycle -= 1;     // Decrement dutyCycle
-        //cli();              // Disable interrupts
-        OCR0B = dutyCycle;  // Update dutyCycle
-        //sei();              // Enable global interrupts
         if (dutyCycle <= (minVal << 2)) {
           ledState = STAY_OFF;
         }
@@ -82,15 +76,15 @@ void updatePwm(void) {
       break;
 
     case STAY_ON:
-      if (curentTime >= (timeOn << 8)) {
-        curentTime = 0;
+      if (timer >= (timeOn << 8)) {
+        timer = 0;
         ledState = FADEOUT;
       }
       break;
 
     case STAY_OFF:
-      if (curentTime >= (timeOff << 8)) {
-        curentTime = 0;
+      if (timer >= (timeOff << 8)) {
+        timer = 0;
         ledState = FADEIN;
       }
       break;
@@ -98,11 +92,11 @@ void updatePwm(void) {
     default:
       break;
   }
-
+  OCR0B = dutyCycle;  // Update dutyCycle
 }
 
 ISR(TIM0_OVF_vect) {
-  curentTime += 1;
+  timer += 1;
 }
 
 /*

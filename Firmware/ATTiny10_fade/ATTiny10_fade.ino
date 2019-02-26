@@ -46,7 +46,6 @@ int main(void) {
     switch (ledState) {
 
       case FADEIN:
-
         if (curentTime >= fadeIn) {
           curentTime = 0;
           dutyCycle += 1;              // Increment dutyCycle
@@ -64,7 +63,7 @@ int main(void) {
           curentTime = 0;
           dutyCycle -= 1;                   // Decrement dutyCycle
           cli();                            // Disable interrupts
-          OCR0B = duty Cycle;               // Update dutyCycle
+          OCR0B = dutyCycle;                // Update dutyCycle
           sei();                            // Enable global interrupts
           if (dutyCycle <= (minVal << 2)) {
             ledState = STAY_OFF;

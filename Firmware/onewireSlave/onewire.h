@@ -19,7 +19,7 @@ void set_cpu_8Mhz(void);
 extern volatile uint16_t byteBuffer;
 extern volatile uint8_t flagBuffer;
 
-extern volatile uint8_t getCommande;
+//extern volatile uint8_t getCommande;
 
 // 1-Wire PIN configuration
 //inline void hardware_onewirePin_setup(void); // FIXME

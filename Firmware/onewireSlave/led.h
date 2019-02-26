@@ -14,7 +14,8 @@
 
 #define LED_PIN         PB1
 
-#define ID              1 // Byte 0 [7:4] (MSB) <- SET BY USER!
+#define ID              1 // Byte 0 [7:4] (MSB) <- LULU-MCU ID SET BY USER
+
 #define BRODCAST        0 // Byte 0 [7:4] (MSB) <- DO NOT CHANGE!
 
 #define MIN_VAL         2 // Byte 0 [3:0] (LSB) <- DO NOT CHANGE!

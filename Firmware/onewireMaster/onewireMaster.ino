@@ -32,9 +32,8 @@ uint8_t fadeOut = 20;
 
 void setup(void) {
 
-  fadingPatternGenerator(2, 0, 25, 1, 1, 255, 255);
-  fadingPatternGenerator(0, 0, 255, 20, 20, 0, 0);
-
+  fadingPatternGenerator(0, 0, 255, 1, 1, 25, 25);
+  //fadingPatternGenerator(2, 0, 255, 20, 20, 0, 0);
 }
 
 void loop(void) {

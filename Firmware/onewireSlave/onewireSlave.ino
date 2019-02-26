@@ -28,13 +28,13 @@ int main(void) {
   setupLedPin();
 
   wdt_enable(WDTO_15MS);
-  //setupPwmMode();
+  setupPwmMode();
 
   while (1) {
     wdt_reset();
 
     if (flagBuffer) {
-      flagBuffer = 0; // Clear the byteBuffer
+      flagBuffer = 0; // Disable flag for next incoming 1-Wire commands
 
       uint8_t readID = ((byteBuffer >> 12) & 0xF);   // Get the address
       uint8_t readMode = ((byteBuffer >> 8) & 0xF);  // Get the mode
@@ -68,7 +68,7 @@ int main(void) {
       setupPwmMode();
     }
     else {
-      if (!getCommande) updatePwm(); // Fading pattern generator controlled by 1-Wire input parameters
+      updatePwm(); // Fading pattern generator controlled by 1-Wire input parameters
     }
   }
 }

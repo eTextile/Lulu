@@ -33,8 +33,8 @@ typedef enum {
   READ
 } state_t;
 
-volatile state_t state = WAIT_RESET;
-volatile uint8_t getCommande = 0;
+volatile state_t state = WAIT_RESET; // This can be declared as extern to supress getCommande
+//volatile uint8_t getCommande = 0;
 
 volatile uint16_t byteBuffer = 0;
 volatile uint8_t flagBuffer = 0;
@@ -59,12 +59,10 @@ void setupOnewirePin(void) {
 // External interrupt called at falling edge
 ISR(INT0_vect) {
 
-  //sleep_disable(); // TODO
-
   switch (state) {
 
     case WAIT_RESET:
-      getCommande = 1;
+      //getCommande = 1;
 
       // 1-Wire decoder hardware configuration
       TCCR0A = (0 << COM0B1) | (0 << COM0B0) | (0 << WGM01) | (0 << WGM00);            // Set Timer0 (TCNT0) to Normal operation - Compare Output Modes: disconnected
@@ -98,9 +96,9 @@ ISR(TIM0_COMPA_vect) {
         //byteBuffer |= 0x80;  // Set the bit - LSB first - Used to decode one byte
         byteBuffer |= 0x8000;  // Set the bit - LSB first - Used to decode two bytes
       }
-
       if (nextBit < 15) {
         byteBuffer >>= 1;
+        nextBit++;
       }
       else {
         // Reading DONE - we can WAIT_RESET for the next reset
@@ -108,7 +106,6 @@ ISR(TIM0_COMPA_vect) {
         flagBuffer = 1;
         break;
       }
-      nextBit++;
       break;
     default:
       break;

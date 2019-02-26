@@ -25,7 +25,8 @@
 - You are ready to flash the lulu-MCU 
 
 #### TPI programmer (AVR-ISP-MK2)
-https://www.olimex.com/Products/AVR/Programmers/AVR-ISP-MK2/resources/AVR-ISP-MK2.pdf
+- [https://www.olimex.com/Products/AVR/Programmers/AVR-ISP-MK2/resources/AVR-ISP-MK2.pdf](olimex TPI prog "AVR-ISP-MK2 TPI prog")
+- [https://make.kosakalab.com/make/electronic-work/arduino_tpi_en/](bitDuino10-aTPI "Arduino as TPI prog")
 
 #### TPI pin mapping
 
