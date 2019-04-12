@@ -24,7 +24,7 @@ led_t ledState = FADEIN;
 uint8_t minVal = 0;
 uint8_t maxVal = 255;
 uint8_t timeOn = 0;
-uint8_t timeOff = 0;
+uint8_t timeOff = 50;
 uint8_t fadeIn = 20;
 uint8_t fadeOut = 20;
 

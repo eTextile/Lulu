@@ -49,26 +49,26 @@ uint8_t concatenate(uint8_t id, uint8_t mode) {
 inline void fadingPatternGenerator(uint8_t id, uint8_t minVal, uint8_t maxVal, uint8_t timeOn, uint8_t timeOff, uint8_t fadeIn, uint8_t fadeOut) {
   // The net.write(); is writing LSB first
   net.reset();
-  net.write(minVal, 1); // Lulu-MCU DEFAULT 0
+  net.write(minVal, 1); // Slave Lulu-MCU DEFAULT 0
   net.write(concatenate(id, MIN_VAL), 1);
 
   net.reset();
-  net.write(maxVal, 1); // MIN-0 MAX-255
-  net.write(concatenate(id, MAX_VAL), 1);
+  net.write(maxVal, 1); // Slave Lulu-MCU DEFAULT 255
+  net.write(concatenate(id, MAX_VAL), 100);
 
   net.reset();
-  net.write(timeOn, 1); // Lulu-MCU DEFAULT 0
+  net.write(timeOn, 1); // Slave Lulu-MCU DEFAULT 0
   net.write(concatenate(id, TIME_ON), 1);
 
   net.reset();
-  net.write(timeOff, 1); // Lulu-MCU DEFAULT 100
+  net.write(timeOff, 1); // Slave Lulu-MCU DEFAULT 50
   net.write(concatenate(id, TIME_OFF), 1);
 
   net.reset();
-  net.write(fadeIn, 1); // Lulu-MCU DEFAULT 10
+  net.write(fadeIn, 1); // Slave Lulu-MCU DEFAULT 20
   net.write(concatenate(id, FADE_IN), 1);
 
   net.reset();
-  net.write(fadeOut, 1); // Lulu-MCU DEFAULT 30
+  net.write(fadeOut, 1); // Slave Lulu-MCU DEFAULT 20
   net.write(concatenate(ID, FADE_OUT), 1);
 }
