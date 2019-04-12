@@ -15,7 +15,7 @@
 ![ATTiny10](../docs/pictures/ATtiny10.png)
 
 ## Programming
-- Download the [https://github.com/technoblogy/attiny10core](ATtiny10Core "Programming the ATtiny10 with Arduino") hardware configuration from my repository on GitHub ATtiny10Core.
+- Download the [https://github.com/technoblogy/attiny10core](ATtiny10Core "GitHub.org") Programming the ATtiny10 with Arduino.
 - Copy it to Documents/Arduino/hardware folder. If this hardware folder isn't already ther you have to create it.
 - Restart the Arduino IDE.
 - In the Arduino menu > Tools/Board select ATtiny10/9/5/4
