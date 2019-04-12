@@ -109,8 +109,8 @@ Wire Wire Line
 	6250 4550 6250 4650
 Wire Wire Line
 	5650 3700 5450 3700
-Text Label 5200 3700 0    50   ~ 0
-PWM
+Text Label 4900 3700 0    50   ~ 0
+_PWM
 Wire Wire Line
 	7100 3200 7800 3200
 Text Label 7450 3200 0    50   ~ 0
@@ -138,7 +138,7 @@ U 1 1 5B7D3F18
 P 8350 3850
 F 0 "J1" H 8377 3876 50  0000 L CNN
 F 1 "Conn_01x03_Female" H 8377 3785 50  0000 L CNN
-F 2 "Lulu_footprints:Lulu_brass_tube_pad" H 8350 3850 50  0001 C CNN
+F 2 "Lulu_footprints:Lulu_plug_3_spaced" H 8350 3850 50  0001 C CNN
 F 3 "~" H 8350 3850 50  0001 C CNN
 	1    8350 3850
 	1    0    0    -1  
@@ -195,7 +195,6 @@ F 3 "~" H 5450 4050 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	5450 3900 5450 3700
-Connection ~ 5450 3700
 Wire Wire Line
 	5450 3700 5150 3700
 $Comp
@@ -263,7 +262,109 @@ F 3 "" H 3050 2650 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 4100 3150 0    50   ~ 0
-PWM
+_SENSOR
 Text Label 4100 3350 0    50   ~ 0
-DATA
+_DATA
+Text Label 4100 3250 0    50   ~ 0
+_PWM
+$Comp
+L Connector:TestPoint TP1
+U 1 1 5CAD390A
+P 5050 2400
+F 0 "TP1" V 5245 2474 50  0001 C CNN
+F 1 "TPI_DATA" V 5089 2991 50  0000 R BNN
+F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 5250 2400 50  0001 C CNN
+F 3 "~" H 5250 2400 50  0001 C CNN
+	1    5050 2400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:TestPoint TP2
+U 1 1 5CAD39E3
+P 5050 2500
+F 0 "TP2" V 5245 2574 50  0001 C CNN
+F 1 "TPI_CLOCK" V 5089 3091 50  0000 R BNN
+F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 5250 2500 50  0001 C CNN
+F 3 "~" H 5250 2500 50  0001 C CNN
+	1    5050 2500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:TestPoint TP3
+U 1 1 5CADD00C
+P 5050 2600
+F 0 "TP3" V 5245 2674 50  0001 C CNN
+F 1 "TPI_RESET" V 5089 3191 50  0000 R BNN
+F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 5250 2600 50  0001 C CNN
+F 3 "~" H 5250 2600 50  0001 C CNN
+	1    5050 2600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:TestPoint TP4
+U 1 1 5CADD036
+P 5050 2700
+F 0 "TP4" V 5245 2774 50  0001 C CNN
+F 1 "TPI_VTARGET" V 5089 3291 50  0000 R BNN
+F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 5250 2700 50  0001 C CNN
+F 3 "~" H 5250 2700 50  0001 C CNN
+	1    5050 2700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector:TestPoint TP5
+U 1 1 5CADD062
+P 5050 2800
+F 0 "TP5" V 5245 2874 50  0001 C CNN
+F 1 "TPI_GND" V 5089 3391 50  0000 R BNN
+F 2 "TestPoint:TestPoint_Pad_D1.0mm" H 5250 2800 50  0001 C CNN
+F 3 "~" H 5250 2800 50  0001 C CNN
+	1    5050 2800
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5050 2400 5300 2400
+Wire Wire Line
+	5050 2500 5300 2500
+Wire Wire Line
+	5050 2600 5300 2600
+Text Label 5250 2400 0    50   ~ 0
+SENSOR
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5CADF790
+P 5700 2350
+F 0 "#PWR?" H 5700 2200 50  0001 C CNN
+F 1 "+3.3V" H 5715 2523 50  0000 C CNN
+F 2 "" H 5700 2350 50  0001 C CNN
+F 3 "" H 5700 2350 50  0001 C CNN
+	1    5700 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5700 2350 5700 2700
+Wire Wire Line
+	5050 2700 5700 2700
+Text Label 4100 3450 0    50   ~ 0
+_RESET
+Text Label 5300 2600 0    50   ~ 0
+_RESET
+Connection ~ 5450 3700
+Text Label 5300 2500 0    50   ~ 0
+_PWM
+Wire Wire Line
+	5700 2950 5700 2800
+Wire Wire Line
+	5700 2800 5050 2800
+$Comp
+L power:GND #PWR?
+U 1 1 5CAE1CC2
+P 5700 2950
+F 0 "#PWR?" H 5700 2700 50  0001 C CNN
+F 1 "GND" H 5705 2777 50  0000 C CNN
+F 2 "" H 5700 2950 50  0001 C CNN
+F 3 "" H 5700 2950 50  0001 C CNN
+	1    5700 2950
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
