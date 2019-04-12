@@ -114,3 +114,5 @@ According to Ohm’s law, this means that the current through them will be '0.6 
 ## TODO
 - [ ] Add ATTiny10 ont the KiCad desin
 - [ ] Add POGO PINs on the PCB to flash the ATTiny10
+- [ ] Change the PCB shape
+- [ ] Make the tube angle 90°
