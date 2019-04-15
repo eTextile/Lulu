@@ -54,7 +54,7 @@ inline void fadingPatternGenerator(uint8_t id, uint8_t minVal, uint8_t maxVal, u
 
   net.reset();
   net.write(maxVal, 1); // Slave Lulu-MCU DEFAULT 255
-  net.write(concatenate(id, MAX_VAL), 100);
+  net.write(concatenate(id, MAX_VAL), 1);
 
   net.reset();
   net.write(timeOn, 1); // Slave Lulu-MCU DEFAULT 0
