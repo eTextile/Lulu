@@ -8,14 +8,14 @@
 
 ## Hardware design
 This branch of the Lulu project is using a 200mA power LED with current current circuitry.
-As the project is focussing on embedded electronics we chosed an high power OSRAM OSLON LED that can have a good autonomy with a small Lypo battry (1000 mA).
-As this kind of LED is seeking 200 mA (5 hour of autonomy with a 1000 mA battery).
-The LED is also providing a narrow angle (60°) to focus the light in the optic fiber tranche.
-	See datasheet: https://github.com/eTextile/Lulu/blob/master/Hardware/DOCs/LY_CN5M.pdf
-The brass tube connector have been selected to fit the outer diameter of the LED package.
-The PCB triangle shape have been selected to fit the zero waste in the production process.
+As the project is focussing on embedded electronics we chosed an high power LED ; OSRAM OSLON SX seeking 200 mA/h 
+Then it can be 5 hour of autonomy with a 1000 mA Lypo battery.
+The LED is also providing a narrow angle (60°) this helps to focus the light in to the optic fiber wafer.
+    See datasheet: https://github.com/eTextile/Lulu/blob/master/Hardware/DOCs/LY_CN5M.pdf
+The brass tube connector have been selected to fit the outer diameter of the LED optics.
+The PCB triangle shape have been selected to fit the zero waste production process.
 All the components are SMD package to reduce the size and price of th PCB.
-We have been experiencing a new way to hand solder the LED on the edge of the PCB but it is still not so handy to do it manually.
+We have been experiencing a new way to hand solder the LED on the edge of the PCB but it is still not so handy.
 Custom tooling will be designed and tested to help in that soldering process.
 
 ## Release notes
@@ -114,5 +114,4 @@ According to Ohm’s law, this means that the current through them will be '0.6 
 ## TODO
 - [ ] Add ATTiny10 ont the KiCad desin
 - [ ] Add POGO PINs on the PCB to flash the ATTiny10
-- [ ] Change the PCB shape
-- [ ] Make the tube angle 90°
+- [ ] Change the PCB shape to put the tube angle to 90° from the e-Textile bus
