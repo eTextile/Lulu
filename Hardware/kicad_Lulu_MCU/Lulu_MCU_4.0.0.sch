@@ -1,13 +1,12 @@
 EESchema Schematic File Version 4
-LIBS:Lulu_MCU_4.0.0-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "Lulu_star"
-Date "2018-08-21"
-Rev "2.1.2"
+Title "Lulu_MCU"
+Date "2021-05-14"
+Rev "4.0.0"
 Comp "https://lulu.etextile.org/"
 Comment1 ""
 Comment2 ""
