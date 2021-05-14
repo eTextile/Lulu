@@ -115,3 +115,4 @@ According to Ohm’s law, this means that the current through them will be '0.6 
 - [ ] Add ATTiny10 ont the KiCad desin
 - [ ] Add POGO PINs on the PCB to flash the ATTiny10
 - [ ] Change the PCB shape to put the tube angle to 90° from the e-Textile bus
+- [ ] cool ref: https://hackaday.io/project/179554-tinyicoc
